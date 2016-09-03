@@ -1,0 +1,11 @@
+run()
+{
+    cd ..
+    nohup npm start dev >logfile.txt 2>&1 </dev/null &
+    return 0
+}
+
+pwd
+echo this is before the run function
+run
+echo end start_server script
