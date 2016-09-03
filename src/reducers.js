@@ -1,44 +1,8 @@
 import { combineReducers } from 'redux';
 import {
-  SELECT_FRIEND_DATASET, INVALIDATE_DATASET,
+  INVALIDATE_DATASET,
   REQUEST_DATA, RECEIVE_DATA
 } from './actions/actions';
-
-function selectedFriendDataset(state = 'friendsOverview', action) {
-  switch (action.type) {
-  case SELECT_FRIEND_DATASET:
-    return action.dataset; // these need to be smarter, maybe?
-  default:
-    return state;
-  }
-}
-
-function selectedExperienceDataset(state = 'experiencesOverview', action) {
-  switch (action.type) {
-  case SELECT_EXPERIENCE_DATASET:
-    return action.dataset; // these need to be smarter, maybe?
-  default:
-    return state;
-  }
-}
-
-function selectedActivityDataset(state = 'activitiesOverview', action) {
-  switch (action.type) {
-  case SELECT_ACTIVITY_DATASET:
-    return action.dataset; // these need to be smarter, maybe?
-  default:
-    return state;
-  }
-}
-
-function selectedReflectionDataset(state = 'userSpokeUniqueWord', action) {
-  switch (action.type) {
-  case SELECT_ACTIVITY_DATASET:
-    return action.dataset; // these need to be smarter, maybe?
-  default:
-    return state;
-  }
-}
 
 function data(state = {
   isFetching: false,
@@ -82,7 +46,6 @@ function dataByDataset(state = { }, action) {
 
 const rootReducer = combineReducers({
   dataByDataset,
-  selectedFriendDataset,
 });
 
 export default rootReducer;

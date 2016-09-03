@@ -62,28 +62,14 @@ class AsyncApp extends Component {
      var loggrowerip = 'http://' + ip +':2000/';
 
      var loginButton, navOptions;
-     if (localStorage.getItem('currentSession') == '0') {
        navOptions = <Nav>
                     </Nav>
        loginButton = <Nav right>
-                      <li><a href={loggrowerip}>log-grower</a></li>
-                      <li><Link to="/signup">Sign Up</Link></li>
-                      <li><Link to="/login">Sign In</Link></li>
+                       <li><Link to="/dashboard">Dashboard</Link></li>
+                      {/*<li><a href={loggrowerip}>log-grower</a></li>*/}
+                      {/* <li><Link to="/signup">Sign Up</Link></li> */}
+                      {/* <li><Link to="/login">Sign In</Link></li> */}
                      </Nav>
-
-     } else {
-       navOptions = (<Nav>
-                      <NavDropdown title="Perspectives" id="basic-nav-dropdown">
-                       <li header className='dropdown-header' style={{textAlign: 'center'}}>Choose a finder</li>
-                       <MenuItem divider />
-                       <li><Link to="/friendFinder">Friend Finder</Link></li>
-                     </NavDropdown>
-                   </Nav>)
-       loginButton = <Nav right>
-                      <li><a href={loggrowerip}>log-grower</a></li>
-                      <li onClick={::this.handleLogout}><Link to="/logout">Sign out</Link></li>
-                     </Nav>
-     }
 
     return (
       <div>

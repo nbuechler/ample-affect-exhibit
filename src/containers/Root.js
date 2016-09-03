@@ -9,17 +9,12 @@ import  Home  from './Home/Home';
 import  Signup  from './Signup/Signup';
 import  Login  from './Login/Login';
 import  Logout  from './Logout/Logout';
-import  FriendFinder  from './FriendFinder/FriendFinder';
+import  Dashboard  from './Dashboard/Dashboard';
 
 const store = configureStore();
 
 export default class Root extends Component {
   render() {
-    window.addEventListener('unload', function(){
-     localStorage.setItem('currentSession', 0);
-     localStorage.setItem('lastSetMsg', null);
-    });
-    // console.log(Login);
     /*
      * These are the routes that get defined, and the component is a param.
      */
@@ -32,7 +27,7 @@ export default class Root extends Component {
               <Route path="/signup" component={Signup}/>
               <Route path="/login" component={Login}/>
               <Route path="/logout" component={Logout}/>
-              <Route path="/friendFinder" component={FriendFinder}/>
+              <Route path="/dashboard" component={Dashboard}/>
             </Route>
           </Router>
         }

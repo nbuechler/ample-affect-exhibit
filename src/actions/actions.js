@@ -2,22 +2,6 @@ import fetch from 'isomorphic-fetch';
 
 export const REQUEST_DATA = 'REQUEST_DATA';
 export const RECEIVE_DATA = 'RECEIVE_DATA';
-export const SELECT_FRIEND_DATASET = 'SELECT_FRIEND_DATASET';
-export const INVALIDATE_DATASET = 'INVALIDATE_DATASET';
-
-export function selectFriendDataset(dataset) {
-  return {
-    type: SELECT_FRIEND_DATASET,
-    dataset
-  };
-}
-
-export function invalidateDataset(dataset) {
-  return {
-    type: INVALIDATE_DATASET,
-    dataset
-  };
-}
 
 function requestData(dataset) {
   return {
@@ -26,7 +10,6 @@ function requestData(dataset) {
   };
 }
 
-//This is the Map part
 function receiveData(dataset, json) {
   return {
     type: RECEIVE_DATA,
