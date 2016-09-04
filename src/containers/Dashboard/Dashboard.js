@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 
 import { Table } from 'react-bootstrap';
 
-class Dashboard extends Component {
+class DashboardForm extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -24,14 +25,34 @@ class Dashboard extends Component {
   }
 
   render () {
-
+    const { handleSubmit } = this.props;
     return (
       <div>
         <h1>Hello world</h1>
         <p>This is a Dashboard?</p>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="firstName">First Name</label>
+            <Field name="firstName" component="input" type="text"/>
+          </div>
+          <div>
+            <label htmlFor="lastName">Last Name</label>
+            <Field name="lastName" component="input" type="text"/>
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <Field name="email" component="input" type="email"/>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     );
   }
 }
 
-export default Dashboard
+// Decorate the form component
+DashboardForm = reduxForm({
+  form: 'contact' // a unique name for this form
+})(DashboardForm);
+
+export default DashboardForm

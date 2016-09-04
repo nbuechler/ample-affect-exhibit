@@ -1,4 +1,5 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import {
   INVALIDATE_DATASET,
   REQUEST_DATA, RECEIVE_DATA
@@ -46,6 +47,7 @@ function dataByDataset(state = { }, action) {
 
 const rootReducer = combineReducers({
   dataByDataset,
+  form: formReducer     // <---- Mounted at 'form'
 });
 
 export default rootReducer;

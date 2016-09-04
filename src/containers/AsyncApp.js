@@ -58,25 +58,17 @@ class AsyncApp extends Component {
       * The are the route that get defined are in <Root>.
       * This is a component that is used as the routh path.
       */
-     var ip = window.location.hostname;
-     var loggrowerip = 'http://' + ip +':2000/';
-
-     var loginButton, navOptions;
-       navOptions = <Nav>
-                    </Nav>
-       loginButton = <Nav right>
-                       <li><Link to="/dashboard">Dashboard</Link></li>
-                      {/*<li><a href={loggrowerip}>log-grower</a></li>*/}
-                      {/* <li><Link to="/signup">Sign Up</Link></li> */}
-                      {/* <li><Link to="/login">Sign In</Link></li> */}
-                     </Nav>
-
     return (
       <div>
         <Navbar className="navbar-inverse">
-          <NavBrand><Link to="/">ample-affect-exhibit</Link></NavBrand>
-          {navOptions}
-          {loginButton}
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#/">ample-affect-exhibit</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Nav>
+            <NavItem href="#/dashboard">Dashboard</NavItem>
+          </Nav>
         </Navbar>
         <div className="container" style={{marginTop: '5%'}}>
           {this.props.children}
