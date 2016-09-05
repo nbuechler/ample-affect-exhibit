@@ -26,7 +26,7 @@ function fetchData(dataset) {
     // return fetch(`http://127.0.0.1:5000/${user}`)
 
     var options = {
-      credentials: localStorage.getItem('credentials')
+      credentials: localStorage.getItem('credentials') | 'none'
     }
 
     var ip = window.location.hostname;
