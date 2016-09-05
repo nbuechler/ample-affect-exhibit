@@ -8,7 +8,7 @@ class Home extends Component {
       <Jumbotron style={{margin: '0%', padding: '10%', background: '#111 none repeat scroll 0% 0%'}}>
         <h2 style={{textAlign: 'right'}}>Ample Affect Exhibit</h2>
         <h5>This is interface meant to provide you access to a affect evaluation tool.</h5>
-        <Link to="/login">
+        <Link to="/dashboard">
           <Button bsStyle="success" className="pull-right">
             Great!
           </Button>
