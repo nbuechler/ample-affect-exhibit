@@ -3,44 +3,33 @@ import { Field, reduxForm } from 'redux-form';
 
 import { Button } from 'react-bootstrap';
 
-class NLPForm extends Component {
-  constructor(props) {
-    super(props);
-  }
+import submit from './submit'
 
-  render () {
-    const { handleSubmit } = this.props;
+const NLPForm = (props) => {
+  const { handleSubmit, pristine, reset, submitting } = props
 
-
-    // TODO: Do this: http://redux-form.com/6.0.2/examples/submitValidation/
-    function submit(values) {
-      console.log('values');
-      console.log(values);
-    }
-
-
-    return (
-      <form style={{backgorund: "gray"}}
-            onSubmit={handleSubmit(submit)}>
-        <div>
-          <label htmlFor="doc">Document</label><br></br>
-          <Field className="form-control" style={{width: "100%"}} rows="4" name="doc" component="textarea" type="text"/>
-        </div>
-        <br></br>
-        <div>
-          <label htmlFor="lang">Language</label><br></br>
-          <Field className="form-control" name="lang" component="input" type="text" value="english"/>
-        </div>
-        <hr></hr>
-        <Button type="submit">Submit</Button>
-      </form>
-    );
-  }
+  return (
+    <form style={{backgorund: "gray"}}
+          onSubmit={handleSubmit(submit)}>
+      <div>
+        <label htmlFor="doc">Document</label><br></br>
+        <Field className="form-control" style={{width: "100%"}} rows="4" name="doc"
+          component="textarea" type="text" placeholder="Write something!" required/>
+      </div>
+      <br></br>
+      <div>
+        <label htmlFor="lang">Language</label><br></br>
+        <Field className="form-control" name="lang"
+          component="input" type="text" placeholder="Choose a language... (i.e. english)" required/>
+      </div>
+      <hr></hr>
+      <Button className="pull-left" disabled={pristine || submitting} onClick={reset}>Clear Values</Button>
+      <Button className="pull-right" disabled={pristine || submitting} type="submit">Submit</Button>
+    </form>
+  );
 }
 
 // Decorate the form component
-NLPForm = reduxForm({
+export default reduxForm({
   form: 'nlp' // a unique name for this form
 })(NLPForm);
-
-export default NLPForm
