@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Table, Button, Row, Col, Panel } from 'react-bootstrap';
 
 import NLPForm from '../../components/forms/NLPForm'
+import NLPTable from '../../components/tables/NLPTable'
 
 class NLPDisplay extends Component {
   constructor(props) {
@@ -29,6 +30,13 @@ class NLPDisplay extends Component {
             <Col lg={6} lgOffset={3}>
               <Panel>
                 <NLPForm/>
+              </Panel>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12}>
+              <Panel>
+                <NLPTable/>
               </Panel>
             </Col>
           </Row>
