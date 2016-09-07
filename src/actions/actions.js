@@ -12,7 +12,7 @@ function requestData(dataset) {
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 function receiveData(dataset, json) {
 
-  let data = json
+  let data = [json] // makes this an array so that the mapstatetoprops is happy
   if (dataset !== 'nlp') {
     data = json.all
   }
