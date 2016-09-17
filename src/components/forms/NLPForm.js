@@ -12,15 +12,33 @@ const NLPForm = (props) => {
     <form style={{backgorund: "gray"}}
           onSubmit={handleSubmit(submit)}>
       <div>
-        <label htmlFor="doc">Document</label><br></br>
+        <label>Document</label><br></br>
         <Field className="form-control" style={{width: "100%"}} rows="4" name="doc"
           component="textarea" type="text" placeholder="Write something!" required/>
       </div>
       <br></br>
       <div>
-        <label htmlFor="lang">Language</label><br></br>
-        <Field className="form-control" name="lang"
-          component="input" type="text" placeholder="Choose a language... (i.e. english)" required/>
+        <label>Language <span style={{color: 'gray'}}>(only English for now)</span></label><br></br>
+        <div>
+          {/* TODO: Get the options via a call to the server!*/}
+          <Field className="form-control" name="lang"
+            component="select" required>
+            <option value="english">English</option>
+          </Field>
+        </div>
+      </div>
+      <br></br>
+      <div>
+        <label>Emotion Set</label>
+        <div>
+          {/* TODO: Get the options via a call to the server!*/}
+          <Field className="form-control" name="emotion_set"
+            component="select" required>
+            <option value="all_emotions">All Affects</option>
+            <option value="emotion_ml">Emotion Markup Language</option>
+            <option value="big_6">Big 6</option>
+          </Field>
+        </div>
       </div>
       <hr></hr>
       <Button className="pull-left" disabled={pristine || submitting} onClick={reset}>Clear Values</Button>
