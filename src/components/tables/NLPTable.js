@@ -27,7 +27,7 @@ class NLPTable extends Component {
                   });
       switch (arrayName) {
         case 'big_6':
-          primaryAlert = 'The Big six emotions are normalized and ranked';
+          primaryAlert = 'Paul Ekman\'s "Big Six" emotions are normalized and ranked';
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>

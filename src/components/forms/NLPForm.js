@@ -18,9 +18,14 @@ const NLPForm = (props) => {
       </div>
       <br></br>
       <div>
-        <label>Language</label><br></br>
-        <Field className="form-control" name="lang"
-          component="input" type="text" placeholder="Choose a language... (i.e. english)" required/>
+        <label>Language <span style={{color: 'gray'}}>(only English for now)</span></label><br></br>
+        <div>
+          {/* TODO: Get the options via a call to the server!*/}
+          <Field className="form-control" name="lang"
+            component="select" required>
+            <option value="english">English</option>
+          </Field>
+        </div>
       </div>
       <br></br>
       <div>
