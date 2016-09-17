@@ -27,8 +27,7 @@ class NLPTable extends Component {
                   });
       switch (arrayName) {
         case 'big_6':
-          primaryAlert = 'The big six emotions are normalized and ranked';
-          secondaryAlert = '';
+          primaryAlert = 'The Big six emotions are normalized and ranked';
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
@@ -76,7 +75,7 @@ class NLPTable extends Component {
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
         }
-        {data.length > 0 &&
+        {data.length > 0 && data[0].name != 'big_6' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
@@ -105,6 +104,25 @@ class NLPTable extends Component {
                 </thead>
                 <tbody>
                 {secondaryArea}
+                </tbody>
+              </Table>
+            </div>
+          </div>
+        }
+        {data.length > 0 && data[0].name == 'big_6' &&
+          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+            <div style={{ textAlign: 'center' }}>
+              <Alert>{primaryAlert}</Alert>
+              <Table style={{margin: 'auto', textAlign: 'center'}} striped bordered condensed hover>
+                <thead>
+                  <tr>
+                    <th>Emotion</th>
+                    <th>Normalized Score</th>
+                    <th>Basic Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {primaryArea}
                 </tbody>
               </Table>
             </div>

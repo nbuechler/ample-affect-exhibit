@@ -26,6 +26,7 @@ const NLPForm = (props) => {
       <div>
         <label>Emotion Set</label>
         <div>
+          {/* TODO: Get the options via a call to the server!*/}
           <Field className="form-control" name="emotion_set"
             component="select" required>
             <option value="all_emotions">All Affects</option>
