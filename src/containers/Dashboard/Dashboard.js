@@ -19,7 +19,7 @@ class Dashboard extends Component {
         <li><a href="#/nlp">Natural Language Processing</a></li>
         <hr></hr>
         <li> <span style={notImplemented}>Computer Vision</span> (Not Implemented)</li>
-        <li> <span style={notImplemented}>Skin Conduance</span> (Not Implemented)</li>
+        <li> <span style={notImplemented}>Skin Conductance</span> (Not Implemented)</li>
         <li> <span style={notImplemented}>Body Temperature</span> (Not Implemented)</li>
       </div>
     );
