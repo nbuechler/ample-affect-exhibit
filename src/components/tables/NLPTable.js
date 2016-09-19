@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import DivList from '../lists/DivList'
+
 import { Table, Alert } from 'react-bootstrap';
 
 class NLPTable extends Component {
@@ -31,7 +33,10 @@ class NLPTable extends Component {
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
-                <td key={i + '-r-affect'}>{array[i].emotion}</td><td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td><td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
+                <td key={i + '-r-affect'}>{array[i].emotion}</td>
+                <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
+                <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
+                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -47,7 +52,7 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-words'}>{array[i].list_of_order_3} </td>
+                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -57,7 +62,7 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-words'}>{array[i].list_of_order_3} </td>
+                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -127,6 +132,7 @@ class NLPTable extends Component {
                     <th>Emotion</th>
                     <th>Normalized Score</th>
                     <th>Basic Score</th>
+                    <th>Words</th>
                   </tr>
                 </thead>
                 <tbody>
