@@ -66,9 +66,9 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdistfdist}/> </td>
-                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdistfdist}/> </td>
-                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdistfdist}/> </td>
+                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
