@@ -1,22 +1,42 @@
 import React from 'react';
 
+import { Alert } from 'react-bootstrap';
+
 export default class DivList extends React.Component {
   constructor (props) {
     super(props);
   }
 
   render () {
-    let array = this.props.list;
-    let list_of_words = [];
-    for (var i = 0; i < array.length; i++) {
-      list_of_words.push(
-        <ul>'hello'</ul>
+    let fdist = this.props.fdist,
+        listItems = [];
+    for (var i = 0; i < fdist.length; i++) {
+      listItems.push(
+        <h6 key={'list-item-' + fdist[i]}>
+          <span className="pull-left">
+            {fdist[i][0]}
+          </span>
+          <span className="pull-right">
+            {fdist[i][1]}
+          </span>
+          <br></br>
+        </h6>
+      )
+    }
+    if (listItems.length < 1) {
+      listItems.push(
+        <h6 key={'list-item-' + fdist[i]}>
+          <span>
+            None
+          </span>
+          <br></br>
+        </h6>
       )
     }
     return (
-      <div>
-        {list_of_words}
-      </div>
+      <Alert bsStyle="warning">
+        {listItems}
+      </Alert>
     );
 
   }

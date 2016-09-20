@@ -36,7 +36,9 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
+                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -52,7 +54,9 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
+                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -62,7 +66,9 @@ class NLPTable extends Component {
                 <td key={i + '-r-affect'}>{array[i].emotion}</td>
                 <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
                 <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-words'}><DivList list={array[i].order_3_fdist}/> </td>
+                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdistfdist}/> </td>
+                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdistfdist}/> </td>
+                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdistfdist}/> </td>
               </tr>
             )
           }
@@ -96,7 +102,9 @@ class NLPTable extends Component {
                     <th>Emotion</th>
                     <th>Normalized Score</th>
                     <th>Basic Score</th>
-                    <th>Words</th>
+                    <th>Primary Words</th>
+                    <th>Secondary Words</th>
+                    <th>Tertiary Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -112,7 +120,9 @@ class NLPTable extends Component {
                     <th>Emotion</th>
                     <th>Normalized Score</th>
                     <th>Basic Score</th>
-                    <th>Words</th>
+                    <th>Primary Words</th>
+                    <th>Secondary Words</th>
+                    <th>Tertiary Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -132,7 +142,9 @@ class NLPTable extends Component {
                     <th>Emotion</th>
                     <th>Normalized Score</th>
                     <th>Basic Score</th>
-                    <th>Words</th>
+                    <th>Primary Words</th>
+                    <th>Secondary Words</th>
+                    <th>Tertiary Words</th>
                   </tr>
                 </thead>
                 <tbody>
