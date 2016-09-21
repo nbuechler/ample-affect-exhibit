@@ -12,7 +12,7 @@ export default class DivList extends React.Component {
         listItems = [];
     for (var i = 0; i < fdist.length; i++) {
       listItems.push(
-        <h6 key={'list-item-' + fdist[i]}>
+        <div key={'list-item-' + fdist[i]}>
           <span className="pull-left">
             {fdist[i][0]}
           </span>
@@ -20,23 +20,23 @@ export default class DivList extends React.Component {
             {fdist[i][1]}
           </span>
           <br></br>
-        </h6>
+        </div>
       )
     }
     if (listItems.length < 1) {
       listItems.push(
-        <h6 key={'list-item-' + fdist[i]}>
+        <div key={'list-item-' + fdist[i]}>
           <span>
             None
           </span>
           <br></br>
-        </h6>
+        </div>
       )
     }
     return (
-      <Alert bsStyle="warning">
+      <div>
         {listItems}
-      </Alert>
+      </div>
     );
 
   }
