@@ -33,12 +33,26 @@ class NLPTable extends Component {
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
-                <td key={i + '-r-affect'}>{array[i].emotion}</td>
-                <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
-                <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+                <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                    {array[i].emotion}
+                </td>
+                <td style={{}} key={i + '-normal-scores'}>
+                    {array[i].normalized_r_score.toFixed(4)}
+                </td>
+                <td style={{padding: '10px'}} key={i + '-other-scores'}>
+                    <div>
+                      <span className='pull-left'>
+                        Basic
+                      </span>
+                      <span className='pull-right'>
+                        {array[i].r_affect_score.toFixed(4)}
+                      </span>
+                    </div>
+                    <br></br>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -51,24 +65,52 @@ class NLPTable extends Component {
           for (var i = 0; i < 10; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
-                <td key={i + '-r-affect'}>{array[i].emotion}</td>
-                <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
-                <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+                <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                    {array[i].emotion}
+                </td>
+                <td style={{}} key={i + '-normal-scores'}>
+                    {array[i].normalized_r_score.toFixed(4)}
+                </td>
+                <td style={{padding: '10px'}} key={i + '-other-scores'}>
+                    <div>
+                      <span className='pull-left'>
+                        Basic
+                      </span>
+                      <span className='pull-right'>
+                        {array[i].r_affect_score.toFixed(4)}
+                      </span>
+                    </div>
+                    <br></br>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
           for (var i = 10; i < array.length; i++) {
             secondaryArea.push(
               <tr key={i + '-affect-row'}>
-                <td key={i + '-r-affect'}>{array[i].emotion}</td>
-                <td key={i + '-normal-score'}>{array[i].normalized_r_score.toFixed(4)} </td>
-                <td key={i + '-basic-score'}>{array[i].r_affect_score.toFixed(4)} </td>
-                <td key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+                <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                    {array[i].emotion}
+                </td>
+                <td style={{}} key={i + '-normal-scores'}>
+                    {array[i].normalized_r_score.toFixed(4)}
+                </td>
+                <td style={{padding: '10px'}} key={i + '-other-scores'}>
+                    <div>
+                      <span className='pull-left'>
+                        Basic
+                      </span>
+                      <span className='pull-right'>
+                        {array[i].r_affect_score.toFixed(4)}
+                      </span>
+                    </div>
+                    <br></br>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
               </tr>
             )
           }
@@ -96,12 +138,12 @@ class NLPTable extends Component {
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
-              <Table style={{margin: 'auto', textAlign: 'center'}} striped bordered condensed hover>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
                 <thead>
-                  <tr>
+                  <tr style={{background: '#101010'}}>
                     <th>Emotion</th>
                     <th>Normalized Score</th>
-                    <th>Basic Score</th>
+                    <th>Other Scores</th>
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
@@ -114,12 +156,12 @@ class NLPTable extends Component {
               <hr></hr>
               <Alert>{secondaryAlert}</Alert>
               <hr></hr>
-              <Table style={{margin: 'auto', textAlign: 'center'}} striped bordered condensed hover>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
                 <thead>
-                  <tr>
+                  <tr style={{background: '#101010'}}>
                     <th>Emotion</th>
                     <th>Normalized Score</th>
-                    <th>Basic Score</th>
+                    <th>Other Scores</th>
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
@@ -136,12 +178,12 @@ class NLPTable extends Component {
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
-              <Table style={{margin: 'auto', textAlign: 'center'}} striped bordered condensed hover>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
                 <thead>
-                  <tr>
+                  <tr style={{background: '#101010'}}>
                     <th>Emotion</th>
                     <th>Normalized Score</th>
-                    <th>Basic Score</th>
+                    <th>Other Scores</th>
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
