@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import DivList from '../lists/DivList'
+import DivListGroup from '../groups/DivListGroup'
 
 import { Table, Alert } from 'react-bootstrap';
 
@@ -84,9 +84,16 @@ class NLPTable extends Component {
                     </div>
                     <br></br>
                 </td>
-                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+
+                <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                  <DivListGroup data={array[i]} order={'1'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                  <DivListGroup data={array[i]} order={'2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                  <DivListGroup data={array[i]} order={'3'}/>
+                </td>
               </tr>
             )
           }
@@ -150,9 +157,15 @@ class NLPTable extends Component {
                     </div>
                     <br></br>
                 </td>
-                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                  <DivListGroup data={array[i]} order={'1'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                  <DivListGroup data={array[i]} order={'2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                  <DivListGroup data={array[i]} order={'3'}/>
+                </td>
               </tr>
             )
           }
@@ -210,9 +223,15 @@ class NLPTable extends Component {
                     </div>
                     <br></br>
                 </td>
-                <td style={{padding: '10px'}} key={i + '-1st-words'}><DivList fdist={array[i].order_1_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}><DivList fdist={array[i].order_2_fdist}/> </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}><DivList fdist={array[i].order_3_fdist}/> </td>
+                <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                  <DivListGroup data={array[i]} order={'1'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                  <DivListGroup data={array[i]} order={'2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                  <DivListGroup data={array[i]} order={'3'}/>
+                </td>
               </tr>
             )
           }
