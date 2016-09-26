@@ -21,7 +21,7 @@ class NLPTable extends Component {
     if (this.props.data.length > 0) {
       primaryArea = [];
       secondaryArea = [];
-      primaryAlert = 'The top ten emotions from emotion list is below, sorted, based on the Normalized Score';
+      primaryAlert = 'The top ten emotions from emotion set is below, sorted, based on the Normalized Score';
       secondaryAlert = 'The remaining emotion list is below, sorted, based on the Normalized Score';
       let arrayName = this.props.data[0].name
       let array = this.props.data[0].emotion_set.sort(function(a,b) {
@@ -250,7 +250,7 @@ class NLPTable extends Component {
           }
         </p>
         {isFetching && data.length === 0 &&
-          <Alert>Fill out the form above to see the results.</Alert>
+          <Alert>After filling out the form above, all the results will be displayed here.</Alert>
         }
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
