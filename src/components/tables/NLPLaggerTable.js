@@ -5,7 +5,7 @@ import DivListGroup from '../groups/DivListGroup'
 
 import { Table, Alert } from 'react-bootstrap';
 
-class NLPRankTable extends Component {
+class NLPLaggerTable extends Component {
   constructor(props) {
     super(props);
   }
@@ -20,19 +20,19 @@ class NLPRankTable extends Component {
     if (this.props.data.length > 0) {
       primaryArea = [];
       secondaryArea = [];
-      primaryAlert = 'Ranking Summary of the Emotion Set\'s Top 10';
+      primaryAlert = 'Lagger Summary of the Emotion Set\'s Bottom 10';
       let arrayName = this.props.data[0].name
       let array = this.props.data[0].emotion_set.sort(function(a,b) {
-                      return b.normalized_r_score - a.normalized_r_score;
+                      return a.normalized_r_score - b.normalized_r_score;
                   });
       switch (arrayName) {
         case 'big_6':
-          primaryAlert = 'Ranking Summary of Paul Ekman\'s "Big Six"';
+          primaryAlert = 'Lagger Summary of Paul Ekman\'s "Big Six"';
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
                 <td style={{background: '#232323'}} key={i + '-r-rank'}>
-                    {i+1}
+                    {array.length - i}
                 </td>
                 <td style={{background: '#131313'}} key={i + '-r-affect'}>
                     {array[i].emotion}
@@ -53,7 +53,7 @@ class NLPRankTable extends Component {
             primaryArea.push(
               <tr key={i + '-affect-row'}>
                 <td style={{background: '#232323'}} key={i + '-r-rank'}>
-                    {i+1}
+                    {array.length - i}
                 </td>
                 <td style={{background: '#131313'}} key={i + '-r-affect'}>
                     {array[i].emotion}
@@ -71,7 +71,7 @@ class NLPRankTable extends Component {
     return (
       <div>
         {isFetching && data.length === 0 &&
-          <Alert>The strongest emotional signals are shown here.</Alert>
+          <Alert>The weakest emotional signals are shown here.</Alert>
         }
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
@@ -119,7 +119,7 @@ class NLPRankTable extends Component {
   }
 }
 
-NLPRankTable.propTypes = {
+NLPLaggerTable.propTypes = {
   data: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
@@ -144,4 +144,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(NLPRankTable);
+export default connect(mapStateToProps)(NLPLaggerTable);

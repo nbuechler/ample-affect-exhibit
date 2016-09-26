@@ -7,6 +7,7 @@ import { Table, Button, Row, Col, Panel } from 'react-bootstrap';
 import NLPForm from '../../components/forms/NLPForm'
 import NLPTable from '../../components/tables/NLPTable'
 import NLPRankTable from '../../components/tables/NLPRankTable'
+import NLPLaggerTable from '../../components/tables/NLPLaggerTable'
 
 class NLPDisplay extends Component {
   constructor(props) {
@@ -38,6 +39,9 @@ class NLPDisplay extends Component {
             <Col lg={3}>
               <Panel>
                 <NLPRankTable/>
+              </Panel>
+              <Panel>
+                <NLPLaggerTable/>
               </Panel>
             </Col>
             <Col lg={9}>

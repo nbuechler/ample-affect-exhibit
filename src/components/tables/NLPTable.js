@@ -250,7 +250,7 @@ class NLPTable extends Component {
           }
         </p>
         {isFetching && data.length === 0 &&
-          <Alert>Fill out the form above to see the results.</Alert>
+          <Alert>After filling out the form above, all the results will be displayed here.</Alert>
         }
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
