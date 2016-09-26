@@ -29,7 +29,7 @@ class NLPDisplay extends Component {
           <h1>Natural Language Processing</h1>
           <hr></hr>
           <Row>
-            <Col lg={6} lgOffset={3}>
+            <Col lg={9} lgOffset={3}>
               <Panel>
                 <NLPForm/>
               </Panel>

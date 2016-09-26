@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col} from 'react-bootstrap';
 
 import submit from './submit'
 
@@ -27,6 +27,33 @@ const NLPForm = (props) => {
           </Field>
         </div>
       </div>
+      <br></br>
+      <Row>
+        <Col lg={4}>
+          <label>Unprocessed</label>
+          <div>
+            <label><Field name="natural" component="input" type="radio" value="1" required/> Included</label>
+            <br></br>
+            <label><Field name="natural" component="input" type="radio" value="0"/> Excluded</label>
+          </div>
+        </Col>
+        <Col lg={4}>
+          <label>Stemmed</label>
+          <div>
+            <label><Field name="stemmer" component="input" type="radio" value="1" required/> Included</label>
+            <br></br>
+            <label><Field name="stemmer" component="input" type="radio" value="0"/> Excluded</label>
+          </div>
+        </Col>
+        <Col lg={4}>
+          <label>Lemmatized</label>
+          <div>
+            <label><Field name="lemma" component="input" type="radio" value="1" required/> Included</label>
+            <br></br>
+            <label><Field name="lemma" component="input" type="radio" value="0"/> Excluded</label>
+          </div>
+        </Col>
+      </Row>
       <br></br>
       <div>
         <label>Emotion Set</label>
