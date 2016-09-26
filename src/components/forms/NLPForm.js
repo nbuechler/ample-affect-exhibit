@@ -28,7 +28,7 @@ const NLPForm = (props) => {
         </div>
       </div>
       <br></br>
-      <Row>
+      <Row style={{textAlign: 'center'}}>
         <Col lg={4}>
           <label>Unprocessed</label>
           <div>
