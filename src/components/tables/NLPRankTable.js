@@ -44,6 +44,24 @@ class NLPRankTable extends Component {
             )
           }
           break;
+        case 'dimensions':
+          primaryAlert = 'Ranking Summary of Dimensions';
+          for (var i = 0; i < 6; i++) {
+            primaryArea.push(
+              <tr key={i + '-affect-row'}>
+                <td style={{background: '#232323'}} key={i + '-r-rank'}>
+                    {i+1}
+                </td>
+                <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                    {array[i].emotion}
+                </td>
+                <td style={{}} key={i + '-normal-scores'}>
+                    {array[i].normalized_r_score.toFixed(4)}
+                </td>
+              </tr>
+            )
+          }
+          break;
         default:
           /*
           handles 'all_emotions':

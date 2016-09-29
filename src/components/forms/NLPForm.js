@@ -65,7 +65,10 @@ const NLPForm = (props) => {
             <option value="emotion_ml">Emotion Markup Language</option>
             <option value="big_6">Big 6</option>
             <option value="everday_categories">Everyday Categories</option>
-            <option value="occ-categories">OCC Categories</option>
+            <option value="occ_categories">OCC Categories</option>
+            <option value="fsre_categories">FSRE Categories</option>
+            <option value="frijda_categories">Frijda Categories</option>
+            <option value="dimensions">Dimensions</option>
           </Field>
         </div>
       </div>
