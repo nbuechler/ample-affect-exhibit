@@ -3,7 +3,7 @@ A user interface to show data that is created from affects
 
 # About the project
 Affect
-:   Affect is the measurable observation of an emotion.
+## Affect is the measurable observation of an emotion.
 
 	> e.g. A particularly relevant affect is natural language
 
@@ -16,7 +16,7 @@ Affect
 	Examples of affect include a facial expression, natural language sentence (Syntagam), tone, body temperature and/or another aspect of their person.
 
 'Representational' Emotions (R-EMOTION)
-:   Linguistic labels (signifier/signified pairs) used to define an emotion.
+## Linguistic labels (signifier/signified pairs) used to define an emotion.
 
 	> Affects can be recorded and observed in sets of multiple R-EMOTION s.
 
@@ -25,7 +25,7 @@ Affect
 	> Suggestion:  Learn about EmotionML, see: https://www.w3.org/TR/emotion-voc/xml
 
 'Inferential' Emotions (I-EMOTION)
-:   I-EMOTION s are an interpretation of how culture (as an emergent quality of human systems) constructs signifier/signified pairs of emotion where I-EMOTION s represent these as a vector of multiple R-EMOTION s.
+## I-EMOTION s are an interpretation of how culture (as an emergent quality of human systems) constructs signifier/signified pairs of emotion where I-EMOTION s represent these as a vector of multiple R-EMOTION s.
 
 	> Suggestion:  Learn about Anthropology
 
