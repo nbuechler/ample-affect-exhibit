@@ -68,6 +68,7 @@ class AsyncApp extends Component {
           </Navbar.Header>
           <Nav>
             <NavItem href="#/dashboard">Dashboard</NavItem>
+            <NavItem href="#/stats">Stats</NavItem>
           </Nav>
         </Navbar>
         <div className="container" style={{marginTop: '5%'}}>
