@@ -10,7 +10,9 @@ import  Signup  from './Signup/Signup';
 import  Login  from './Login/Login';
 import  Logout  from './Logout/Logout';
 import  Dashboard  from './Dashboard/Dashboard';
+import  Stats  from './Stats/Stats';
 import  NLPDisplay  from './NLP/NLPDisplay';
+import  NLPStatsDisplay  from './NLP/NLPStatsDisplay';
 
 const store = configureStore();
 
@@ -29,7 +31,9 @@ export default class Root extends Component {
               <Route path="/login" component={Login}/>
               <Route path="/logout" component={Logout}/>
               <Route path="/dashboard" component={Dashboard}/>
+              <Route path="/stats" component={Stats}/>
               <Route path="/nlp" component={NLPDisplay}/>
+              <Route path="/nlp-stats" component={NLPStatsDisplay}/>
             </Route>
           </Router>
         }

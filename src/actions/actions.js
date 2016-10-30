@@ -13,7 +13,10 @@ export const RECEIVE_DATA = 'RECEIVE_DATA';
 function receiveData(dataset, json) {
 
   let data = [json] // makes this an array so that the mapstatetoprops is happy
-  if (dataset !== 'nlp') {
+  if (dataset == 'nlp-stats') {
+    data = json.statistics
+  }
+  else if (dataset !== 'nlp') {
     data = json.all
   }
 
@@ -47,9 +50,15 @@ function fetchData(dataset, port) {
     let ip = window.location.hostname;
     let portNum = port || 3000
 
-    return fetch(`http://` + ip + `:` + portNum + `/${dataset}/?credentials=` + options.credentials)
-      .then(req => req.json())
-      .then(json => dispatch(receiveData(dataset, json)));
+    if (dataset == 'nlp-stats') {
+      return fetch(`http://` + ip + `:` + port + `/helpers/stats/0/truncated/1`)
+        .then(req => req.json())
+        .then(json => dispatch(receiveData(dataset, json)));
+    } else {
+      return fetch(`http://` + ip + `:` + portNum + `/${dataset}/?credentials=` + options.credentials)
+        .then(req => req.json())
+        .then(json => dispatch(receiveData(dataset, json)));
+    }
   };
 }
 
@@ -64,10 +73,10 @@ function shouldFetchData(state, dataset) {
   }
 }
 
-export function fetchDataIfNeeded(dataset) {
+export function fetchDataIfNeeded(dataset, port) {
   return (dispatch, getState) => {
     if (shouldFetchData(getState(), dataset)) {
-      return dispatch(fetchData(dataset));
+      return dispatch(fetchData(dataset, port));
     }
   };
 }

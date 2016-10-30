@@ -11,13 +11,13 @@ export default class Wrapper extends React.Component {
     if(this.props.border){
       return (
         <svg
-          style={{border: this.props.borderWeight + 'px solid black', padding: '0px', marginTop: '10px', marginBottom: '10px', background: '#222'}}
+          style={{border: this.props.borderWeight + 'px solid black', padding: '0px', paddingLeft: '20px', paddingRight: '20px', marginTop: '10px', marginBottom: '10px', background: '#222'}}
           width={this.props.width} height={this.props.height}>{this.props.children}</svg>
       );
     } else {
       return (
         <svg
-          style={{border: '0px solid black', padding: '0px', background: '#222', marginTop: '10px', marginBottom: '10px'}}
+          style={{border: '0px solid black', padding: '0px', background: '#222', paddingLeft: '20px', paddingRight: '20px', marginTop: '10px', marginBottom: '10px'}}
           width={this.props.width} height={this.props.height}>{this.props.children}</svg>
       );
     }
