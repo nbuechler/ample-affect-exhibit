@@ -38,7 +38,7 @@ This is the User Interface to display results from: speedy-affect-scorer. Additi
 
 Find the project here: https://github.com/nbuechler/speedy-affect-scorer
 
-* Appoximately 400 representational emotions are categorized by speedy-affect-scorer, these do not absolutely map to the inferential emotion of a human, which will be described later
+* Approximately 400 representational emotions are categorized by speedy-affect-scorer, these do not absolutely map to the inferential emotion of a human, which will be described later
 * A representation of an emotion is a label like 'Love' which reminds us humans of signifier/signified pairs (see semiotics)
 * Usually, one human maps their signifier/signified pairs to single a representation
 * This project introduces the newer concept of an 'Inferential Emotion'

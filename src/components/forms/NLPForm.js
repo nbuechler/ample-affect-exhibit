@@ -17,6 +17,34 @@ const NLPForm = (props) => {
           component="textarea" type="text" placeholder="Write something!" required/>
       </div>
       <br></br>
+      <Row style={{padding: "30px 0", background: "#454545"}}>
+        <Col lg={4}>
+            <div>
+              Constrain the affect words to use from the corpora.
+              <br></br>
+              <h6 style={{color: "#AAA"}}>
+                (Setting both bounds to 25 will use the middle 50 percent of the affect words.)
+              </h6>
+            </div>
+        </Col>
+        <Col lg={4}>
+          <label>Upper Bound</label>
+          <div>
+            <Field className="form-control" style={{width: "100%"}} name="ub"
+              component="input" type="number" placeholder="0-100" min="0" max="100"
+              required/>
+          </div>
+        </Col>
+        <Col lg={4}>
+          <label>Lower Bound</label>
+          <div>
+            <Field className="form-control" style={{width: "100%"}} name="lb"
+              component="input" type="number" placeholder="0-100" min="0" max="100"
+              required/>
+          </div>
+        </Col>
+      </Row>
+      <br></br>
       <div>
         <label>Language <span style={{color: 'gray'}}>(only English for now)</span></label><br></br>
         <div>
