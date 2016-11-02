@@ -23,7 +23,7 @@ const NLPForm = (props) => {
               Constrain the affect words to use from the corpora.
               <br></br>
               <h6 style={{color: "#AAA"}}>
-                (Setting both bounds to 25 will use the middle 50 percent of affect words.)
+                (Setting both bounds to 25 will use the middle 50 percent of the affect words.)
               </h6>
             </div>
         </Col>
