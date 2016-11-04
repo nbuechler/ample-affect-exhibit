@@ -152,6 +152,58 @@ class NLPTable extends Component {
                       <span className='pull-left'>Tertiary Normalized Score</span>
                       <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
                     </div>
+                    <hr></hr>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'><strong>1/2 Common Words</strong></span>
+                    </div>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'>1/2 Corpus Length</span>
+                      <span className='pull-right'>{array[i].order_1_and_2_length}</span>
+                      <br></br>
+                      <span className='pull-left'>1/2 Normalized Score</span>
+                      <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
+                    </div>
+                    <hr></hr>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'><strong>1/3 Common Words</strong></span>
+                    </div>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'>1/3 Corpus Length</span>
+                      <span className='pull-right'>{array[i].order_1_and_3_length}</span>
+                      <br></br>
+                      <span className='pull-left'>1/3 Normalized Score</span>
+                      <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
+                    </div>
+                    <hr></hr>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'><strong>2/3 Common Words</strong></span>
+                    </div>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'>2/3 Corpus Length</span>
+                      <span className='pull-right'>{array[i].order_2_and_3_length}</span>
+                      <br></br>
+                      <span className='pull-left'>2/3 Normalized Score</span>
+                      <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
+                    </div>
+                    <hr></hr>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
+                    </div>
+                    <br></br>
+                    <div>
+                      <span className='pull-left'>1/2/3 Corpus Length</span>
+                      <span className='pull-right'>{array[i].all_orders_length}</span>
+                      <br></br>
+                      <span className='pull-left'>1/2/3 Normalized Score</span>
+                      <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
+                    </div>
                     <br></br>
                 </td>
 
@@ -163,6 +215,18 @@ class NLPTable extends Component {
                 </td>
                 <td style={{padding: '10px'}} key={i + '-3rd-words'}>
                   <DivListGroup data={array[i]} order={'3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
+                  <DivListGroup data={array[i]} order={'1_2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
+                  <DivListGroup data={array[i]} order={'1_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
+                  <DivListGroup data={array[i]} order={'2_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-123-words'}>
+                  <DivListGroup data={array[i]} order={'123'}/>
                 </td>
               </tr>
             )
@@ -226,6 +290,59 @@ class NLPTable extends Component {
                       <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
                     </div>
                     <br></br>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/2 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/2 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_1_and_2_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/2 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_1_and_3_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>2/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>2/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_2_and_3_length}</span>
+                        <br></br>
+                        <span className='pull-left'>2/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/2/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].all_orders_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/2/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
+                      </div>
+                    <br></br>
                 </td>
                 <td style={{padding: '10px'}} key={i + '-1st-words'}>
                   <DivListGroup data={array[i]} order={'1'}/>
@@ -235,6 +352,18 @@ class NLPTable extends Component {
                 </td>
                 <td style={{padding: '10px'}} key={i + '-3rd-words'}>
                   <DivListGroup data={array[i]} order={'3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
+                  <DivListGroup data={array[i]} order={'1_2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
+                  <DivListGroup data={array[i]} order={'1_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
+                  <DivListGroup data={array[i]} order={'2_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-123-words'}>
+                  <DivListGroup data={array[i]} order={'123'}/>
                 </td>
               </tr>
             )
@@ -292,6 +421,59 @@ class NLPTable extends Component {
                       <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
                     </div>
                     <br></br>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/2 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/2 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_1_and_2_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/2 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_1_and_3_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>2/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>2/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].order_2_and_3_length}</span>
+                        <br></br>
+                        <span className='pull-left'>2/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
+                      </div>
+                      <br></br>
+                      <div>
+                        <span className='pull-left'>1/2/3 Corpus Length</span>
+                        <span className='pull-right'>{array[i].all_orders_length}</span>
+                        <br></br>
+                        <span className='pull-left'>1/2/3 Normalized Score</span>
+                        <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
+                      </div>
+                    <br></br>
                 </td>
                 <td style={{padding: '10px'}} key={i + '-1st-words'}>
                   <DivListGroup data={array[i]} order={'1'}/>
@@ -301,6 +483,18 @@ class NLPTable extends Component {
                 </td>
                 <td style={{padding: '10px'}} key={i + '-3rd-words'}>
                   <DivListGroup data={array[i]} order={'3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
+                  <DivListGroup data={array[i]} order={'1_2'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
+                  <DivListGroup data={array[i]} order={'1_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
+                  <DivListGroup data={array[i]} order={'2_3'}/>
+                </td>
+                <td style={{padding: '10px'}} key={i + '-123-words'}>
+                  <DivListGroup data={array[i]} order={'123'}/>
                 </td>
               </tr>
             )
@@ -338,6 +532,10 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
+                    <th>1/2 Words</th>
+                    <th>1/3 Words</th>
+                    <th>2/3 Words</th>
+                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -356,6 +554,10 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
+                    <th>1/2 Words</th>
+                    <th>1/3 Words</th>
+                    <th>2/3 Words</th>
+                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -378,6 +580,10 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
+                    <th>1/2 Words</th>
+                    <th>1/3 Words</th>
+                    <th>2/3 Words</th>
+                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
