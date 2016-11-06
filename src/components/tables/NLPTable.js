@@ -65,38 +65,114 @@ class NLPTable extends Component {
             )
           }
           break;
-        case 'dimensions':
-          break;
-        default:
-          /*
-          handles 'all_emotions':
-          handles 'emotion_ml':
-          */
-          for (var i = 0; i < 10; i++) {
-            primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-              </tr>
-            )
-          }
-          for (var i = 10; i < array.length; i++) {
-            secondaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-              </tr>
-            )
-          }
-          break;
+          case 'dimensions':
+            primaryAlert = 'Dimensional emotions are normalized and ranked';
+            for (var i = 0; i < 7; i++) {
+              primaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
+                      <div>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            break;
+          default:
+            /*
+            handles 'all_emotions':
+            handles 'emotion_ml':
+            */
+            for (var i = 0; i < 10; i++) {
+              primaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
+                      <div>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            for (var i = 10; i < array.length; i++) {
+              secondaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
+                      <div>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
+                      </div>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            break;
       }
       // End switch
     }
