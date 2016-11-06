@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import DivListGroup from '../groups/DivListGroup'
+import StatisticGroup from '../groups/StatisticGroup'
 
 import { Table, Alert } from 'react-bootstrap';
 
@@ -45,461 +46,133 @@ class NLPTable extends Component {
                       <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
                     </div>
                     <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Primary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Primary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Primary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1.toFixed(4)}</span>
-                    </div>
-                    <br></br>
+                    <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
                     <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Secondary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Secondary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_2_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Secondary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_2.toFixed(4)}</span>
-                    </div>
-                    <br></br>
+                    <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
                     <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Tertiary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Tertiary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Tertiary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
-                    </div>
-                    <br></br>
+                    <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
                 </td>
-
                 <td style={{padding: '10px'}} key={i + '-1st-words'}>
-                  <DivListGroup data={array[i]} order={'1'}/>
+                  <DivListGroup data={array[i]['order-1']}/>
                 </td>
                 <td style={{padding: '10px'}} key={i + '-2nd-words'}>
-                  <DivListGroup data={array[i]} order={'2'}/>
+                  <DivListGroup data={array[i]['order-2']}/>
                 </td>
                 <td style={{padding: '10px'}} key={i + '-3rd-words'}>
-                  <DivListGroup data={array[i]} order={'3'}/>
+                  <DivListGroup data={array[i]['order-3']}/>
                 </td>
               </tr>
             )
           }
           break;
-        case 'dimensions':
-          primaryAlert = 'Dimensional emotions are normalized and ranked';
-          for (var i = 0; i < 7; i++) {
-            primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-                <td style={{padding: '10px'}} key={i + '-other-stats'}>
-                    <div>
-                      <span className='pull-left'>Basic Score</span>
-                      <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Primary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Primary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Primary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Secondary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Secondary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_2_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Secondary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_2.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Tertiary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Tertiary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Tertiary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'><strong>1/2 Common Words</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>1/2 Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_and_2_length}</span>
-                      <br></br>
-                      <span className='pull-left'>1/2 Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'><strong>1/3 Common Words</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>1/3 Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_and_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>1/3 Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'><strong>2/3 Common Words</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>2/3 Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_2_and_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>2/3 Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>1/2/3 Corpus Length</span>
-                      <span className='pull-right'>{array[i].all_orders_length}</span>
-                      <br></br>
-                      <span className='pull-left'>1/2/3 Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                </td>
-
-                <td style={{padding: '10px'}} key={i + '-1st-words'}>
-                  <DivListGroup data={array[i]} order={'1'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
-                  <DivListGroup data={array[i]} order={'2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
-                  <DivListGroup data={array[i]} order={'3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
-                  <DivListGroup data={array[i]} order={'1_2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
-                  <DivListGroup data={array[i]} order={'1_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
-                  <DivListGroup data={array[i]} order={'2_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-123-words'}>
-                  <DivListGroup data={array[i]} order={'123'}/>
-                </td>
-              </tr>
-            )
-          }
-          break;
-        default:
-          /*
-          handles 'all_emotions':
-          handles 'emotion_ml':
-          */
-          for (var i = 0; i < 10; i++) {
-            primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-                <td style={{padding: '10px'}} key={i + '-other-stats'}>
-                    <div>
-                      <span className='pull-left'>Basic Score</span>
-                      <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Primary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Primary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Primary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Secondary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Secondary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_2_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Secondary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_2.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Tertiary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Tertiary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Tertiary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                      <hr></hr>
-                      <br></br>
+          case 'dimensions':
+            primaryAlert = 'Dimensional emotions are normalized and ranked';
+            for (var i = 0; i < 7; i++) {
+              primaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
                       <div>
-                        <span className='pull-left'><strong>1/2 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/2 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_1_and_2_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/2 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
                       </div>
                       <hr></hr>
-                      <br></br>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            break;
+          default:
+            /*
+            handles 'all_emotions':
+            handles 'emotion_ml':
+            */
+            for (var i = 0; i < 10; i++) {
+              primaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
                       <div>
-                        <span className='pull-left'><strong>1/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_1_and_3_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
                       </div>
                       <hr></hr>
-                      <br></br>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
+                      <hr></hr>
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            for (var i = 10; i < array.length; i++) {
+              secondaryArea.push(
+                <tr key={i + '-affect-row'}>
+                  <td style={{background: '#131313'}} key={i + '-r-affect'}>
+                      {array[i].emotion}
+                  </td>
+                  <td style={{}} key={i + '-normal-scores'}>
+                      {array[i].normalized_r_score.toFixed(4)}
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-other-stats'}>
                       <div>
-                        <span className='pull-left'><strong>2/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>2/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_2_and_3_length}</span>
-                        <br></br>
-                        <span className='pull-left'>2/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
+                        <span className='pull-left'>Basic Score</span>
+                        <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
                       </div>
                       <hr></hr>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/2/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].all_orders_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/2/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
-                      </div>
-                    <br></br>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1st-words'}>
-                  <DivListGroup data={array[i]} order={'1'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
-                  <DivListGroup data={array[i]} order={'2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
-                  <DivListGroup data={array[i]} order={'3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
-                  <DivListGroup data={array[i]} order={'1_2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
-                  <DivListGroup data={array[i]} order={'1_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
-                  <DivListGroup data={array[i]} order={'2_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-123-words'}>
-                  <DivListGroup data={array[i]} order={'123'}/>
-                </td>
-              </tr>
-            )
-          }
-          for (var i = 10; i < array.length; i++) {
-            secondaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-                <td style={{padding: '10px'}} key={i + '-other-stats'}>
-                    <div>
-                      <span className='pull-left'>Basic Score</span>
-                      <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
-                    </div>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Primary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Primary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_1_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Primary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_1.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Secondary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Secondary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_2_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Secondary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_2.toFixed(4)}</span>
-                    </div>
-                    <br></br>
-                    <hr></hr>
-                    <div>
-                      <span className='pull-left'><strong>Tertiary</strong></span>
-                    </div>
-                    <br></br>
-                    <div>
-                      <span className='pull-left'>Tertiary Corpus Length</span>
-                      <span className='pull-right'>{array[i].order_3_length}</span>
-                      <br></br>
-                      <span className='pull-left'>Tertiary Normalized Score</span>
-                      <span className='pull-right'>{array[i].normalized_order_3.toFixed(4)}</span>
-                    </div>
-                    <br></br>
+                      <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
                       <hr></hr>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'><strong>1/2 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/2 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_1_and_2_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/2 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_1_and_2.toFixed(4)}</span>
-                      </div>
+                      <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
                       <hr></hr>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'><strong>1/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_1_and_3_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_1_and_3.toFixed(4)}</span>
-                      </div>
-                      <hr></hr>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'><strong>2/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>2/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].order_2_and_3_length}</span>
-                        <br></br>
-                        <span className='pull-left'>2/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_order_2_and_3.toFixed(4)}</span>
-                      </div>
-                      <hr></hr>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'><strong>1/2/3 Common Words</strong></span>
-                      </div>
-                      <br></br>
-                      <div>
-                        <span className='pull-left'>1/2/3 Corpus Length</span>
-                        <span className='pull-right'>{array[i].all_orders_length}</span>
-                        <br></br>
-                        <span className='pull-left'>1/2/3 Normalized Score</span>
-                        <span className='pull-right'>{array[i].normalized_all_orders.toFixed(4)}</span>
-                      </div>
-                    <br></br>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1st-words'}>
-                  <DivListGroup data={array[i]} order={'1'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2nd-words'}>
-                  <DivListGroup data={array[i]} order={'2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-3rd-words'}>
-                  <DivListGroup data={array[i]} order={'3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and2-words'}>
-                  <DivListGroup data={array[i]} order={'1_2'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-1and3-words'}>
-                  <DivListGroup data={array[i]} order={'1_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-2and3-words'}>
-                  <DivListGroup data={array[i]} order={'2_3'}/>
-                </td>
-                <td style={{padding: '10px'}} key={i + '-123-words'}>
-                  <DivListGroup data={array[i]} order={'123'}/>
-                </td>
-              </tr>
-            )
-          }
-          break;
+                      <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-1st-words'}>
+                    <DivListGroup data={array[i]['order-1']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-2nd-words'}>
+                    <DivListGroup data={array[i]['order-2']}/>
+                  </td>
+                  <td style={{padding: '10px'}} key={i + '-3rd-words'}>
+                    <DivListGroup data={array[i]['order-3']}/>
+                  </td>
+                </tr>
+              )
+            }
+            break;
       }
       // End switch
     }
@@ -532,10 +205,6 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
-                    <th>1/2 Words</th>
-                    <th>1/3 Words</th>
-                    <th>2/3 Words</th>
-                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -554,10 +223,6 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
-                    <th>1/2 Words</th>
-                    <th>1/3 Words</th>
-                    <th>2/3 Words</th>
-                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -580,10 +245,6 @@ class NLPTable extends Component {
                     <th>Primary Words</th>
                     <th>Secondary Words</th>
                     <th>Tertiary Words</th>
-                    <th>1/2 Words</th>
-                    <th>1/3 Words</th>
-                    <th>2/3 Words</th>
-                    <th>1/2/3 Words</th>
                   </tr>
                 </thead>
                 <tbody>
