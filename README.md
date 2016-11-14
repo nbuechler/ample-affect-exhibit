@@ -13,7 +13,7 @@ Affects are defined by the observed reality (via some kind of sign) of a person.
 
 	> Suggestion:  Learn about Semiotics
 
-	Examples of affect include a facial expression, natural language sentence (Syntagam), tone, body temperature and/or another aspect of their person.
+	Examples of affect include a facial expression, natural language sentence (Syntagram), tone, body temperature and/or another aspect of their person.
 
 #### 'Representational' Emotions (R-EMOTION)
 Linguistic labels (signifier/signified pairs) used to define an emotion.
@@ -64,5 +64,5 @@ Display a user interface for natural language
 npm run start dev
 ```
 
-#LICENSE
+# LICENSE
 GPLv3
