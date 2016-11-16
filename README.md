@@ -33,7 +33,7 @@ I-EMOTION s are an interpretation of how culture (as an emergent quality of huma
 
 	> Important: R-EMOTION s are symbolic and are not the same as 'Inferential' Emotions (I-EMOTION).
 
-## History
+# History
 This is the User Interface to display results from: speedy-affect-scorer. Additionaly, this project may one day become the UI to display information processed from computer vision, bioinference, and other forms of affect.
 
 Find the project here: https://github.com/nbuechler/speedy-affect-scorer
