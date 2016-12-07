@@ -17,6 +17,7 @@ class Dashboard extends Component {
         <p>Choose an option:</p>
         <hr></hr>
         <li><a href="#/nlp">Natural Language Processing</a></li>
+        <li><a href="#/nlp-comprehensive">Comprehensive NLP Display</a></li>
         <hr></hr>
         <li> <span style={notImplemented}>Computer Vision</span> (Not Implemented)</li>
         <li> <span style={notImplemented}>Skin Conductance</span> (Not Implemented)</li>

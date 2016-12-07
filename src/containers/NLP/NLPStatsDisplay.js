@@ -36,7 +36,7 @@ class NLPStatsDisplay extends Component {
               in each of those slices, we would get a graph something like above.</h5>
               <h5>The y-axis is based on the number of times that word signals a
               representational emotion (R-Emotion).</h5>
-              <h5>For example, the word state signals 329 emotions in the corpora!</h5>
+              <h5>For example, the word 'state' signals 329 emotions in the corpora!</h5>
               <h5>This bar chart shows the frequency distribution of every word
               used to describe the representational emotion (R-Emotion).</h5>
             </Col>
