@@ -89,10 +89,10 @@ class NLPLaggerTable extends Component {
     return (
       <div>
         {isFetching && data.length === 0 &&
-          <Alert>The weakest emotional signals are shown here.</Alert>
+          <div style={{textAlign: 'center'}}>The weakest emotional signals are shown here.</div>
         }
         {!isFetching && data.length === 0 &&
-          <Alert>No results.</Alert>
+          <div style={{textAlign: 'center'}}>No results.</div>
         }
         {data.length > 0 && data[0].name != 'big_6' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>

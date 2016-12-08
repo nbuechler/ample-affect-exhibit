@@ -29,20 +29,19 @@ class NLPDisplay extends Component {
           <h1>Natural Language Processing</h1>
           <hr></hr>
 
-          <Panel className="form--nlp">
+          {/* These panels get fixed around the edge of the screen */}
+          <Panel className="transparent--module form--nlp">
             <NLPComprehensiveForm/>
+          </Panel>
+          <Panel className="transparent--module transparent--module_module-1">
+            <NLPRankTable/>
+          </Panel>
+          <Panel className="transparent--module transparent--module_module-2">
+            <NLPLaggerTable/>
           </Panel>
 
           <Row>
-            <Col lg={3}>
-              <Panel>
-                <NLPRankTable/>
-              </Panel>
-              <Panel>
-                <NLPLaggerTable/>
-              </Panel>
-            </Col>
-            <Col lg={9}>
+            <Col lg={12}>
               <Panel>
                 <NLPTable/>
               </Panel>

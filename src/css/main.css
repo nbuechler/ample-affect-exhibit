@@ -1,19 +1,44 @@
-.form--nlp {
+/*
+ * Layout
+ */
+
+.transparent--module {
   position: fixed;
-  bottom: 0;
-  right: 15;
   z-index: 10;
-  opacity: .05;
+  opacity: .075;
   -webkit-transition: opacity .2s; /* Safari */
   transition: opacity .2s;
   -webkit-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   -moz-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   box-shadow: 0px 1px 8px 0px rgba(204,204,204,1);
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transparent--module_module-1 {
+  top: 10;
+  left: 15;
+  height: 440px;
+  width: 250px;
+}
+
+.transparent--module_module-2 {
+  top: 460;
+  left: 15;
+  height: 440px;
+  width: 250px;
+}
+
+
+.form--nlp {
+  bottom: 0;
+  right: 15;
   width: 400px;
 }
 
-.form--nlp:hover {
+.transparent--module:hover {
   opacity: 1;
 }
 
