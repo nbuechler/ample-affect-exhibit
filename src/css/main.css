@@ -1,7 +1,7 @@
 .form--nlp {
   position: fixed;
   bottom: 0;
-  right: 2;
+  right: 15;
   z-index: 10;
   opacity: .1;
   -webkit-transition: opacity .2s; /* Safari */
@@ -34,4 +34,6 @@ h6 {
   height: 22px;
   padding: 3px 6px;
   font-size: 12px;
+  background: #565656;
+  color: #CCC;
 }

@@ -28,9 +28,11 @@ class NLPDisplay extends Component {
         <div style={{paddingBottom: '100px'}}>
           <h1>Natural Language Processing</h1>
           <hr></hr>
-              <Panel className="form--nlp">
-                <NLPComprehensiveForm/>
-              </Panel>
+
+          <Panel className="form--nlp">
+            <NLPComprehensiveForm/>
+          </Panel>
+
           <Row>
             <Col lg={3}>
               <Panel>
@@ -40,8 +42,6 @@ class NLPDisplay extends Component {
                 <NLPLaggerTable/>
               </Panel>
             </Col>
-          </Row>
-          <Row>
             <Col lg={9}>
               <Panel>
                 <NLPTable/>
