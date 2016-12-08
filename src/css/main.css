@@ -9,9 +9,29 @@
   -webkit-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   -moz-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   box-shadow: 0px 1px 8px 0px rgba(204,204,204,1);
-  font-size: 12px
+  font-size: 12px;
 }
 
 .form--nlp:hover {
   opacity: 1;
+}
+
+
+
+/*
+ * Heading overrides
+ */
+
+h6 {
+   font-size: 12px;
+}
+
+/*
+ * Bootstrap overrides
+ */
+
+.form-control {
+  height: 22px;
+  padding: 3px 6px;
+  font-size: 12px;
 }
