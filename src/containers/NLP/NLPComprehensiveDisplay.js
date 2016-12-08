@@ -28,38 +28,26 @@ class NLPDisplay extends Component {
         <div style={{paddingBottom: '100px'}}>
           <h1>Natural Language Processing</h1>
           <hr></hr>
-          <Accordion>
-            <Panel header="Collapsible Group Item #1" eventKey="1">
-              <Row>
-                <Col lg={12}>
-                  <Panel>
-                    <NLPComprehensiveForm/>
-                  </Panel>
-                </Col>
-              </Row>
-            </Panel>
-            <Panel header="Collapsible Group Item #2" eventKey="2">
-              <Row>
-                <Col lg={3}>
-                  <Panel>
-                    <NLPRankTable/>
-                  </Panel>
-                  <Panel>
-                    <NLPLaggerTable/>
-                  </Panel>
-                </Col>
-              </Row>
-            </Panel>
-            <Panel header="Collapsible Group Item #3" eventKey="3">
-              <Row>
-                <Col lg={9}>
-                  <Panel>
-                    <NLPTable/>
-                  </Panel>
-                </Col>
-              </Row>
-            </Panel>
-          </Accordion>
+              <Panel className="form--nlp">
+                <NLPComprehensiveForm/>
+              </Panel>
+          <Row>
+            <Col lg={3}>
+              <Panel>
+                <NLPRankTable/>
+              </Panel>
+              <Panel>
+                <NLPLaggerTable/>
+              </Panel>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={9}>
+              <Panel>
+                <NLPTable/>
+              </Panel>
+            </Col>
+          </Row>
         </div>
       </div>
     );

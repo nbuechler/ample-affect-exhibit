@@ -11,7 +11,8 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://' + ip + ':4000',
     './src/index',
-    './src/css/bootstrap.css'
+    './src/css/bootstrap.css',
+    './src/css/main.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
