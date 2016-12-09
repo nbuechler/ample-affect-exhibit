@@ -24,7 +24,7 @@ class StatsChart extends Component {
     const { data, isFetching, lastUpdated } = this.props;
 
     return (
-      <div style={{width: "550px", border: "1px solid #DDD"}}>
+      <div style={{width: "550px", border: "1px solid #DDD", margin: 'auto'}}>
         <BarChart
             title={'Word Affect Frequency Distribution'}
             distinctColors={false}
