@@ -74,7 +74,7 @@ const NLPComprehensiveForm = (props) => {
               </h6>
             </div>
             <Row style={{textAlign: 'center'}}>
-              <Col lg={4}>
+              <Col md={4} lg={4}>
                 <label>Unprocessed</label>
                 <div>
                   <label><Field name="natural" component="input" type="radio" value="1" required/> Included</label>
@@ -82,7 +82,7 @@ const NLPComprehensiveForm = (props) => {
                   <label><Field name="natural" component="input" type="radio" value="0"/> Excluded</label>
                 </div>
               </Col>
-              <Col lg={4}>
+              <Col md={4} lg={4}>
                 <label>Stemmed</label>
                 <div>
                   <label><Field name="stemmer" component="input" type="radio" value="1" required/> Included</label>
@@ -90,7 +90,7 @@ const NLPComprehensiveForm = (props) => {
                   <label><Field name="stemmer" component="input" type="radio" value="0"/> Excluded</label>
                 </div>
               </Col>
-              <Col lg={4}>
+              <Col md={4} lg={4}>
                 <label>Lemmatized</label>
                 <div>
                   <label><Field name="lemma" component="input" type="radio" value="1" required/> Included</label>
