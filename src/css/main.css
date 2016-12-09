@@ -1,4 +1,17 @@
 /*
+ * Background
+ */
+
+
+/*
+ * Font overrides
+ */
+
+.navbar-header, .nav, .navbar-nav, h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/*
  * Layout
  */
 
@@ -48,8 +61,6 @@
   opacity: 1;
 }
 
-
-
 /*
  * Heading overrides
  */
@@ -68,4 +79,8 @@ h6 {
   font-size: 12px;
   background: #565656;
   color: #CCC;
+}
+
+.navbar-inverse {
+  background-color: rgba(19,19,19, 0.8);
 }
