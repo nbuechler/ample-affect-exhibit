@@ -2,6 +2,19 @@
  * Background
  */
 
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  opacity: .05;
+}
 
 /*
  * Font overrides
@@ -23,11 +36,21 @@
   transition: opacity .5s;
   -webkit-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   -moz-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
-  box-shadow: 0px 1px 8px 0px rgba(204,204,204,1);
+  box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.transparent--module:hover {
+  opacity: 1;
+}
+
+.form--nlp {
+  bottom: 0;
+  right: 15;
+  width: 400px;
 }
 
 .transparent--module_module-1 {
@@ -51,16 +74,6 @@
 }
 
 
-.form--nlp {
-  bottom: 0;
-  right: 15;
-  width: 400px;
-}
-
-.transparent--module:hover {
-  opacity: 1;
-}
-
 /*
  * Heading overrides
  */
@@ -72,6 +85,10 @@ h6 {
 /*
  * Bootstrap overrides
  */
+
+.panel, .well, .alert, .form-control, .btn {
+  border-radius: 0px
+}
 
 .form-control {
   height: 22px;
