@@ -6,8 +6,8 @@
   position: fixed;
   z-index: 10;
   opacity: .075;
-  -webkit-transition: opacity .2s; /* Safari */
-  transition: opacity .2s;
+  -webkit-transition: opacity .5s; /* Safari */
+  transition: opacity .5s;
   -webkit-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   -moz-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   box-shadow: 0px 1px 8px 0px rgba(204,204,204,1);
@@ -29,6 +29,12 @@
   left: 15;
   height: 440px;
   width: 250px;
+}
+
+@media screen and (max-height: 900px) {
+    .transparent--module_module-2 {
+        display: none;
+    }
 }
 
 
