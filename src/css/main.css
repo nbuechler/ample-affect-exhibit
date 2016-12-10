@@ -1,7 +1,7 @@
 /*
  * Background
  */
-
+/*Free Stock videos by Videezy: http://www.videezy.com*/
 video {
   position: fixed;
   top: 50%;
@@ -13,7 +13,7 @@ video {
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
-  opacity: .05;
+  opacity: .1;
 }
 
 /*
@@ -50,7 +50,7 @@ video {
 .form--nlp {
   bottom: 0;
   right: 15;
-  width: 400px;
+  width: 350px;
 }
 
 .transparent--module_module-1 {
@@ -86,7 +86,8 @@ h6 {
  * Bootstrap overrides
  */
 
-.panel, .well, .alert, .form-control, .btn {
+.panel, .well, .alert, .form-control, .btn, .jumbotron,
+.container .jumbotron,.navbar-inverse {
   border-radius: 0px
 }
 
@@ -99,5 +100,27 @@ h6 {
 }
 
 .navbar-inverse {
-  background-color: rgba(19,19,19, 0.8);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
+  background: -moz-linear-gradient(top,  rgba(19,19,19,0.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(19,19,19,0.8) 0%,rgba(19,19,19,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(19,19,19,0.8) 0%,rgba(19,19,19,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc131313', endColorstr='#33131313',GradientType=0 ); /* IE6-9 */
+  border-bottom: 1px solid white;
+}
+
+/*
+ * Bootstrap overrides
+ */
+
+
+::-webkit-scrollbar {
+   width: 12px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+   background: #FFF;
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }

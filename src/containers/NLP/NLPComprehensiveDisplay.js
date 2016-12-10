@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Table, Button, Row, Col, Panel, Accordion } from 'react-bootstrap';
 
 import NLPComprehensiveForm from '../../components/forms/NLPComprehensiveForm'
-import NLPTable from '../../components/tables/NLPTable'
+import NLPComprehensiveTable from '../../components/tables/NLPComprehensiveTable'
 import NLPRankTable from '../../components/tables/NLPRankTable'
 import NLPLaggerTable from '../../components/tables/NLPLaggerTable'
 
@@ -43,7 +43,7 @@ class NLPDisplay extends Component {
           <Row>
             <Col lg={12}>
               <Panel>
-                <NLPTable/>
+                <NLPComprehensiveTable/>
               </Panel>
             </Col>
           </Row>
