@@ -27,7 +27,6 @@ class NLPDisplay extends Component {
         <a href="#/dashboard"><Button className="pull-right">Back</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <h1>Natural Language Processing</h1>
-          <hr></hr>
 
           {/* These panels get fixed around the edge of the screen */}
           <Panel className="transparent--module form--nlp">
@@ -42,9 +41,9 @@ class NLPDisplay extends Component {
 
           <Row>
             <Col lg={12}>
-              <Panel>
+              <div>
                 <NLPComprehensiveTable/>
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>

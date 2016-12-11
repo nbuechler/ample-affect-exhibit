@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 import DivListGroup from '../groups/DivListGroup'
 import DivList from '../lists/DivList'
 import StatisticGroup from '../groups/StatisticGroup'
+import AffectUnprocessedRowTableGroup from '../groups/AffectUnprocessedRowTableGroup'
+import AffectStemmedRowTableGroup from '../groups/AffectStemmedRowTableGroup'
+import AffectLemmatizedRowTableGroup from '../groups/AffectLemmatizedRowTableGroup'
+import AffectCorpusLengthRowTableGroup from '../groups/AffectCorpusLengthRowTableGroup'
+import AffectNormalizedScoreRowTableGroup from '../groups/AffectNormalizedScoreRowTableGroup'
 
 import { Table, Alert } from 'react-bootstrap';
+
+import NLPComprehensiveTableModule from '../tables/NLPComprehensiveTableModule'
 
 class NLPComprehensiveTable extends Component {
   constructor(props) {
@@ -90,140 +97,7 @@ class NLPComprehensiveTable extends Component {
             primaryAlert = 'Dimensional emotions are normalized and ranked';
             for (var i = 0; i < 7; i++) {
               primaryArea.push(
-                <div key={array[i].emotion + '-group'}>
-                  <div>
-                    <p key={i + '-r-affect'}>
-                      {array[i].emotion}
-                    </p>
-                    <p key={i + '-normal-scores'}>
-                      {array[i].normalized_r_score.toFixed(4)}
-                    </p>
-                    <div>
-                      <span className='pull-left'>Basic Score</span>
-                      <span className='pull-right'>{array[i].r_affect_score.toFixed(4)}</span>
-                    </div>
-                  </div>
-                  <Table key={i + '-table'} style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}}>
-                    <thead>
-                      <tr style={{background: '#101010'}}>
-                        <th></th>
-                        <th>I Words</th>
-                        <th>II Words</th>
-                        <th>III Words</th>
-                        <th>I-II Words</th>
-                        <th>I-III Words</th>
-                        <th>II-III Words</th>
-                        <th>I-II-III Words</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          Unprocessed
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-1'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-2'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-3'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_2'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_3'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_2_and_3'].natural_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['all_orders'].natural_order_fdist}/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Stemmed
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-1'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-2'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-3'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_2'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_3'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_2_and_3'].stemmer_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['all_orders'].stemmer_order_fdist}/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Lemmatized
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-1'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-2'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order-3'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_2'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_1_and_3'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['order_2_and_3'].lemma_order_fdist}/>
-                        </td>
-                        <td>
-                          <DivList fdist={array[i]['all_orders'].lemma_order_fdist}/>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Stats
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order-1']} title={'Primary'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order-2']} title={'Secondary'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order-3']} title={'Tertiary'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order_1_and_2']} title={'1-2'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order_1_and_3']} title={'1-3'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['order_2_and_3']} title={'2-3'}/>
-                        </td>
-                        <td>
-                          <StatisticGroup data={array[i]['all_orders']} title={'All'}/>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </div>
+                <NLPComprehensiveTableModule key={i + '-affect-table'} array={array} iterator={i}></NLPComprehensiveTableModule>
               )
             }
             break;
@@ -344,14 +218,6 @@ class NLPComprehensiveTable extends Component {
     }
     return (
       <div>
-        <p>
-          {lastUpdated &&
-            <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-              {' '}
-            </span>
-          }
-        </p>
         {isFetching && data.length === 0 &&
           <Alert>After filling out the form above, all the results will be displayed here.</Alert>
         }
@@ -408,12 +274,24 @@ class NLPComprehensiveTable extends Component {
         }
         {data.length > 0 && ( data[0].name == 'big_6' || data[0].name == 'dimensions') &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <div style={{ textAlign: 'center' }}>
-              <Alert>{primaryAlert}</Alert>
-              {primaryArea}
+            <div>
+              <div className="affect--emotion_set-title">{primaryAlert}</div>
+              <div className="affect--display_main-area-wrapper">
+                <div className="affect--display_main-area">
+                  {primaryArea}
+                </div>
+              </div>
             </div>
           </div>
         }
+        <div style={{fontSize: '10px'}}>
+          {lastUpdated &&
+            <span>
+              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+              {' '}
+            </span>
+          }
+        </div>
       </div>
     );
   }

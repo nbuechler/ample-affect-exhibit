@@ -71,7 +71,7 @@ class AsyncApp extends Component {
             <NavItem href="#/stats">Stats</NavItem>
           </Nav>
         </Navbar>
-        <div className="container" style={{marginTop: '5%', height: '95%'}}>
+        <div className="container" style={{marginTop: '5%'}}>
           {this.props.children}
         </div>
       </div>
