@@ -272,11 +272,11 @@ class NLPComprehensiveTable extends Component {
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
         }
-        {data.length > 0 && data[0].name != 'big_6' &&
+        {data.length > 0 && data[0].name != 'big_6' && data[0].name != 'dimensions' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
-              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}}>
                 <thead>
                   <tr style={{background: '#101010'}}>
                     <th>Emotion</th>
@@ -298,7 +298,7 @@ class NLPComprehensiveTable extends Component {
               <hr></hr>
               <Alert>{secondaryAlert}</Alert>
               <hr></hr>
-              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}}>
                 <thead>
                   <tr style={{background: '#101010'}}>
                     <th>Emotion</th>
@@ -320,11 +320,11 @@ class NLPComprehensiveTable extends Component {
             </div>
           </div>
         }
-        {data.length > 0 && data[0].name == 'big_6' &&
+        {data.length > 0 && ( data[0].name == 'big_6' || data[0].name == 'dimensions') &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
-              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}}>
                 <thead>
                   <tr style={{background: '#101010'}}>
                     <th>Emotion</th>

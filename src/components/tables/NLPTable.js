@@ -192,7 +192,7 @@ class NLPTable extends Component {
         {!isFetching && data.length === 0 &&
           <Alert>No results.</Alert>
         }
-        {data.length > 0 && data[0].name != 'big_6' &&
+        {data.length > 0 && data[0].name != 'big_6' && data[0].name != 'dimensions' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
@@ -232,7 +232,7 @@ class NLPTable extends Component {
             </div>
           </div>
         }
-        {data.length > 0 && data[0].name == 'big_6' &&
+        {data.length > 0 && ( data[0].name == 'big_6' || data[0].name == 'dimensions') &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
               <Alert>{primaryAlert}</Alert>
