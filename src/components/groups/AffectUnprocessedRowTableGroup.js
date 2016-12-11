@@ -13,8 +13,10 @@ export default class AffectUnprocessedRowTableGroup extends React.Component {
 
     return (
       <tr>
-        <td className="row-title">
-          Unprocessed
+        <td>
+          <div className="affect--display_row-title">
+            Unprocessed
+          </div>
         </td>
         <td>
           <DivList fdist={data['order-1'].natural_order_fdist}/>

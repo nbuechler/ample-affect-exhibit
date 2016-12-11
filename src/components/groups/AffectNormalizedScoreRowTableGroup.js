@@ -13,8 +13,10 @@ export default class AffectNormalizedScoreRowTableGroup extends React.Component 
 
     return (
       <tr>
-        <td className="row-title">
-          Normalized Score
+        <td>
+          <div className="affect--display_row-title">
+            Normalized Score
+          </div>
         </td>
         <td>
           {data['order-1'].normalized_order.toFixed(4)}

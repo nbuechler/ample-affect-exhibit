@@ -13,8 +13,10 @@ export default class AffectCorpusLengthRowTableGroup extends React.Component {
 
     return (
       <tr>
-        <td className="row-title">
-          Corpus Length
+        <td>
+          <div className="affect--display_row-title">
+            Corpus Length
+          </div>
         </td>
         <td>
           {data['order-1'].order_length}

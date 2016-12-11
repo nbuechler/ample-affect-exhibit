@@ -13,8 +13,10 @@ export default class AffectLemmatizedRowTableGroup extends React.Component {
 
     return (
       <tr>
-        <td className="row-title">
-          Lemmatized
+        <td>
+          <div className="affect--display_row-title">
+            Lemmatized
+          </div>
         </td>
         <td>
           <DivList fdist={data['order-1'].lemma_order_fdist}/>

@@ -13,8 +13,10 @@ export default class AffectStemmedRowTableGroup extends React.Component {
 
     return (
       <tr>
-        <td className="row-title">
-          Stemmed
+        <td>
+          <div className="affect--display_row-title">
+            Stemmed
+          </div>
         </td>
         <td>
           <DivList fdist={data['order-1'].stemmer_order_fdist}/>

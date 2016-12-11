@@ -41,7 +41,7 @@ export default class NLPComprehensiveTableModule extends React.Component {
             </span>
           </div>
         </div>
-        <Table condensed key={i + '-table'} style={{fontSize: '12px', marginLeft: '0%', textAlign: 'center'}}>
+        <Table condensed key={i + '-table'} style={{fontSize: '12px', marginLeft: '0%', textAlign: 'left'}}>
           <thead>
             <tr>
               <th></th>
