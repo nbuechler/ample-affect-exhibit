@@ -19,25 +19,39 @@ export default class AffectCorpusLengthRowTableGroup extends React.Component {
           </div>
         </td>
         <td>
-          {data['order-1'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order-1'].order_length}
+          </div>
         </td>
         <td>
-          {data['order-2'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order-2'].order_length}
+          </div>
         </td>
         <td>
-          {data['order-3'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order-3'].order_length}
+          </div>
         </td>
         <td>
-          {data['order_1_and_2'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order_1_and_2'].order_length}
+          </div>
         </td>
         <td>
-          {data['order_1_and_3'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order_1_and_3'].order_length}
+          </div>
         </td>
         <td>
-          {data['order_2_and_3'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['order_2_and_3'].order_length}
+          </div>
         </td>
         <td>
-          {data['all_orders'].order_length}
+          <div className="affect--display_corpus-length">
+            {data['all_orders'].order_length}
+          </div>
         </td>
       </tr>
     );

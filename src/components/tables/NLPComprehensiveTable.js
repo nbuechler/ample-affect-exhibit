@@ -1,18 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import DivListGroup from '../groups/DivListGroup'
-import DivList from '../lists/DivList'
-import StatisticGroup from '../groups/StatisticGroup'
-import AffectUnprocessedRowTableGroup from '../groups/AffectUnprocessedRowTableGroup'
-import AffectStemmedRowTableGroup from '../groups/AffectStemmedRowTableGroup'
-import AffectLemmatizedRowTableGroup from '../groups/AffectLemmatizedRowTableGroup'
-import AffectCorpusLengthRowTableGroup from '../groups/AffectCorpusLengthRowTableGroup'
-import AffectNormalizedScoreRowTableGroup from '../groups/AffectNormalizedScoreRowTableGroup'
-
 import { Table, Alert } from 'react-bootstrap';
 
 import NLPComprehensiveTableModule from '../tables/NLPComprehensiveTableModule'
+import NLPCondensedTableModule from '../tables/NLPCondensedTableModule'
 
 class NLPComprehensiveTable extends Component {
   constructor(props) {
@@ -65,7 +57,7 @@ class NLPComprehensiveTable extends Component {
           }
           for (var i = 10; i < array.length; i++) {
             secondaryArea.push(
-              <NLPComprehensiveTableModule key={i + '-affect-table'} array={array} iterator={i}></NLPComprehensiveTableModule>
+              <NLPCondensedTableModule key={i + '-affect-table'} array={array} iterator={i}></NLPCondensedTableModule>
             )
           }
           break;

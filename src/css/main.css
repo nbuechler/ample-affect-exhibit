@@ -39,11 +39,11 @@ video {
   font-family: 'Orbitron', sans-serif;
   padding: 18px;
 }
-    background: #1C1C1C;
+
 .affect-display_emotion {
   font-size: 14px;
   text-align: left;
-  padding-bottom: 4px;
+  padding: 20px 0px 20px 0px;
 }
 
 .affect--display_main-area-wrapper, .transparent--module_alt-01 {
@@ -92,6 +92,27 @@ video {
   text-align: right;
   width: 150px;
   float: right;
+}
+
+.affect--display_corpus-length {
+  background: #28282a;
+  padding: 4px;
+  color: #CCC;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.affect--display_corpus-score {
+  background: #2a3135;
+  padding: 4px;
+  color: #CCC;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.affect--display_word-result {
+  word-break: break-word;
+  width: 85px;
 }
 
 /*
@@ -180,7 +201,7 @@ h6 {
 }
 
 /*
- * Bootstrap overrides
+ * Scrollbars
  */
 
 

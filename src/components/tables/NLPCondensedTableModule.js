@@ -3,9 +3,6 @@ import React from 'react';
 import DivListGroup from '../groups/DivListGroup'
 import DivList from '../lists/DivList'
 import StatisticGroup from '../groups/StatisticGroup'
-import AffectUnprocessedRowTableGroup from '../groups/AffectUnprocessedRowTableGroup'
-import AffectStemmedRowTableGroup from '../groups/AffectStemmedRowTableGroup'
-import AffectLemmatizedRowTableGroup from '../groups/AffectLemmatizedRowTableGroup'
 import AffectCorpusLengthRowTableGroup from '../groups/AffectCorpusLengthRowTableGroup'
 import AffectNormalizedScoreRowTableGroup from '../groups/AffectNormalizedScoreRowTableGroup'
 
@@ -61,9 +58,6 @@ export default class NLPComprehensiveTableModule extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <AffectUnprocessedRowTableGroup data={array[i]}></AffectUnprocessedRowTableGroup>
-            <AffectStemmedRowTableGroup data={array[i]}></AffectStemmedRowTableGroup>
-            <AffectLemmatizedRowTableGroup data={array[i]}></AffectLemmatizedRowTableGroup>
             <AffectCorpusLengthRowTableGroup data={array[i]}></AffectCorpusLengthRowTableGroup>
             <AffectNormalizedScoreRowTableGroup data={array[i]}></AffectNormalizedScoreRowTableGroup>
           </tbody>
