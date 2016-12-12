@@ -59,7 +59,7 @@ const NLPForm = (props) => {
       <Row style={{textAlign: 'center'}}>
         <Col lg={4}>
           <label>Unprocessed</label>
-          <div>
+          <div style={{textAlign: 'left'}}>
             <label><Field name="natural" component="input" type="radio" value="1" required/> Included</label>
             <br></br>
             <label><Field name="natural" component="input" type="radio" value="0"/> Excluded</label>
@@ -67,7 +67,7 @@ const NLPForm = (props) => {
         </Col>
         <Col lg={4}>
           <label>Stemmed</label>
-          <div>
+          <div style={{textAlign: 'left'}}>
             <label><Field name="stemmer" component="input" type="radio" value="1" required/> Included</label>
             <br></br>
             <label><Field name="stemmer" component="input" type="radio" value="0"/> Excluded</label>
@@ -75,7 +75,7 @@ const NLPForm = (props) => {
         </Col>
         <Col lg={4}>
           <label>Lemmatized</label>
-          <div>
+          <div style={{textAlign: 'left'}}>
             <label><Field name="lemma" component="input" type="radio" value="1" required/> Included</label>
             <br></br>
             <label><Field name="lemma" component="input" type="radio" value="0"/> Excluded</label>

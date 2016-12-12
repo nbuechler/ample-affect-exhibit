@@ -27,7 +27,6 @@ class NLPDisplay extends Component {
         <a href="#/dashboard"><Button className="pull-right">Back</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <h1>Natural Language Processing</h1>
-          <hr></hr>
           <Row>
             <Col lg={9} lgOffset={3}>
               <Panel>

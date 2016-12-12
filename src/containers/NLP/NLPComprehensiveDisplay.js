@@ -24,27 +24,26 @@ class NLPDisplay extends Component {
 
     return (
       <div>
-        <a href="#/dashboard"><Button className="pull-right">Back</Button></a>
+        <a href="#/dashboard"><Button bsStyle="success" className="pull-right">Back</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <h1>Natural Language Processing</h1>
-          <hr></hr>
 
           {/* These panels get fixed around the edge of the screen */}
-          <Panel className="transparent--module form--nlp">
+          <div className="transparent--module transparent--module_alt-01 form--nlp">
             <NLPComprehensiveForm/>
-          </Panel>
-          <Panel className="transparent--module transparent--module_module-1">
+          </div>
+          <div className="transparent--module transparent--module_alt-01 transparent--module_module-1">
             <NLPRankTable/>
-          </Panel>
-          <Panel className="transparent--module transparent--module_module-2">
+          </div>
+          <div className="transparent--module transparent--module_alt-01 transparent--module_module-2">
             <NLPLaggerTable/>
-          </Panel>
+          </div>
 
           <Row>
             <Col lg={12}>
-              <Panel>
+              <div>
                 <NLPComprehensiveTable/>
-              </Panel>
+              </div>
             </Col>
           </Row>
         </div>
