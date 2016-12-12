@@ -143,18 +143,21 @@ export default class DivList extends React.Component {
       }
     }
 
+    fdist = fdist.reverse()
     for (var i = 0; i < fdist.length; i++) {
-      listItems.push(
-        <div key={'list-item-' + fdist[i]}>
-          <span className="pull-left">
-            {handlePOS(fdist[i][0])}
-          </span>
-          <span className="pull-right">
-            {fdist[i][1]}
-          </span>
-          <br></br>
-        </div>
-      )
+      if (i < 5) {
+        listItems.push(
+          <div key={'list-item-' + fdist[i]}>
+            <span className="pull-left">
+              {handlePOS(fdist[i][0])}
+            </span>
+            <span className="pull-right">
+              {fdist[i][1]}
+            </span>
+            <br></br>
+          </div>
+        )
+      }
     }
     if (listItems.length < 1) {
       listItems.push(
