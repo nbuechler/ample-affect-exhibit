@@ -22,9 +22,16 @@ export default class DivList extends React.Component {
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
       switch (wordTuple[1]) {
-        case 'IN': //Nouns
+        case 'IN': //Preposition
           return (
             <div className='affect--display_word-result' style={{color: prepColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'PRP': //Nouns
+          return (
+            <div className='affect--display_word-result' style={{color: nounColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
             </div>
             )
@@ -141,14 +148,14 @@ export default class DivList extends React.Component {
             </div>
             )
           break;
-        case 'CD': //Verbs
+        case 'CD': //Number
           return (
             <div className='affect--display_word-result' style={{color: numColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
             </div>
             )
           break;
-        case 'FW': //Verbs
+        case 'FW': //Foreign word
           return (
             <div className='affect--display_word-result' style={{color: foreColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
