@@ -14,7 +14,10 @@ export default class DivList extends React.Component {
     let prepColor = 'palegoldenrod',
         nounColor = 'lightgreen',
         adjColor = 'lightblue',
-        verbColor = 'lightcoral';
+        verbColor = 'lightcoral',
+        numColor = 'goldenrod',
+        foreColor = 'lightslategrey';
+
 
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
@@ -134,6 +137,20 @@ export default class DivList extends React.Component {
         case 'VBZ': //Verbs
           return (
             <div className='affect--display_word-result' style={{color: verbColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'CD': //Verbs
+          return (
+            <div className='affect--display_word-result' style={{color: numColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'FW': //Verbs
+          return (
+            <div className='affect--display_word-result' style={{color: foreColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
             </div>
             )
