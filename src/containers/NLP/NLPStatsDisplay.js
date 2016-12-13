@@ -23,7 +23,7 @@ class NLPStatsDisplay extends Component {
       <div>
         <a href="#/stats"><Button className="pull-right">Back</Button></a>
         <div style={{paddingBottom: '100px'}}>
-          <h1>Statistics of NLP Corpora</h1>
+          <h1><i className="fa fa-language" aria-hidden="true"></i> Statistics of NLP Corpora</h1>
           <hr></hr>
           <Row>
             <Col lg={6} lgOffset={3}>

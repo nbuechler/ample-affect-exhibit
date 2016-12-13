@@ -15,7 +15,7 @@ export default class AffectUnprocessedRowTableGroup extends React.Component {
       <tr>
         <td>
           <div className="affect--display_row-title">
-            Unprocessed
+            <i className="fa fa-pull-left fa-lemon-o affect--emotion_fa-icon-adjustment" aria-hidden="true"></i> Unprocessed
           </div>
         </td>
         <td>
