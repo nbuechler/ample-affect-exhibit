@@ -14,14 +14,24 @@ export default class DivList extends React.Component {
     let prepColor = 'palegoldenrod',
         nounColor = 'lightgreen',
         adjColor = 'lightblue',
-        verbColor = 'lightcoral';
+        verbColor = 'lightcoral',
+        numColor = 'goldenrod',
+        foreColor = 'lightslategrey';
+
 
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
       switch (wordTuple[1]) {
-        case 'IN': //Nouns
+        case 'IN': //Preposition
           return (
             <div className='affect--display_word-result' style={{color: prepColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'PRP': //Nouns
+          return (
+            <div className='affect--display_word-result' style={{color: nounColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
             </div>
             )
@@ -138,23 +148,40 @@ export default class DivList extends React.Component {
             </div>
             )
           break;
+        case 'CD': //Number
+          return (
+            <div className='affect--display_word-result' style={{color: numColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'FW': //Foreign word
+          return (
+            <div className='affect--display_word-result' style={{color: foreColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
         default:
           return wordTuple[0] + ' (' + wordTuple[1] + ')'
       }
     }
 
+    fdist = fdist.reverse()
     for (var i = 0; i < fdist.length; i++) {
-      listItems.push(
-        <div key={'list-item-' + fdist[i]}>
-          <span className="pull-left">
-            {handlePOS(fdist[i][0])}
-          </span>
-          <span className="pull-right">
-            {fdist[i][1]}
-          </span>
-          <br></br>
-        </div>
-      )
+      if (i < 5) {
+        listItems.push(
+          <div key={'list-item-' + fdist[i]}>
+            <span className="pull-left">
+              {handlePOS(fdist[i][0])}
+            </span>
+            <span className="pull-right">
+              {fdist[i][1]}
+            </span>
+            <br></br>
+          </div>
+        )
+      }
     }
     if (listItems.length < 1) {
       listItems.push(

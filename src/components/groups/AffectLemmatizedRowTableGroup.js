@@ -15,7 +15,7 @@ export default class AffectLemmatizedRowTableGroup extends React.Component {
       <tr>
         <td>
           <div className="affect--display_row-title">
-            Lemmatized
+            <i className="fa fa-pull-left fa-puzzle-piece affect--emotion_fa-icon-adjustment" aria-hidden="true"></i> Lemmatized
           </div>
         </td>
         <td>

@@ -67,8 +67,8 @@ class AsyncApp extends Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
-            <NavItem href="#/dashboard">Dashboard</NavItem>
-            <NavItem href="#/stats">Stats</NavItem>
+            <NavItem href="#/dashboard"><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</NavItem>
+            <NavItem href="#/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavItem>
           </Nav>
         </Navbar>
         <div className="container" style={{marginTop: '5%'}}>

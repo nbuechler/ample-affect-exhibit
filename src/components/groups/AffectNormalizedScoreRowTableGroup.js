@@ -15,7 +15,7 @@ export default class AffectNormalizedScoreRowTableGroup extends React.Component 
       <tr>
         <td>
           <div className="affect--display_row-title">
-            Normalized Score
+            <i className="fa fa-pull-left fa-certificate affect--emotion_fa-icon-adjustment" aria-hidden="true"></i> Normalized Score
           </div>
         </td>
         <td>

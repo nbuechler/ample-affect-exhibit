@@ -26,7 +26,7 @@ class NLPDisplay extends Component {
       <div>
         <a href="#/dashboard"><Button className="pull-right">Back</Button></a>
         <div style={{paddingBottom: '100px'}}>
-          <h1>Natural Language Processing</h1>
+          <h1><i className="fa fa-language" aria-hidden="true"></i>  Natural Language Processing</h1>
           <Row>
             <Col lg={9} lgOffset={3}>
               <Panel>

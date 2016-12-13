@@ -15,7 +15,7 @@ export default class AffectStemmedRowTableGroup extends React.Component {
       <tr>
         <td>
           <div className="affect--display_row-title">
-            Stemmed
+            <i className="fa fa-pull-left fa-pagelines affect--emotion_fa-icon-adjustment" aria-hidden="true"></i> Stemmed
           </div>
         </td>
         <td>

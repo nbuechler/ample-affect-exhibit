@@ -25,6 +25,19 @@ video {
 }
 
 /*
+ * Font awesome
+ */
+
+i.fa {
+  text-align: center;
+  min-width: 20px;
+}
+
+.affect--emotion_fa-icon-adjustment {
+  margin-top: 2px;
+}
+
+/*
  * Affect Display
  */
 
