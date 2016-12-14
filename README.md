@@ -65,8 +65,7 @@ npm run start dev
 ```
 
 # Credits
-_The main video is from Videezy_
-Free Stock videos by <a href="http://www.videezy.com">Videezy</a>
+* _The main video is from Videezy_: Free Stock videos by <a href="http://www.videezy.com">Videezy</a>
 
 # LICENSE
 GPLv3

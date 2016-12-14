@@ -17,7 +17,6 @@ class Dashboard extends Component {
         <p>Choose an option:</p>
         <hr></hr>
         <li><i className="fa fa-language" aria-hidden="true"></i> <a href="#/nlp">Natural Language Processing</a></li>
-        <li><i className="fa fa-language" aria-hidden="true"></i> <a href="#/nlp-comprehensive">Comprehensive NLP Display</a></li>
         <hr></hr>
         <li><i className="fa fa-camera" aria-hidden="true"></i> <span style={notImplemented}>Computer Vision</span> (Not Implemented)</li>
         <li><i className="fa fa-flash" aria-hidden="true"></i> <span style={notImplemented}>Skin Conductance</span> (Not Implemented)</li>

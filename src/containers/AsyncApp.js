@@ -16,43 +16,6 @@ import { IndexLink, Link } from 'react-router';
 
 class AsyncApp extends Component {
 
-
-  handleLogout = (e) => {
-    const self = this;
-    const input = this.refs.username;
-    const pswd = this.refs.password;
-
-    var ip = window.location.hostname;
-
-    fetch(`http://` + ip + `:3000/postRemoteLogout`, {
-
-      method: 'post',
-      headers: {
-        'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      },
-      body: 'token=' + null
-      })
-      .then(status)
-      .then(function json(response) {
-        return response.json()
-      })
-      .then(function(data) {
-        console.log('Request succeeded with JSON response', data);
-        //4031, errors
-        //4032, error msg
-        //2001, success msg
-        if(data.customCode == 2001){
-          localStorage.setItem('lastSetMsg', data.msg);
-          localStorage.setItem('currentSession', 0);
-          window.location.href = 'http://' + ip + ':4000/#/logout';
-        } else {
-          console.error('Unable to logout, try again later');
-        }
-      }).catch(function(error) {
-        console.error('Request failed', error);
-      });
-  }
-
   render () {
     /**
       * The are the route that get defined are in <Root>.
