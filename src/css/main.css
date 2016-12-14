@@ -133,11 +133,13 @@ i.fa {
  */
 
 .transparent--module {
+  -webkit-transition: height .5s, width .5s, opacity .5s;
+  transition: height .5s, width .5s, opacity .5s;
   position: fixed;
   z-index: 10;
-  opacity: .075;
-  -webkit-transition: opacity .5s; /* Safari */
-  transition: opacity .5s;
+  opacity: .25;
+  width: 50px;
+  height: 50px;
   -webkit-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   -moz-box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
   box-shadow: 0px 1px 8px 0px rgba(204,204,204,0.25);
@@ -151,33 +153,66 @@ i.fa {
   opacity: 1;
 }
 
-.form--nlp {
+.transparent--module_module-content {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.transparent--module_module-icon {
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.transparent--module:hover .transparent--module_module-content{
+  -webkit-transition: opacity 2.5s;
+  transition: opacity 2.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.transparent--module:hover .transparent--module_module-icon{
+  -webkit-transition: opacity 2.5s;
+  transition: opacity 2.5s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.transparent--module_form--nlp {
   bottom: 10;
   right: 15;
-  width: 350px;
+  width: 50px;
   padding-top: 10px;
 }
 
 .transparent--module_module-1 {
-  top: 10;
+  top: 80;
   left: 15;
-  height: 440px;
-  width: 250px;
 }
 
 .transparent--module_module-2 {
-  top: 460;
+  top: 150;
   left: 15;
+}
+
+.transparent--module_form--nlp:hover {
+  -webkit-transition: height .5s, width .5s, opacity .5s;
+  transition: height .5s, width .5s, opacity .5s;
+  height: 635px;
+  width: 350px;
+}
+
+.transparent--module_module-1:hover,
+.transparent--module_module-2:hover {
+  -webkit-transition: height .5s, width .5s, opacity .5s;
+  transition: height .5s, width .5s, opacity .5s;
   height: 440px;
   width: 250px;
+  z-index: 1000;
 }
-
-@media screen and (max-height: 900px) {
-    .transparent--module_module-2 {
-        display: none;
-    }
-}
-
 
 /*
  * Heading overrides
