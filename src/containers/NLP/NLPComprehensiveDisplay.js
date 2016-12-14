@@ -29,14 +29,29 @@ class NLPDisplay extends Component {
           <h1><i className="fa fa-language" aria-hidden="true"></i>  Natural Language Processing</h1>
 
           {/* These panels get fixed around the edge of the screen */}
-          <div className="transparent--module transparent--module_alt-01 form--nlp">
-            <NLPComprehensiveForm/>
+          <div className="transparent--module transparent--module_alt-01 transparent--module_form--nlp">
+            <div className="transparent--module_module-content">
+              <NLPComprehensiveForm/>
+            </div>
+            <div className="transparent--module_module-icon">
+              <i className="fa fa-2 fa-list-alt" aria-hidden="true"></i>
+            </div>
           </div>
           <div className="transparent--module transparent--module_alt-01 transparent--module_module-1">
-            <NLPRankTable/>
+            <div className="transparent--module_module-content">
+              <NLPRankTable/>
+            </div>
+            <div className="transparent--module_module-icon">
+
+            </div>
           </div>
           <div className="transparent--module transparent--module_alt-01 transparent--module_module-2">
-            <NLPLaggerTable/>
+            <div className="transparent--module_module-content">
+              <NLPLaggerTable/>
+            </div>
+            <div className="transparent--module_module-icon">
+
+            </div>
           </div>
 
           <Row>
