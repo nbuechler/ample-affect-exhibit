@@ -15,7 +15,7 @@ class Dashboard extends Component {
       <div>
         <h1><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</h1>
         <p>Choose an option:</p>
-        <hr></hr>
+        <br></br>
         <div><i className="fa fa-language" aria-hidden="true"></i> <a href="#/nlp">Natural Language Processing</a></div>
         <hr></hr>
         <div><i className="fa fa-camera" aria-hidden="true"></i> <span style={notImplemented}>Computer Vision</span> (Not Implemented)</div>

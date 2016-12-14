@@ -161,10 +161,11 @@ i.fa {
 }
 
 .transparent--module_module-icon {
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  visibility: visible;
+  -webkit-transition: opacity 2.5s;
+  transition: opacity 2.5s;
   opacity: 1;
+  position: absolute;
+  bottom: 13;
 }
 
 .transparent--module:hover .transparent--module_module-content{
@@ -175,9 +176,8 @@ i.fa {
 }
 
 .transparent--module:hover .transparent--module_module-icon{
-  -webkit-transition: opacity 2.5s;
-  transition: opacity 2.5s;
-  visibility: hidden;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
   opacity: 0;
 }
 
@@ -194,7 +194,7 @@ i.fa {
 }
 
 .transparent--module_module-2 {
-  top: 150;
+  top: 145;
   left: 15;
 }
 
@@ -209,7 +209,7 @@ i.fa {
 .transparent--module_module-2:hover {
   -webkit-transition: height .5s, width .5s, opacity .5s;
   transition: height .5s, width .5s, opacity .5s;
-  height: 440px;
+  height: 500px;
   width: 250px;
   z-index: 1000;
 }

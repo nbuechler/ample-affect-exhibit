@@ -15,7 +15,7 @@ class Stats extends Component {
       <div>
         <h1><i className="fa fa-signal" aria-hidden="true"></i> Statistics</h1>
         <p>Choose an option:</p>
-        <hr></hr>
+        <br></br>
         <li><i className="fa fa-language" aria-hidden="true"></i> <a href="#/nlp-stats">Natural Language Processing</a></li>
         <hr></hr>
         <li><i className="fa fa-camera" aria-hidden="true"></i> <span style={notImplemented}>Computer Vision</span> (Not Implemented)</li>
