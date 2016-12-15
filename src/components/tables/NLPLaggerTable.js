@@ -5,6 +5,8 @@ import DivListGroup from '../groups/DivListGroup'
 
 import { Table, Alert } from 'react-bootstrap';
 
+import AffectSummaryLaggerRowTableGroup from '../groups/AffectSummaryLaggerRowTableGroup'
+
 class NLPLaggerTable extends Component {
   constructor(props) {
     super(props);
@@ -30,17 +32,7 @@ class NLPLaggerTable extends Component {
           primaryAlert = 'Lagger Summary of Paul Ekman\'s "Big Six"';
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#232323'}} key={i + '-r-rank'}>
-                    {array.length - i}
-                </td>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-              </tr>
+              <AffectSummaryLaggerRowTableGroup key={i + '-affect-lagger-row'} data={array} iterator={i}></AffectSummaryLaggerRowTableGroup>
             )
           }
           break;
@@ -48,17 +40,7 @@ class NLPLaggerTable extends Component {
           primaryAlert = 'Lagger Summary of Dimensions';
           for (var i = 0; i < 6; i++) {
             primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#232323'}} key={i + '-r-rank'}>
-                    {array.length - i}
-                </td>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-              </tr>
+              <AffectSummaryLaggerRowTableGroup key={i + '-affect-lagger-row'} data={array} iterator={i}></AffectSummaryLaggerRowTableGroup>
             )
           }
           break;
@@ -69,17 +51,7 @@ class NLPLaggerTable extends Component {
           */
           for (var i = 0; i < 10; i++) {
             primaryArea.push(
-              <tr key={i + '-affect-row'}>
-                <td style={{background: '#232323'}} key={i + '-r-rank'}>
-                    {array.length - i}
-                </td>
-                <td style={{background: '#131313'}} key={i + '-r-affect'}>
-                    {array[i].emotion}
-                </td>
-                <td style={{}} key={i + '-normal-scores'}>
-                    {array[i].normalized_r_score.toFixed(4)}
-                </td>
-              </tr>
+              <AffectSummaryLaggerRowTableGroup key={i + '-affect-lagger-row'} data={array} iterator={i}></AffectSummaryLaggerRowTableGroup>
             )
           }
           break;
@@ -97,15 +69,8 @@ class NLPLaggerTable extends Component {
         {data.length > 0 && data[0].name != 'big_6' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
-              <Alert>{primaryAlert}</Alert>
-              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
-                <thead>
-                  <tr style={{background: '#101010'}}>
-                    <th>Rank</th>
-                    <th>Emotion</th>
-                    <th>Normalized Score</th>
-                  </tr>
-                </thead>
+              <Alert bsStyle="success">{primaryAlert}</Alert>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} condensed>
                 <tbody>
                 {primaryArea}
                 </tbody>
@@ -116,15 +81,8 @@ class NLPLaggerTable extends Component {
         {data.length > 0 && data[0].name == 'big_6' &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
             <div style={{ textAlign: 'center' }}>
-              <Alert>{primaryAlert}</Alert>
-              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} hover striped bordered condensed>
-                <thead>
-                  <tr style={{background: '#101010'}}>
-                    <th>Rank</th>
-                    <th>Emotion</th>
-                    <th>Normalized Score</th>
-                  </tr>
-                </thead>
+              <Alert bsStyle="success">{primaryAlert}</Alert>
+              <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} condensed>
                 <tbody>
                 {primaryArea}
                 </tbody>

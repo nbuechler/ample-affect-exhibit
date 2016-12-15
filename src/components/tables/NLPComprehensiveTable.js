@@ -66,6 +66,20 @@ class NLPComprehensiveTable extends Component {
     }
     return (
       <div>
+        <p>
+          Each word is an affect of the natural language passage you decided to analyze.
+          The five words with the greatest emotional signal are displayed for each facet,
+          but each facet could be influenced by more than five words. Each emotion is a
+          representation of the overall emotion state of the passage.
+        </p>
+        <p>
+          Good inferences about the passage, with a more comprehensive understanding of
+          the passage, are possible by thinking about the emotional state as a grouping
+          of these emotion representations.
+        </p>
+        <p>
+          Hover your mouse over the form icon in the bottom right corner to begin.
+        </p>
         {isFetching && data.length === 0 &&
           <Alert bsStyle="success">After filling out the form above, all the results will be displayed here.</Alert>
         }

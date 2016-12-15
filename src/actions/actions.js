@@ -93,7 +93,7 @@ export function nlpSubmit(data) {
     fetch(url, {
       // credentials: 'include', //pass cookies, for authentication
       method: 'POST',
-      mode: 'CORS',
+      // mode: 'CORS', // This line didn't work in firefox
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

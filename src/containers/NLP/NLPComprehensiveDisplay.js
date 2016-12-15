@@ -30,11 +30,11 @@ class NLPDisplay extends Component {
 
           {/* These panels get fixed around the edge of the screen */}
           <div className="transparent--module transparent--module_alt-01 transparent--module_form--nlp">
+            <div className="transparent--module_module-icon">
+              <i className="fa fa-2x fa-list-alt" aria-hidden="true"></i>
+            </div>
             <div className="transparent--module_module-content">
               <NLPComprehensiveForm/>
-            </div>
-            <div className="transparent--module_module-icon">
-              <i className="fa fa-2 fa-list-alt" aria-hidden="true"></i>
             </div>
           </div>
           <div className="transparent--module transparent--module_alt-01 transparent--module_module-1">
@@ -42,7 +42,7 @@ class NLPDisplay extends Component {
               <NLPRankTable/>
             </div>
             <div className="transparent--module_module-icon">
-
+              <i className="fa fa-2x fa-table" aria-hidden="true"></i>
             </div>
           </div>
           <div className="transparent--module transparent--module_alt-01 transparent--module_module-2">
@@ -50,7 +50,7 @@ class NLPDisplay extends Component {
               <NLPLaggerTable/>
             </div>
             <div className="transparent--module_module-icon">
-
+              <i className="fa fa-2x fa-table" aria-hidden="true"></i>
             </div>
           </div>
 
