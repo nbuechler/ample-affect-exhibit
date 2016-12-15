@@ -165,7 +165,8 @@ i.fa {
   transition: opacity 2.5s;
   opacity: 1;
   position: absolute;
-  bottom: 13;
+  bottom: 13px;
+  right: 13px;
 }
 
 .transparent--module:hover .transparent--module_module-content{
@@ -182,26 +183,26 @@ i.fa {
 }
 
 .transparent--module_form--nlp {
-  bottom: 10;
-  right: 15;
+  bottom: 10px;
+  right: 15px;
   width: 50px;
   padding-top: 10px;
 }
 
 .transparent--module_module-1 {
-  top: 80;
-  left: 15;
+  top: 80px;
+  left: 15px;
 }
 
 .transparent--module_module-2 {
-  top: 145;
-  left: 15;
+  top: 145px;
+  left: 15px;
 }
 
 .transparent--module_form--nlp:hover {
   -webkit-transition: height .5s, width .5s, opacity .5s;
   transition: height .5s, width .5s, opacity .5s;
-  height: 635px;
+  height: 655px;
   width: 350px;
 }
 
