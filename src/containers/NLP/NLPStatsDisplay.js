@@ -15,7 +15,8 @@ class NLPStatsDisplay extends Component {
   handleRefreshClick(e) {
     e.preventDefault();
   }
-// /helpers/stats/0
+  
+  // /helpers/stats/0
   render () {
     const { } = this.props;
 

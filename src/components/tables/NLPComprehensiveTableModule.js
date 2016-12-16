@@ -9,11 +9,17 @@ import AffectLemmatizedRowTableGroup from '../groups/AffectLemmatizedRowTableGro
 import AffectCorpusLengthRowTableGroup from '../groups/AffectCorpusLengthRowTableGroup'
 import AffectNormalizedScoreRowTableGroup from '../groups/AffectNormalizedScoreRowTableGroup'
 
-import { Table, Alert } from 'react-bootstrap';
+import { Table, Alert, Button } from 'react-bootstrap';
 
 export default class NLPComprehensiveTableModule extends React.Component {
   constructor (props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(d) {
+    localStorage.setItem('lastEmotion', JSON.stringify(d));
+    localStorage.setItem('lastEmotionCreationDate', new Date());
   }
 
   render () {
@@ -39,6 +45,19 @@ export default class NLPComprehensiveTableModule extends React.Component {
             <span style={{marginLeft: '2px', color: '#AAA'}}>
               (<i >{array[i].r_affect_score.toFixed(4)}</i>)
             </span>
+          </div>
+          <div>
+            <a href="#/nlp-infographic">
+              <Button
+                bsSize="xsmall"
+                bsStyle="info"
+                className="pull-right"
+                onClick={this.handleClick.bind(this, array[i])}
+                >
+                <i className="fa fa-file-image-o" aria-hidden="true"></i>
+                Infographic
+              </Button>
+            </a>
           </div>
         </div>
         <Table condensed key={i + '-table'} style={{
