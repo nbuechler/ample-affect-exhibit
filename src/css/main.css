@@ -59,7 +59,8 @@ i.fa {
   padding: 20px 0px 20px 0px;
 }
 
-.affect--display_main-area-wrapper, .transparent--module_alt-01 {
+.affect--display_main-area-wrapper, .transparent--module_alt-01,
+.infographic--display_main-area-wrapper {
   padding: 0px 10px 0px 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,222222+100 */
   background: rgb(19,19,19); /* Old browsers */

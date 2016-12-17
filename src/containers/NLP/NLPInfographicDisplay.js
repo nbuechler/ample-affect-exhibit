@@ -6,6 +6,12 @@ import { Table, Button, Row, Col, Panel } from 'react-bootstrap';
 
 import StatsChart from '../../components/subcharts/StatsChart'
 
+import AffectUnprocessedRowTableGroup from '../../components/groups/AffectUnprocessedRowTableGroup'
+import AffectStemmedRowTableGroup from '../../components/groups/AffectStemmedRowTableGroup'
+import AffectLemmatizedRowTableGroup from '../../components/groups/AffectLemmatizedRowTableGroup'
+import AffectCorpusLengthRowTableGroup from '../../components/groups/AffectCorpusLengthRowTableGroup'
+import AffectNormalizedScoreRowTableGroup from '../../components/groups/AffectNormalizedScoreRowTableGroup'
+
 class NLPStatsDisplay extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +35,7 @@ class NLPStatsDisplay extends Component {
 
     return (
       <div>
-        <a href="#/dashboard"><Button bsStyle="success" className="pull-right">Back to Dashboard</Button></a>
+        <a href="#/nlp"><Button bsStyle="success" className="pull-right">Back to Affect Set</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <h1><i className="fa fa-file-image-o" aria-hidden="true"></i> Infographic of {emotionName}</h1>
           <Row>
@@ -43,10 +49,47 @@ class NLPStatsDisplay extends Component {
               <div className="infographic--display_rank">
                 <div className="infographic--display_rank-main_heading">3/400</div>
                 <br></br>
-                <div className="infographic--display_rank-sub_heading">in the All Affects emotion set</div>
+                <div className="infographic--display_rank-sub_heading">in the 'All Affects' emotion set</div>
+              </div>
+              <div className="infographic--display_scores infographic--display_main-area-wrapper">
+                <div className="infographic--display_scores-main_heading">10.0073</div>
+                <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
             </Col>
             <Col lg={6}>
+            </Col>
+          </Row>
+          <br></br>
+          <br></br>
+          <Row>
+            <Col lg={12}>
+              <Table condensed style={{
+                  fontSize: '12px',
+                  marginLeft: '0%',
+                  textAlign: 'left',
+                  width: '100%',
+                  tableLayout: 'fixed',
+                }}>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>I Words</th>
+                    <th>II Words</th>
+                    <th>III Words</th>
+                    <th>I-II Words</th>
+                    <th>I-III Words</th>
+                    <th>II-III Words</th>
+                    <th>I-II-III Words</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <AffectUnprocessedRowTableGroup data={emotion}></AffectUnprocessedRowTableGroup>
+                  <AffectStemmedRowTableGroup data={emotion}></AffectStemmedRowTableGroup>
+                  <AffectLemmatizedRowTableGroup data={emotion}></AffectLemmatizedRowTableGroup>
+                  <AffectCorpusLengthRowTableGroup data={emotion}></AffectCorpusLengthRowTableGroup>
+                  <AffectNormalizedScoreRowTableGroup data={emotion}></AffectNormalizedScoreRowTableGroup>
+                </tbody>
+              </Table>
             </Col>
           </Row>
         </div>
