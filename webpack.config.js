@@ -12,7 +12,8 @@ module.exports = {
     'webpack-dev-server/client?http://' + ip + ':4000',
     './src/index',
     './src/css/bootstrap.css',
-    './src/css/main.css'
+    './src/css/main.css',
+    './src/css/infographic.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),

@@ -1,0 +1,44 @@
+
+/*
+ * Infographic Display Rank
+ */
+
+.infographic--display_rank {
+  font-family: 'Orbitron', sans-serif;
+  width: 400px;
+  line-height: 35px;
+  padding: 100px 0px 50px 0px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.infographic--display_rank-main_heading {
+  font-size: 100px;
+}
+
+.infographic--display_rank-sub_heading {
+  font-size: 20px;
+}
+
+
+/*
+ * Infographic Display Scores
+ */
+
+.infographic--display_scores {
+  font-family: 'Orbitron', sans-serif;
+  width: 400px;
+  padding: 50px;
+  padding: 50px 0px 50px 0px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.infographic--display_scores-main_heading {
+  font-size: 40px;
+}
+
+.infographic--display_scores-sub_heading {
+  font-size: 20px;
+}
