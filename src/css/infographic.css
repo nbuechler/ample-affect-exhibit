@@ -1,0 +1,23 @@
+/*
+ * Infographic Main Elements
+ */
+
+.infographic--display_scores {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.infographic--display_rank {
+  font-family: 'Orbitron', sans-serif;
+  width: 400px;
+  padding: 50px;
+  padding: 50px 0px 50px 0px;
+  margin: 0 auto;
+}
+
+.infographic--display_rank-main_heading {
+  font-size: 100px;
+}
+
+.infographic--display_rank-sub_heading {
+  font-size: 40px;
+}

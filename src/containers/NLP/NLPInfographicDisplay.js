@@ -38,6 +38,17 @@ class NLPStatsDisplay extends Component {
               emotion, {emotionName}. It was last updated on {lastEmotionCreationDate}.</h5>
             </Col>
           </Row>
+          <Row>
+            <Col lg={6}>
+              <div className="infographic--display_rank">
+                <div className="infographic--display_rank-main_heading">3/400</div>
+                <br></br>
+                <div className="infographic--display_rank-sub_heading">in the All Affects emotion set</div>
+              </div>
+            </Col>
+            <Col lg={6}>
+            </Col>
+          </Row>
         </div>
       </div>
     );
