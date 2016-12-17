@@ -40,7 +40,7 @@ export default class NLPComprehensiveTableModule extends React.Component {
               {array[i].normalized_r_score.toFixed(4)}
             </span>
             <span style={{marginLeft: '2px', color: '#AAA'}}>
-              (<i >{array[i].r_affect_score.toFixed(4)}</i>)
+              (<i>{array[i].r_affect_score.toFixed(4)}</i>)
             </span>
           </div>
           <div>

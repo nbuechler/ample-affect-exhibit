@@ -52,7 +52,7 @@ class NLPStatsDisplay extends Component {
                 <div className="infographic--display_rank-sub_heading">in the 'All Affects' emotion set</div>
               </div>
               <div className="infographic--display_scores infographic--display_main-area-wrapper">
-                <div className="infographic--display_scores-main_heading">10.0073</div>
+                <div className="infographic--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>
                 <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
             </Col>

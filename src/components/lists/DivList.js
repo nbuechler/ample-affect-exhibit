@@ -182,20 +182,8 @@ export default class DivList extends React.Component {
 
     let targetFrequencyDist = reversed_fdist;
     for (var i = 0; i < targetFrequencyDist.length; i++) {
-      if (i < 5) {
-        if (limit == '1') {
-          listItems.push(
-            <div key={'list-item-' + targetFrequencyDist[i]}>
-              <span className="pull-left">
-                {handlePOS(targetFrequencyDist[i][0])}
-              </span>
-              <span className="pull-right">
-                {targetFrequencyDist[i][1]}
-              </span>
-              <br></br>
-            </div>
-          )
-        } else {
+      if (limit == '1') {
+        if (i < 5) {
           listItems.push(
             <div key={'list-item-' + targetFrequencyDist[i]}>
               <span className="pull-left">
@@ -208,6 +196,18 @@ export default class DivList extends React.Component {
             </div>
           )
         }
+      } else {
+        listItems.push(
+          <div key={'list-item-' + targetFrequencyDist[i]}>
+            <span className="pull-left">
+              {handlePOS(targetFrequencyDist[i][0])}
+            </span>
+            <span className="pull-right">
+              {targetFrequencyDist[i][1]}
+            </span>
+            <br></br>
+          </div>
+        )
       }
     }
     if (listItems.length < 1) {
