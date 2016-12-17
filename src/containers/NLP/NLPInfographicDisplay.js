@@ -83,9 +83,9 @@ class NLPStatsDisplay extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <AffectUnprocessedRowTableGroup data={emotion}></AffectUnprocessedRowTableGroup>
-                  <AffectStemmedRowTableGroup data={emotion}></AffectStemmedRowTableGroup>
-                  <AffectLemmatizedRowTableGroup data={emotion}></AffectLemmatizedRowTableGroup>
+                  <AffectUnprocessedRowTableGroup data={emotion} limitList={0}></AffectUnprocessedRowTableGroup>
+                  <AffectStemmedRowTableGroup data={emotion} limitList={0}></AffectStemmedRowTableGroup>
+                  <AffectLemmatizedRowTableGroup data={emotion} limitList={0}></AffectLemmatizedRowTableGroup>
                   <AffectCorpusLengthRowTableGroup data={emotion}></AffectCorpusLengthRowTableGroup>
                   <AffectNormalizedScoreRowTableGroup data={emotion}></AffectNormalizedScoreRowTableGroup>
                 </tbody>

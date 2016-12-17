@@ -9,7 +9,13 @@ export default class DivList extends React.Component {
 
   render () {
     let fdist = this.props.fdist,
+        limit = this.props.limitList || false,
         listItems = [];
+
+    let reversed_fdist = []
+        for (var i = 0; i < fdist.length; i++) {
+          reversed_fdist.unshift(fdist[i])
+        }
 
     let prepColor = 'palegoldenrod',
         nounColor = 'lightgreen',
@@ -23,6 +29,13 @@ export default class DivList extends React.Component {
     function handlePOS(wordTuple) {
       switch (wordTuple[1]) {
         case 'IN': //Preposition
+          return (
+            <div className='affect--display_word-result' style={{color: prepColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'RP': //Particle
           return (
             <div className='affect--display_word-result' style={{color: prepColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
@@ -167,25 +180,39 @@ export default class DivList extends React.Component {
       }
     }
 
-    fdist = fdist.reverse()
-    for (var i = 0; i < fdist.length; i++) {
+    let targetFrequencyDist = reversed_fdist;
+    for (var i = 0; i < targetFrequencyDist.length; i++) {
       if (i < 5) {
-        listItems.push(
-          <div key={'list-item-' + fdist[i]}>
-            <span className="pull-left">
-              {handlePOS(fdist[i][0])}
-            </span>
-            <span className="pull-right">
-              {fdist[i][1]}
-            </span>
-            <br></br>
-          </div>
-        )
+        if (limit == '1') {
+          listItems.push(
+            <div key={'list-item-' + targetFrequencyDist[i]}>
+              <span className="pull-left">
+                {handlePOS(targetFrequencyDist[i][0])}
+              </span>
+              <span className="pull-right">
+                {targetFrequencyDist[i][1]}
+              </span>
+              <br></br>
+            </div>
+          )
+        } else {
+          listItems.push(
+            <div key={'list-item-' + targetFrequencyDist[i]}>
+              <span className="pull-left">
+                {handlePOS(targetFrequencyDist[i][0])}
+              </span>
+              <span className="pull-right">
+                {targetFrequencyDist[i][1]}
+              </span>
+              <br></br>
+            </div>
+          )
+        }
       }
     }
     if (listItems.length < 1) {
       listItems.push(
-        <div style={{textAlign: 'center', color: '#888'}} key={'list-item-' + fdist[i]}>
+        <div style={{textAlign: 'center', color: '#888'}} key={'list-item-' + targetFrequencyDist[i]}>
           <span>
             None
           </span>

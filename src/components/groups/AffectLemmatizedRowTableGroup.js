@@ -10,6 +10,7 @@ export default class AffectLemmatizedRowTableGroup extends React.Component {
   render () {
 
     let data = this.props.data;
+    let limitList = this.props.limitList;
 
     return (
       <tr>
@@ -19,25 +20,25 @@ export default class AffectLemmatizedRowTableGroup extends React.Component {
           </div>
         </td>
         <td>
-          <DivList fdist={data['order-1'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order-1'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['order-2'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order-2'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['order-3'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order-3'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['order_1_and_2'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order_1_and_2'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['order_1_and_3'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order_1_and_3'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['order_2_and_3'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['order_2_and_3'].lemma_order_fdist}/>
         </td>
         <td>
-          <DivList fdist={data['all_orders'].lemma_order_fdist}/>
+          <DivList limitList={limitList} fdist={data['all_orders'].lemma_order_fdist}/>
         </td>
       </tr>
     );
