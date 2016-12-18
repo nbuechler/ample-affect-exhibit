@@ -42,3 +42,50 @@
 .infographic--display_scores-sub_heading {
   font-size: 20px;
 }
+
+/*
+ * Infographic Table Display
+ */
+
+ .infographic--emotion_set-title {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
+   background: -moz-linear-gradient(bottom,  rgba(19,19,19,.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(bottom,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to top,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc131313', endColorstr='#33131313',GradientType=0 ); /* IE6-9 */
+   border-top: 1px solid white;
+   border: 0px 1px 1px 1px solid #333;
+   font-family: 'Orbitron', sans-serif;
+   padding: 18px;
+   height: 60px;
+ }
+
+ .infographic--emotion_set-title_table {
+   font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   padding-right: 50px;
+ }
+
+ .infographic--display_main-area {
+   overflow-y: scroll;
+   max-height: 30vh;
+   padding: 10px;
+   padding-right: 30px;
+}
+
+.infographic--emotion_set-footer {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
+   background: -moz-linear-gradient(top,  rgba(19,19,19,.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc131313', endColorstr='#33131313',GradientType=0 ); /* IE6-9 */
+   border-bottom: 1px solid white;
+   border: 0px 1px 1px 1px solid #333;
+   font-family: 'Orbitron', sans-serif;
+   padding: 18px;
+}
+
+.infographic--emotion_set-footer_table {
+   font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   height: 100px;
+   padding-right: 50px;
+}

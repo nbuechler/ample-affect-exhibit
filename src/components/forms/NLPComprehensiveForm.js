@@ -103,7 +103,7 @@ const NLPComprehensiveForm = (props) => {
         </Col>
       </Row>
       <Button bsSize="xsmall" className="pull-left" disabled={pristine || submitting} onClick={reset}>Clear Values</Button>
-      <Button bsSize="xsmall" className="pull-right" disabled={pristine || submitting} type="submit">Submit</Button>
+      <Button bsSize="xsmall" className="pull-right" disabled={pristine || submitting} type="submit">Start Analysis</Button>
     </form>
   );
 }

@@ -59,7 +59,9 @@ i.fa {
   padding: 20px 0px 20px 0px;
 }
 
-.affect--display_main-area-wrapper, .transparent--module_alt-01,
+.affect--display_main-area-wrapper,
+.infographic--display_main-area-wrapper,
+.transparent--module_alt-01,
 .infographic--display_main-area-wrapper {
   padding: 0px 10px 0px 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,222222+100 */
@@ -109,7 +111,7 @@ i.fa {
 }
 
 .affect--display_corpus-length {
-  background: #28282a;
+  background: rgba(17,14,25, .3);
   padding: 4px;
   color: #CCC;
   vertical-align: middle;
@@ -117,7 +119,7 @@ i.fa {
 }
 
 .affect--display_corpus-score {
-  background: #2a3135;
+  background: rgba(17,19,53, .3);
   padding: 4px;
   color: #CCC;
   vertical-align: middle;

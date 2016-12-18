@@ -9,15 +9,27 @@ export default class DivList extends React.Component {
 
   render () {
     let fdist = this.props.fdist,
+        limit = this.props.limitList || false,
         listItems = [];
 
-    let prepColor = 'palegoldenrod',
-        nounColor = 'lightgreen',
-        adjColor = 'lightblue',
-        verbColor = 'lightcoral',
-        numColor = 'goldenrod',
-        foreColor = 'lightslategrey';
+    let reversed_fdist = []
+        for (var i = 0; i < fdist.length; i++) {
+          reversed_fdist.unshift(fdist[i])
+        }
 
+    let prepColor = '#eae3db',
+        nounColor = '#c2f6ff',
+        adjColor = '#90a9dc',
+        verbColor = '#d5c5fc',
+        numColor = '#a3b2ca',
+        foreColor = '#a3b2ca';
+
+        // prepColor = 'palegoldenrod',
+        // nounColor = 'lightgreen',
+        // adjColor = 'lightblue',
+        // verbColor = 'lightcoral',
+        // numColor = 'goldenrod',
+        // foreColor = 'lightslategrey';
 
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
@@ -29,7 +41,21 @@ export default class DivList extends React.Component {
             </div>
             )
           break;
+        case 'RP': //Particle
+          return (
+            <div className='affect--display_word-result' style={{color: prepColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
         case 'PRP': //Nouns
+          return (
+            <div className='affect--display_word-result' style={{color: nounColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'PRP$': //Nouns
           return (
             <div className='affect--display_word-result' style={{color: nounColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
@@ -167,16 +193,30 @@ export default class DivList extends React.Component {
       }
     }
 
-    fdist = fdist.reverse()
-    for (var i = 0; i < fdist.length; i++) {
-      if (i < 5) {
+    let targetFrequencyDist = reversed_fdist;
+    for (var i = 0; i < targetFrequencyDist.length; i++) {
+      if (limit == '1') {
+        if (i < 5) {
+          listItems.push(
+            <div key={'list-item-' + targetFrequencyDist[i]}>
+              <span className="pull-left">
+                {handlePOS(targetFrequencyDist[i][0])}
+              </span>
+              <span className="pull-right">
+                {targetFrequencyDist[i][1]}
+              </span>
+              <br></br>
+            </div>
+          )
+        }
+      } else {
         listItems.push(
-          <div key={'list-item-' + fdist[i]}>
+          <div key={'list-item-' + targetFrequencyDist[i]}>
             <span className="pull-left">
-              {handlePOS(fdist[i][0])}
+              {handlePOS(targetFrequencyDist[i][0])}
             </span>
             <span className="pull-right">
-              {fdist[i][1]}
+              {targetFrequencyDist[i][1]}
             </span>
             <br></br>
           </div>
@@ -185,7 +225,7 @@ export default class DivList extends React.Component {
     }
     if (listItems.length < 1) {
       listItems.push(
-        <div style={{textAlign: 'center', color: '#888'}} key={'list-item-' + fdist[i]}>
+        <div style={{textAlign: 'center', color: '#888'}} key={'list-item-' + targetFrequencyDist[i]}>
           <span>
             None
           </span>
