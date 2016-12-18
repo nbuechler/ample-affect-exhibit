@@ -109,7 +109,7 @@ i.fa {
 }
 
 .affect--display_corpus-length {
-  background: #28282a;
+  background: rgba(17,14,25, .3);
   padding: 4px;
   color: #CCC;
   vertical-align: middle;
@@ -117,7 +117,7 @@ i.fa {
 }
 
 .affect--display_corpus-score {
-  background: #2a3135;
+  background: rgba(17,19,53, .3);
   padding: 4px;
   color: #CCC;
   vertical-align: middle;
@@ -126,7 +126,6 @@ i.fa {
 
 .affect--display_word-result {
   word-break: break-word;
-  width: 85px;
 }
 
 /*

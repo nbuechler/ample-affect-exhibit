@@ -17,13 +17,19 @@ export default class DivList extends React.Component {
           reversed_fdist.unshift(fdist[i])
         }
 
-    let prepColor = 'palegoldenrod',
-        nounColor = 'lightgreen',
-        adjColor = 'lightblue',
-        verbColor = 'lightcoral',
-        numColor = 'goldenrod',
-        foreColor = 'lightslategrey';
+    let prepColor = '#eae3db',
+        nounColor = '#c2f6ff',
+        adjColor = '#90a9dc',
+        verbColor = '#d5c5fc',
+        numColor = '#a3b2ca',
+        foreColor = '#a3b2ca';
 
+        // prepColor = 'palegoldenrod',
+        // nounColor = 'lightgreen',
+        // adjColor = 'lightblue',
+        // verbColor = 'lightcoral',
+        // numColor = 'goldenrod',
+        // foreColor = 'lightslategrey';
 
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
@@ -43,6 +49,13 @@ export default class DivList extends React.Component {
             )
           break;
         case 'PRP': //Nouns
+          return (
+            <div className='affect--display_word-result' style={{color: nounColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'PRP$': //Nouns
           return (
             <div className='affect--display_word-result' style={{color: nounColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
