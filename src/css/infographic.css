@@ -72,6 +72,13 @@
    padding-right: 30px;
 }
 
+.infographic--display_description-area {
+   overflow-y: scroll;
+   height: 30vh;
+   padding: 10px;
+   padding-right: 30px;
+}
+
 .infographic--emotion_set-footer {
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
    background: -moz-linear-gradient(top,  rgba(19,19,19,.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */

@@ -128,8 +128,8 @@ class NLPStatsDisplay extends Component {
                 <div className="infographic--emotion_set-title">
                   Text used to generate this graphic
                 </div>
-                <div className="infographic--display_main-area-wrapper">
-                  <div className="infographic--display_main-area">
+                <div className="infographic--display_description-area-wrapper">
+                  <div className="infographic--display_description-area">
                     <div className="infographic--display_description">
                     {lastEmotionText}
                     </div>
@@ -141,8 +141,8 @@ class NLPStatsDisplay extends Component {
               <div className="infographic--emotion_set-title">
                 Methodology
               </div>
-              <div className="infographic--display_main-area-wrapper">
-                <div className="infographic--display_main-area">
+              <div className="infographic--display_description-area-wrapper">
+                <div className="infographic--display_description-area">
                   <div className="infographic--display_description">
                     A representation emotion is an abstract concept, but you
                     might know them simply as emotions. {emotionName} is calculated
