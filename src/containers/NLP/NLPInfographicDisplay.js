@@ -63,33 +63,59 @@ class NLPStatsDisplay extends Component {
           <br></br>
           <Row>
             <Col lg={12}>
-              <Table condensed style={{
-                  fontSize: '12px',
-                  marginLeft: '0%',
-                  textAlign: 'left',
-                  width: '100%',
-                  tableLayout: 'fixed',
-                }}>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>I Words</th>
-                    <th>II Words</th>
-                    <th>III Words</th>
-                    <th>I-II Words</th>
-                    <th>I-III Words</th>
-                    <th>II-III Words</th>
-                    <th>I-II-III Words</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <AffectUnprocessedRowTableGroup data={emotion} limitList={0}></AffectUnprocessedRowTableGroup>
-                  <AffectStemmedRowTableGroup data={emotion} limitList={0}></AffectStemmedRowTableGroup>
-                  <AffectLemmatizedRowTableGroup data={emotion} limitList={0}></AffectLemmatizedRowTableGroup>
-                  <AffectCorpusLengthRowTableGroup data={emotion}></AffectCorpusLengthRowTableGroup>
-                  <AffectNormalizedScoreRowTableGroup data={emotion}></AffectNormalizedScoreRowTableGroup>
-                </tbody>
-              </Table>
+              <div className="infographic--emotion_set-title infographic--emotion_set-title_table">
+                  <Table condensed style={{
+                      fontSize: '12px',
+                      marginLeft: '5%',
+                      textAlign: 'left',
+                      width: '95%',
+                      tableLayout: 'fixed',
+                    }}>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>I Words</th>
+                        <th>II Words</th>
+                        <th>III Words</th>
+                        <th>I-II Words</th>
+                        <th>I-III Words</th>
+                        <th>II-III Words</th>
+                        <th>I-II-III Words</th>
+                      </tr>
+                    </thead>
+                  </Table>
+              </div>
+              <div className="infographic--display_main-area-wrapper">
+                <div className="infographic--display_main-area">
+                  <Table condensed style={{
+                      fontSize: '12px',
+                      marginLeft: '5%',
+                      textAlign: 'left',
+                      width: '95%',
+                      tableLayout: 'fixed',
+                    }}>
+                    <tbody>
+                      <AffectUnprocessedRowTableGroup data={emotion} limitList={0}></AffectUnprocessedRowTableGroup>
+                      <AffectStemmedRowTableGroup data={emotion} limitList={0}></AffectStemmedRowTableGroup>
+                      <AffectLemmatizedRowTableGroup data={emotion} limitList={0}></AffectLemmatizedRowTableGroup>
+                    </tbody>
+                  </Table>
+                </div>
+              </div>
+              <div className="infographic--emotion_set-footer infographic--emotion_set-footer_table">
+                  <Table condensed style={{
+                      fontSize: '12px',
+                      marginLeft: '5%',
+                      textAlign: 'left',
+                      width: '95%',
+                      tableLayout: 'fixed',
+                    }}>
+                    <tbody>
+                      <AffectCorpusLengthRowTableGroup data={emotion}></AffectCorpusLengthRowTableGroup>
+                      <AffectNormalizedScoreRowTableGroup data={emotion}></AffectNormalizedScoreRowTableGroup>
+                    </tbody>
+                  </Table>
+              </div>
             </Col>
           </Row>
         </div>
