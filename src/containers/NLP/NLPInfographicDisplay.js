@@ -36,7 +36,7 @@ class NLPStatsDisplay extends Component {
 
     return (
       <div>
-        <a href="#/nlp"><Button bsStyle="success" className="pull-right">Back to Affect Set</Button></a>
+        <a href="#/nlp"><Button bsStyle="success" className="pull-right">Return to emotion set</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <Row>
             <Col lg={6}>
@@ -130,7 +130,9 @@ class NLPStatsDisplay extends Component {
                 </div>
                 <div className="infographic--display_main-area-wrapper">
                   <div className="infographic--display_main-area">
+                    <div className="infographic--display_description">
                     {lastEmotionText}
+                    </div>
                   </div>
                 </div>
               </Col>
