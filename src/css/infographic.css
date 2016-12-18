@@ -7,7 +7,7 @@
   font-family: 'Orbitron', sans-serif;
   width: 400px;
   line-height: 35px;
-  padding: 100px 0px 50px 0px;
+  padding: 40px 0px 40px 0px;
   margin: 0 auto;
   text-align: center;
 }
@@ -88,4 +88,9 @@
    font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
    height: 100px;
    padding-right: 50px;
+}
+
+.infographic--display_description {
+  font-size: 12px;
+  margin: 10px;
 }

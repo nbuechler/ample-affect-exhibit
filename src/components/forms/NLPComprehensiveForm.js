@@ -42,7 +42,8 @@ const NLPComprehensiveForm = (props) => {
           <div>
             <label>Document</label><br></br>
             <Field className="form-control" style={{width: "100%"}} rows="4" name="doc"
-              component="textarea" type="text" placeholder="Write something!" required/>
+              component="textarea" type="text" placeholder="Write something!"
+              id="analyze-form_text-area" required/>
           </div>
           <div style={{margin: "10px 0px", padding: "10px 10px", background: "#454545"}}>
             <div>
