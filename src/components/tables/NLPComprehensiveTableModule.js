@@ -18,7 +18,9 @@ export default class NLPComprehensiveTableModule extends React.Component {
   }
 
   handleClick(d) {
+    let lastEmotionText = document.getElementById("analyze-form_text-area").innerHTML;
     localStorage.setItem('lastEmotion', JSON.stringify(d));
+    localStorage.setItem('lastEmotionText', lastEmotionText);
     localStorage.setItem('lastEmotionCreationDate', new Date());
   }
 
@@ -49,6 +51,7 @@ export default class NLPComprehensiveTableModule extends React.Component {
           <div>
             <a href="#/nlp-infographic">
               <Button
+                style={{fontSize: '12px'}}
                 bsSize="xsmall"
                 bsStyle="info"
                 className=""

@@ -32,21 +32,22 @@ class NLPStatsDisplay extends Component {
     let emotion = JSON.parse(localStorage.getItem('lastEmotion'));
     let emotionName = capitalizeFirstLetter(emotion.emotion);
     let lastEmotionCreationDate = localStorage.getItem('lastEmotionCreationDate');
+    let lastEmotionText = localStorage.getItem('lastEmotionText');
 
     return (
       <div>
-        <a href="#/nlp"><Button bsStyle="success" className="pull-right">Back to Affect Set</Button></a>
+        <a href="#/nlp"><Button bsStyle="success" className="pull-right">Return to emotion set</Button></a>
         <div style={{paddingBottom: '100px'}}>
-          <h1><i className="fa fa-file-image-o" aria-hidden="true"></i> Infographic of {emotionName}</h1>
           <Row>
-            <Col lg={6} lgOffset={3}>
-              <h5>The following infographic depicts all of the data about the representational
-              emotion, {emotionName}. It was last updated on {lastEmotionCreationDate}.</h5>
+            <Col lg={6}>
+              <div style={{fontSize: '10px'}}>Last updated on {lastEmotionCreationDate}.</div>
             </Col>
           </Row>
           <Row>
             <Col lg={6}>
               <div className="infographic--display_rank">
+                <div className="infographic--display_rank-sub_heading">{emotionName}</div>
+                <br></br>
                 <div className="infographic--display_rank-main_heading">3/400</div>
                 <br></br>
                 <div className="infographic--display_rank-sub_heading">in the 'All Affects' emotion set</div>
@@ -93,6 +94,7 @@ class NLPStatsDisplay extends Component {
                       textAlign: 'left',
                       width: '95%',
                       tableLayout: 'fixed',
+                      marginBottom: '0px',
                     }}>
                     <tbody>
                       <AffectUnprocessedRowTableGroup data={emotion} limitList={0}></AffectUnprocessedRowTableGroup>
@@ -115,6 +117,62 @@ class NLPStatsDisplay extends Component {
                       <AffectNormalizedScoreRowTableGroup data={emotion}></AffectNormalizedScoreRowTableGroup>
                     </tbody>
                   </Table>
+              </div>
+            </Col>
+          </Row>
+          <br></br>
+          <br></br>
+          <Row>
+            {lastEmotionText.length > 0 &&
+              <Col lg={6}>
+                <div className="infographic--emotion_set-title">
+                  Text used to generate this graphic
+                </div>
+                <div className="infographic--display_description-area-wrapper">
+                  <div className="infographic--display_description-area">
+                    <div className="infographic--display_description">
+                    {lastEmotionText}
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            }
+            <Col lg={6}>
+              <div className="infographic--emotion_set-title">
+                Methodology
+              </div>
+              <div className="infographic--display_description-area-wrapper">
+                <div className="infographic--display_description-area">
+                  <div className="infographic--display_description">
+                    A representation emotion is an abstract concept, but you
+                    might know them simply as emotions. {emotionName} is calculated
+                    and scored based on a process that separates words from a
+                    selection of text into and compares them to groups.
+                  </div>
+                  <div className="infographic--display_description">
+                    The algorithm believes <i>'I Words'</i> are synonyms of {emotionName}
+                    , the <i>'II Words'</i> are synonyms of those synonyms, and
+                    the <i>'III Words'</i> are synonyms of those. The normalized score
+                    is calculated by considering the total length of the group
+                    the word is in. Smaller groups with any words receive more
+                    points. A point is given for every word and weighted based
+                    on which group(s) the word is in. Each group receives its
+                    normalized score and they are combined to create the overall
+                    normalized score for the representational emotion,{emotionName}.
+                  </div>
+                  <div className="infographic--display_description">
+                    <i>'I-II Words'</i> are words that exist in both the <i>'I Words'</i>
+                    and <i>'II Words'</i> groups. Similarly, <i>'II-III Words'</i>,
+                    <i>'II-III Words'</i>, and <i>'I-II--III Words'</i> are groups
+                    where a word exists in n-number of groups.
+                  </div>
+                  <div className="infographic--display_description">
+                    A representational emotion is this algorithms cultural lens
+                    of an emotion, and with sets of representational emotions,
+                    the algorithm provides you something of an inference about
+                    a particular selection of text.
+                  </div>
+                </div>
               </div>
             </Col>
           </Row>
