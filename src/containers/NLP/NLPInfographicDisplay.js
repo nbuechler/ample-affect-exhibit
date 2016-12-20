@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import { Table, Button, Row, Col, Panel } from 'react-bootstrap';
 
-import StatsChart from '../../components/subcharts/StatsChart'
+import WordFrequencyScatterPlot from '../../components/subcharts/WordFrequencyScatterPlot'
 
 import AffectUnprocessedRowTableGroup from '../../components/groups/AffectUnprocessedRowTableGroup'
 import AffectStemmedRowTableGroup from '../../components/groups/AffectStemmedRowTableGroup'
@@ -57,7 +57,8 @@ class NLPStatsDisplay extends Component {
                 <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} style={{paddingTop: '20px'}}>
+              <WordFrequencyScatterPlot></WordFrequencyScatterPlot>
             </Col>
           </Row>
           <br></br>
