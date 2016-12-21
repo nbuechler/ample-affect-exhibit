@@ -47,10 +47,12 @@ class NLPStatsDisplay extends Component {
             <Col lg={6}>
               <div className="infographic--display_rank">
                 <div className="infographic--display_rank-sub_heading">{emotionName}</div>
+                {/*
                 <br></br>
                 <div className="infographic--display_rank-main_heading">3/400</div>
                 <br></br>
                 <div className="infographic--display_rank-sub_heading">in the 'All Affects' emotion set</div>
+                */}
               </div>
               <div className="infographic--display_scores infographic--display_main-area-wrapper">
                 <div className="infographic--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>

@@ -8,6 +8,7 @@ import { Table, Alert } from 'react-bootstrap';
 import { selectActivityDataset, fetchDataIfNeeded } from '../../actions/actions';
 
 import ScatterPlot from '../d3charts/ScatterPlot'
+import BarChart from '../d3charts/BarChart'
 
 class WordFrequencyScatterPlot extends Component {
   constructor(props) {
@@ -31,14 +32,44 @@ class WordFrequencyScatterPlot extends Component {
       ,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
     return (
-      <div style={{width: "550px", border: "1px solid #DDD", margin: 'auto'}}>
-        <ScatterPlot
-            title={'Word Affect Frequency Distribution'}
-            distinctColors={false}
-            modulus={1}
-            fillColors={['none']}
-            data={data}
-            width={'500'} />
+      <div>
+        <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
+          <ScatterPlot
+              title={'Word Affect Frequency Distribution'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={data}
+              height={'300'}
+              width={'150'} />
+          <ScatterPlot
+              title={'Word Affect Frequency Distribution'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={data}
+              height={'300'}
+              width={'150'} />
+          <ScatterPlot
+              title={'Word Affect Frequency Distribution'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={data}
+              height={'300'}
+              width={'150'} />
+        </div>
+        <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
+          <BarChart
+              title={'Word Affect Frequency Distribution'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={data}
+              height={'100'}
+              width={'450'} />
+        </div>
+
       </div>
     );
   }
