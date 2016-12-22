@@ -27,22 +27,14 @@ export default class DataSeries extends React.Component {
       .domain(d3.range(data.length))
       .rangeRoundBands([0, 10000]);
 
-      console.log((xScale.rangeBand()));
-
     let fillColors = this.props.fillColors,
         stroke = 'black',
         strokeAlt = 'white';
 
     let modulus = this.props.modulus;
 
-    var tempStore = {};
-        tempStore.data = this.props.data;
-        tempStore.eventfulDates = this.props.eventfulDates;
-        tempStore.dataLength = this.props.data.length;
-        tempStore.openModal = this.props.openModal;
-
     switch (this.props.chart) {
-      case 'scatter': //chart
+      case 'simple-scatter': //chart
         var points = _.map(data, function(dataPoint, i) {
           return (
             <Point id={i} key={i} r={'3px'} stroke={strokeAlt}

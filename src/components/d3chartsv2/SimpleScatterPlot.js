@@ -5,7 +5,7 @@ import _ from 'underscore';
 import DataSeries from '../d3componentsv2/DataSeries';
 import VectorGraphicWrapper from '../d3componentsv2/VectorGraphicWrapper';
 
-export default class ScatterPlot extends React.Component {
+export default class SimpleScatterPlot extends React.Component {
 
   static defaultProps = {
     width: 500,
@@ -18,7 +18,7 @@ export default class ScatterPlot extends React.Component {
 
   render () {
 
-    // You are pulling levels for building the chart.
+    // You are pulling levers for building the chart.
     let svgStyle = {
       border: '1px solid black',
       backgroundColor: 'rgba(256, 256, 256, .2)',
@@ -28,11 +28,11 @@ export default class ScatterPlot extends React.Component {
     }
     return (
       <div>
-        <div>{this.props.title}</div>
+        <div className="infographic--graph-title">{this.props.title}</div>
         <VectorGraphicWrapper svgStyle={svgStyle}>
           <DataSeries
             modulus={this.props.modulus}
-            chart={'scatter'}
+            chart={'simple-scatter'}
             data={this.props.data}
             height={this.props.heightPixel}
             width={this.props.widthPercent}

@@ -44,6 +44,16 @@
 }
 
 /*
+ * Infographic Graphs
+ */
+
+ .infographic--graph-title {
+   padding: 10px;
+   text-align: center;
+   font-size: 12px;
+ }
+
+/*
  * Infographic Table Display
  */
 
