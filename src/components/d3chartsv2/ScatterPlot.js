@@ -21,9 +21,10 @@ export default class ScatterPlot extends React.Component {
     // You are pulling levels for building the chart.
     let svgStyle = {
       border: '1px solid black',
-      padding: '20px',
+      backgroundColor: 'rgba(256, 256, 256, .2)',
       height: this.props.heightPixel + 'px',
       width: this.props.widthPercent + '%',
+      padding: this.props.paddingPixel + 'px',
     }
     return (
       <div>
@@ -36,7 +37,8 @@ export default class ScatterPlot extends React.Component {
             chart={'scatter'}
             data={this.props.data}
             height={this.props.heightPixel}
-            width={this.props.widthPercent}/>
+            width={this.props.widthPercent}
+            padding={this.props.paddingPixel}/>
         </VectorGraphicWrapper>
       </div>
     );

@@ -41,7 +41,8 @@ class WordFrequencyScatterPlot extends Component {
               fillColors={['none']}
               data={data}
               heightPixel={'100'}
-              widthPercent={'100'} />
+              widthPercent={'100'}
+              paddingPixel={'10'} />
           <ScatterPlot
               title={'Word Affect Frequency Distribution'}
               distinctColors={false}
@@ -49,7 +50,8 @@ class WordFrequencyScatterPlot extends Component {
               fillColors={['none']}
               data={data}
               heightPixel={'100'}
-              widthPercent={'100'} />
+              widthPercent={'100'}
+              paddingPixel={'10'} />
           <ScatterPlot
               title={'Word Affect Frequency Distribution'}
               distinctColors={false}
@@ -57,7 +59,8 @@ class WordFrequencyScatterPlot extends Component {
               fillColors={['none']}
               data={data}
               heightPixel={'100'}
-              widthPercent={'100'} />
+              widthPercent={'100'}
+              paddingPixel={'10'} />
         </div>
         <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
           <BarChart

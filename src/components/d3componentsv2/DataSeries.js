@@ -3,8 +3,6 @@ import d3 from 'd3';
 import _ from 'underscore';
 import { Calendar } from 'calendar';
 
-import ToolTip from '../d3componentsv2/ToolTip';
-
 import Empty from '../d3componentsv2/Empty';
 import Point from '../d3componentsv2/Point';
 
@@ -17,11 +15,13 @@ export default class DataSeries extends React.Component {
     let props = this.props;
     let yScale = d3.scale.linear()
       .domain([0, d3.max(this.props.data)])
-      .range([0, 5]);
+      .range([0 + this.props.padding, this.props.height - this.props.padding]);
 
     let xScale = d3.scale.ordinal()
       .domain(d3.range(this.props.data.length))
       .rangeRoundBands([0, this.props.width], 0.05);
+
+      console.log(xScale.rangeBand());
 
     let fillColors = this.props.fillColors,
         stroke = 'black',
@@ -64,21 +64,9 @@ export default class DataSeries extends React.Component {
           );
         });
 
-        var tips = _.map(this.props.data, function(dataPoint, i) {
-          if (distinctColors){
-            computedColor = fillColors[i % modulus];
-          }
-          return (
-            <ToolTip id={i} dataLength={tempStore.dataLength} buffers={buffers}
-              mainText={dataPoint} ttRectWidth={'50'} ttRectHeight={'50'}  visibility={'hidden'}
-              height={yScale(dataPoint)} width={xScale.rangeBand()} offset={xScale(i)} availableHeight={props.height} fillColor={computedColor} key={i} />
-          );
-        });
-
         return (
           <g>
             {points}
-            {tips}
           </g>
         );
         break;
