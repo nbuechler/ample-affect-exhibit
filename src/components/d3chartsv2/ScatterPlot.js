@@ -31,8 +31,6 @@ export default class ScatterPlot extends React.Component {
         <div>{this.props.title}</div>
         <VectorGraphicWrapper svgStyle={svgStyle}>
           <DataSeries
-            distinctColors={this.props.distinctColors}
-            fillColors={this.props.fillColors}
             modulus={this.props.modulus}
             chart={'scatter'}
             data={this.props.data}

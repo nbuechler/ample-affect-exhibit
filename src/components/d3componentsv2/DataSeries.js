@@ -12,38 +12,28 @@ export default class DataSeries extends React.Component {
   }
 
   render () {
+    let data = this.props.data;
     let props = this.props;
+    // In px (pixels)
     let yScale = d3.scale.linear()
-      .domain([0, d3.max(this.props.data)])
-      .range([0 + this.props.padding, this.props.height - this.props.padding]);
+      // d3.max(>data>) should have the data with the greatest point
+      .domain([0, d3.max(data)])
+      // The VectorGraphicWrapper adds padding. The tallest point is fine.
+      // The shortest point is twice the padding off the graph.
+      .range([0 + (this.props.padding * 2), this.props.height]);
 
+    // In % (percents)
     let xScale = d3.scale.ordinal()
-      .domain(d3.range(this.props.data.length))
-      .rangeRoundBands([0, this.props.width], 0.05);
+      .domain(d3.range(data.length))
+      .rangeRoundBands([0, 10000]);
 
-      console.log(xScale.rangeBand());
+      console.log((xScale.rangeBand()));
 
     let fillColors = this.props.fillColors,
         stroke = 'black',
         strokeAlt = 'white';
 
-    /**
-     * The return statement needs to know what chart to apply the DataSeries to.
-     * And, here's the thing, this.props.chart actually gets defined in the
-     * React Component that calls DataSeries, where the defnition is, sort of
-     * like dependency injection.
-     */
-    let computedColor = '#AAA',
-        computedColorAlt = '#222',
-        distinctColors = this.props.distinctColors,
-        modulus = this.props.modulus;
-
-    let buffers = {
-      'top': .95,
-      'bottom': .00,
-      'left': .05,
-      'right': .05,
-    }
+    let modulus = this.props.modulus;
 
     var tempStore = {};
         tempStore.data = this.props.data;
@@ -53,14 +43,11 @@ export default class DataSeries extends React.Component {
 
     switch (this.props.chart) {
       case 'scatter': //chart
-        var points = _.map(this.props.data, function(dataPoint, i) {
-          if (distinctColors){
-            computedColor = fillColors[i % modulus];
-          }
+        var points = _.map(data, function(dataPoint, i) {
           return (
-            <Point id={i} dataLength={tempStore.dataLength}
-              height={yScale(dataPoint)} width={xScale.rangeBand()} offset={xScale(i)} r={'5px'}
-              availableHeight={props.height} stroke={strokeAlt} fillColor={computedColorAlt} key={i} />
+            <Point id={i} key={i} r={'3px'} stroke={strokeAlt}
+              cy={yScale(dataPoint)} rangeBandTarget={i} rangeBand={xScale.rangeBand()/100}
+              availableHeight={props.height}/>
           );
         });
 
