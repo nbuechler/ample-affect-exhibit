@@ -7,7 +7,7 @@ import { Table, Alert } from 'react-bootstrap';
 
 import { selectActivityDataset, fetchDataIfNeeded } from '../../actions/actions';
 
-import ScatterPlot from '../d3charts/ScatterPlot'
+import ScatterPlot from '../d3chartsv2/ScatterPlot'
 import BarChart from '../d3charts/BarChart'
 
 class WordFrequencyScatterPlot extends Component {
@@ -40,24 +40,27 @@ class WordFrequencyScatterPlot extends Component {
               modulus={1}
               fillColors={['none']}
               data={data}
-              height={'300'}
-              width={'150'} />
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
           <ScatterPlot
               title={'Word Affect Frequency Distribution'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
               data={data}
-              height={'300'}
-              width={'150'} />
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
           <ScatterPlot
               title={'Word Affect Frequency Distribution'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
               data={data}
-              height={'300'}
-              width={'150'} />
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
         </div>
         <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
           <BarChart
