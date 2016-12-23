@@ -12,7 +12,7 @@ export default class Point extends React.Component {
     return (
       <circle fill={this.props.fillColor}
         r={this.props.r}
-        opacity={.5}
+        opacity={this.props.opacity}
         cx={(this.props.rangeBandTarget * this.props.rangeBand) + this.props.rangeBand/2 + '%'}
         cy={this.props.availableHeight - this.props.cy}
         stroke={this.props.stroke}
