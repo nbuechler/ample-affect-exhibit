@@ -7,7 +7,8 @@ import { Table, Alert } from 'react-bootstrap';
 
 import { selectActivityDataset, fetchDataIfNeeded } from '../../actions/actions';
 
-import ScatterPlot from '../d3chartsv2/ScatterPlot'
+import SimpleScatterPlot from '../d3chartsv2/SimpleScatterPlot'
+import BinScatterPlot from '../d3chartsv2/BinScatterPlot'
 import BarChart from '../d3charts/BarChart'
 
 class WordFrequencyScatterPlot extends Component {
@@ -31,11 +32,33 @@ class WordFrequencyScatterPlot extends Component {
       ,5,5,5,5,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1
       ,1,1,1,1,1,1,1,1,1,1,1,1,1]
 
+    function prepareBinPlot(graph) {
+      let result = [],
+          key_prefix = '';
+      if (graph == '-') {
+        key_prefix = '';
+      } else {
+        key_prefix = graph + '_';
+      }
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order-1'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order-2'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order-3'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order_1_and_2'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order_1_and_3'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['order_2_and_3'][key_prefix + 'order_fdist'])
+      result.push(JSON.parse(localStorage.getItem('lastEmotion'))['all_orders'][key_prefix + 'order_fdist'])
+      return result;
+    }
+
+    const naturalBinData = prepareBinPlot('natural')
+    const stemmerBinData = prepareBinPlot('stemmer')
+    const lemmaBinData = prepareBinPlot('lemma')
+
     return (
       <div>
         <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
-          <ScatterPlot
-              title={'Word Affect Frequency Distribution'}
+          <SimpleScatterPlot
+              title={'Simple Scatter'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
@@ -43,34 +66,33 @@ class WordFrequencyScatterPlot extends Component {
               heightPixel={'100'}
               widthPercent={'100'}
               paddingPixel={'10'} />
-          <ScatterPlot
-              title={'Word Affect Frequency Distribution'}
+          <BinScatterPlot
+              title={'Unprocessed Scatter'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
-              data={data}
+              data={naturalBinData}
               heightPixel={'100'}
               widthPercent={'100'}
               paddingPixel={'10'} />
-          <ScatterPlot
-              title={'Word Affect Frequency Distribution'}
+          <BinScatterPlot
+              title={'Stemmed Scatter'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
-              data={data}
+              data={stemmerBinData}
               heightPixel={'100'}
               widthPercent={'100'}
               paddingPixel={'10'} />
-        </div>
-        <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
-          <BarChart
-              title={'Word Affect Frequency Distribution'}
+          <BinScatterPlot
+              title={'Lemmatized Scatter'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
-              data={data}
-              height={'100'}
-              width={'450'} />
+              data={lemmaBinData}
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
         </div>
 
       </div>
