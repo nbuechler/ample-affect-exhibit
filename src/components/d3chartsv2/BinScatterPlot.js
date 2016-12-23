@@ -32,7 +32,7 @@ export default class BinScatterPlot extends React.Component {
         <VectorGraphicWrapper svgStyle={svgStyle}>
           <DataSeries
             modulus={this.props.modulus}
-            chart={'simple-scatter'}
+            chart={'bin-scatter'}
             data={this.props.data}
             height={this.props.heightPixel}
             width={this.props.widthPercent}

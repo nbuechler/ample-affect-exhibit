@@ -50,9 +50,9 @@ class WordFrequencyScatterPlot extends Component {
       return result;
     }
 
+    const naturalBinData = prepareBinPlot('natural')
     const stemmerBinData = prepareBinPlot('stemmer')
     const lemmaBinData = prepareBinPlot('lemma')
-    console.log(lemmaBinData);
 
     return (
       <div>
@@ -67,11 +67,29 @@ class WordFrequencyScatterPlot extends Component {
               widthPercent={'100'}
               paddingPixel={'10'} />
           <BinScatterPlot
-              title={'Bin Scatter'}
+              title={'Unprocessed Scatter'}
               distinctColors={false}
               modulus={1}
               fillColors={['none']}
-              data={data}
+              data={naturalBinData}
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
+          <BinScatterPlot
+              title={'Stemmed Scatter'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={stemmerBinData}
+              heightPixel={'100'}
+              widthPercent={'100'}
+              paddingPixel={'10'} />
+          <BinScatterPlot
+              title={'Lemmatized Scatter'}
+              distinctColors={false}
+              modulus={1}
+              fillColors={['none']}
+              data={lemmaBinData}
               heightPixel={'100'}
               widthPercent={'100'}
               paddingPixel={'10'} />

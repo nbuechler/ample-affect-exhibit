@@ -49,6 +49,22 @@ export default class DataSeries extends React.Component {
           </g>
         );
         break;
+      case 'bin-scatter': //chart
+        var points = _.map(data, function(dataPoint, i) {
+          console.log(dataPoint, i);
+          return (
+            <Point id={i} key={i} r={'3px'} stroke={strokeAlt}
+              cy={yScale(dataPoint)} rangeBandTarget={i} rangeBand={xScale.rangeBand()/100}
+              availableHeight={props.height}/>
+          );
+        });
+
+        return (
+          <g>
+            {points}
+          </g>
+        );
+        break;
       default:
         return (
           <Empty height={this.props.height} width={this.props.width}></Empty>
