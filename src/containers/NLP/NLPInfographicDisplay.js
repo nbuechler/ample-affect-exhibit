@@ -60,7 +60,7 @@ class NLPStatsDisplay extends Component {
               </div>
             </Col>
             <Col lg={6} style={{paddingTop: '20px'}}>
-              <WordFrequencyScatterPlot></WordFrequencyScatterPlot>
+              <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
             </Col>
           </Row>
           <br></br>

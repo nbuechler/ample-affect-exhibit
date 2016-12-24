@@ -17,6 +17,7 @@ export default class DataSeries extends React.Component {
     let props = undefined;
     let yScale = undefined;
     let xScale = undefined;
+    let r = undefined;
 
     let graphYRange = [0 + (this.props.padding * 2), this.props.height];
     let graphXRangeBands = [0, 10000];
@@ -46,7 +47,7 @@ export default class DataSeries extends React.Component {
 
         var points = _.map(data, function(dataPoint, i) {
           return (
-            <Point id={i} key={i} r={'3px'} stroke={strokeAlt} opacity={.5}
+            <Point id={i} key={i} r={r || '3px'} stroke={strokeAlt} opacity={.5}
               cy={yScale(dataPoint)} rangeBandTarget={i} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );
@@ -94,10 +95,13 @@ export default class DataSeries extends React.Component {
           .domain(d3.range(counter))
           .rangeRoundBands(graphXRangeBands);
 
-        console.log(xScale.rangeBand()/100);
+        r = this.props.pointRadius;
         var points = _.map(data, function(dataPoint, i) {
+          if (dataPoint.pos == 'PRP$') {
+            dataPoint.pos = 'PRPS';
+          }
           return (
-            <Point id={i} key={i} r={'3px'} stroke={strokeAlt} opacity={.3}
+            <Point id={i} key={i} r={r + 'px'} stroke={strokeAlt} opacity={.3} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );

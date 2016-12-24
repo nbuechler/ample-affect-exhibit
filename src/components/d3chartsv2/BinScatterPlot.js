@@ -37,7 +37,8 @@ export default class BinScatterPlot extends React.Component {
             height={this.props.heightPixel}
             width={this.props.widthPercent}
             padding={this.props.paddingPixel}
-            maxYValue={this.props.maxYValue}/>
+            maxYValue={this.props.maxYValue}
+            pointRadius={this.props.pointRadius}/>
         </VectorGraphicWrapper>
       </div>
     );

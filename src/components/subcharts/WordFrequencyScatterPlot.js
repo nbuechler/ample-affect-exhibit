@@ -45,10 +45,21 @@ class WordFrequencyScatterPlot extends Component {
       return result;
     }
 
+    function prepareBinPlotComplete(a, b, c) {
+      let result = [],
+          numOrders = a.length;
+      // The assumption is that each graph has the same number of orders.
+      for (var i = 0; i < numOrders; i++) {
+        result.push(a[i].concat(b[i]).concat(c[i]))
+      }
+      return result;
+    }
+
     const naturalBinData = prepareBinPlot('natural')
     const stemmerBinData = prepareBinPlot('stemmer')
     const lemmaBinData = prepareBinPlot('lemma')
-    const allBinData = naturalBinData.concat(stemmerBinData).concat(lemmaBinData);
+    const allBinData = prepareBinPlotComplete(naturalBinData, stemmerBinData, lemmaBinData);
+
 
     let rawData = allBinData,
         processedData = [],
@@ -78,7 +89,7 @@ class WordFrequencyScatterPlot extends Component {
       <div>
         <div style={{
             width: "530px",
-            border: "1px solid #DDD",
+            // border: "1px solid #DDD",
             margin: 'auto',
             display: 'flex',
             justifyContent: 'space-around',
@@ -86,7 +97,7 @@ class WordFrequencyScatterPlot extends Component {
           }}>
           <div style={{width: "100px"}}>
             <BinScatterPlot
-                title={'Unprocessed Scatter'}
+                title={'Unprocessed Word Count'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -94,9 +105,10 @@ class WordFrequencyScatterPlot extends Component {
                 heightPixel={'100'}
                 widthPercent={'100'}
                 paddingPixel={'10'}
-                maxYValue={maxYValue}/>
+                maxYValue={maxYValue}
+                pointRadius={'3'}/>
             <BinScatterPlot
-                title={'Stemmed Scatter'}
+                title={'Stemmed Word Count'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -104,9 +116,10 @@ class WordFrequencyScatterPlot extends Component {
                 heightPixel={'100'}
                 widthPercent={'100'}
                 paddingPixel={'10'}
-                maxYValue={maxYValue}/>
+                maxYValue={maxYValue}
+                pointRadius={'3'}/>
             <BinScatterPlot
-                title={'Lemmatized Scatter'}
+                title={'Lemmatized Word Count'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -114,12 +127,13 @@ class WordFrequencyScatterPlot extends Component {
                 heightPixel={'100'}
                 widthPercent={'100'}
                 paddingPixel={'10'}
-                maxYValue={maxYValue}/>
+                maxYValue={maxYValue}
+                pointRadius={'3'}/>
           </div>
           <div style={{width: "400px"}}>
             <div style={{marginTop: '6px'}}>
               <BinScatterPlot
-                  title={'Simple Scatter'}
+                  title={this.props.emotionName + ' Word Count'}
                   titleSize={'20'}
                   distinctColors={false}
                   modulus={1}
@@ -127,8 +141,9 @@ class WordFrequencyScatterPlot extends Component {
                   data={allBinData}
                   heightPixel={'408'}
                   widthPercent={'100'}
-                  paddingPixel={'10'}
-                  maxYValue={maxYValue}/>
+                  paddingPixel={'30'}
+                  maxYValue={maxYValue}
+                  pointRadius={'9'}/>
             </div>
           </div>
         </div>
