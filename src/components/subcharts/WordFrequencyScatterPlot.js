@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import d3 from 'd3';
+
 import { connect } from 'react-redux';
 
 import DivListGroup from '../groups/DivListGroup'
@@ -25,13 +27,6 @@ class WordFrequencyScatterPlot extends Component {
   render () {
     // const { data, isFetching, lastUpdated } = this.props;
 
-    const data =
-    [329,175,144,125,112,103,94,87,81,76,72,67,63,59,56,52,50,47,45,43,41,39,
-      38,36,34,33,32,30,29,28,27,25,24,24,23,22,21,20,19,19,18,17,17,16,15,15
-      ,14,14,14,13,13,12,12,11,11,11,10,10,10,9,9,9,8,8,8,8,7,7,7,7,6,6,6,5,5
-      ,5,5,5,5,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1
-      ,1,1,1,1,1,1,1,1,1,1,1,1,1]
-
     function prepareBinPlot(graph) {
       let result = [],
           key_prefix = '';
@@ -53,16 +48,41 @@ class WordFrequencyScatterPlot extends Component {
     const naturalBinData = prepareBinPlot('natural')
     const stemmerBinData = prepareBinPlot('stemmer')
     const lemmaBinData = prepareBinPlot('lemma')
+    const allBinData = naturalBinData.concat(stemmerBinData).concat(lemmaBinData);
+
+    let rawData = allBinData,
+        processedData = [],
+        datapoint = {},
+        counter = 0;
+    for (let i of rawData) {
+      for (let j of i) {
+        datapoint = {
+          "word": j[0][0],
+          "pos": j[0][1],
+          "count": j[1],
+          "bin": counter,
+        }
+        processedData.push(datapoint)
+      }
+      counter++
+    }
+
+    let data = processedData;
+
+    // d3.max(<data>) should have the data with the greatest point
+    let maxYValue = d3.max(data, function(d) {
+                      return +d.count;
+                    })
 
     return (
       <div>
         <div style={{
-            width: "525px",
+            width: "530px",
             border: "1px solid #DDD",
             margin: 'auto',
             display: 'flex',
             justifyContent: 'space-around',
-            padding: '7px'
+            padding: '10px'
           }}>
           <div style={{width: "100px"}}>
             <BinScatterPlot
@@ -73,7 +93,8 @@ class WordFrequencyScatterPlot extends Component {
                 data={naturalBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
-                paddingPixel={'10'} />
+                paddingPixel={'10'}
+                maxYValue={maxYValue}/>
             <BinScatterPlot
                 title={'Stemmed Scatter'}
                 distinctColors={false}
@@ -82,7 +103,8 @@ class WordFrequencyScatterPlot extends Component {
                 data={stemmerBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
-                paddingPixel={'10'} />
+                paddingPixel={'10'}
+                maxYValue={maxYValue}/>
             <BinScatterPlot
                 title={'Lemmatized Scatter'}
                 distinctColors={false}
@@ -91,19 +113,22 @@ class WordFrequencyScatterPlot extends Component {
                 data={lemmaBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
-                paddingPixel={'10'} />
+                paddingPixel={'10'}
+                maxYValue={maxYValue}/>
           </div>
           <div style={{width: "400px"}}>
-            <div style={{marginTop: '17px'}}>
+            <div style={{marginTop: '6px'}}>
               <BinScatterPlot
                   title={'Simple Scatter'}
+                  titleSize={'20'}
                   distinctColors={false}
                   modulus={1}
                   fillColors={['none']}
-                  data={naturalBinData}
-                  heightPixel={'400'}
+                  data={allBinData}
+                  heightPixel={'408'}
                   widthPercent={'100'}
-                  paddingPixel={'10'} />
+                  paddingPixel={'10'}
+                  maxYValue={maxYValue}/>
             </div>
           </div>
         </div>

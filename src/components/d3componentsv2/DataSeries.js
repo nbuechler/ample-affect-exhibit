@@ -77,11 +77,9 @@ export default class DataSeries extends React.Component {
         }
 
         data = processedData;
-          // d3.max(<data>) should have the data with the greatest point
 
-        let maxYValue = d3.max(data, function(d) {
-                          return +d.count;
-                        })
+        // d3.max(<data>) should have the data with the greatest point
+        let maxYValue = this.props.maxYValue
 
         props = this.props;
         // In px (pixels)
