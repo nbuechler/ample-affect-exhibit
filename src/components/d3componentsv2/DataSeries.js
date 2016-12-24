@@ -93,7 +93,7 @@ export default class DataSeries extends React.Component {
 
         // In % (percents)
         xScale = d3.scale.ordinal()
-          .domain(d3.range(counter*5))
+          .domain(d3.range(counter))
           .rangeRoundBands(graphXRangeBands);
 
         console.log(xScale.rangeBand()/100);

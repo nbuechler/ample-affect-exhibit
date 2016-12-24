@@ -56,45 +56,57 @@ class WordFrequencyScatterPlot extends Component {
 
     return (
       <div>
-        <div style={{width: "500px", border: "1px solid #DDD", margin: 'auto'}}>
-          <SimpleScatterPlot
-              title={'Simple Scatter'}
-              distinctColors={false}
-              modulus={1}
-              fillColors={['none']}
-              data={data}
-              heightPixel={'100'}
-              widthPercent={'100'}
-              paddingPixel={'10'} />
-          <BinScatterPlot
-              title={'Unprocessed Scatter'}
-              distinctColors={false}
-              modulus={1}
-              fillColors={['none']}
-              data={naturalBinData}
-              heightPixel={'100'}
-              widthPercent={'100'}
-              paddingPixel={'10'} />
-          <BinScatterPlot
-              title={'Stemmed Scatter'}
-              distinctColors={false}
-              modulus={1}
-              fillColors={['none']}
-              data={stemmerBinData}
-              heightPixel={'100'}
-              widthPercent={'100'}
-              paddingPixel={'10'} />
-          <BinScatterPlot
-              title={'Lemmatized Scatter'}
-              distinctColors={false}
-              modulus={1}
-              fillColors={['none']}
-              data={lemmaBinData}
-              heightPixel={'100'}
-              widthPercent={'100'}
-              paddingPixel={'10'} />
+        <div style={{
+            width: "525px",
+            border: "1px solid #DDD",
+            margin: 'auto',
+            display: 'flex',
+            justifyContent: 'space-around',
+            padding: '7px'
+          }}>
+          <div style={{width: "100px"}}>
+            <BinScatterPlot
+                title={'Unprocessed Scatter'}
+                distinctColors={false}
+                modulus={1}
+                fillColors={['none']}
+                data={naturalBinData}
+                heightPixel={'100'}
+                widthPercent={'100'}
+                paddingPixel={'10'} />
+            <BinScatterPlot
+                title={'Stemmed Scatter'}
+                distinctColors={false}
+                modulus={1}
+                fillColors={['none']}
+                data={stemmerBinData}
+                heightPixel={'100'}
+                widthPercent={'100'}
+                paddingPixel={'10'} />
+            <BinScatterPlot
+                title={'Lemmatized Scatter'}
+                distinctColors={false}
+                modulus={1}
+                fillColors={['none']}
+                data={lemmaBinData}
+                heightPixel={'100'}
+                widthPercent={'100'}
+                paddingPixel={'10'} />
+          </div>
+          <div style={{width: "400px"}}>
+            <div style={{marginTop: '17px'}}>
+              <BinScatterPlot
+                  title={'Simple Scatter'}
+                  distinctColors={false}
+                  modulus={1}
+                  fillColors={['none']}
+                  data={naturalBinData}
+                  heightPixel={'400'}
+                  widthPercent={'100'}
+                  paddingPixel={'10'} />
+            </div>
+          </div>
         </div>
-
       </div>
     );
   }
