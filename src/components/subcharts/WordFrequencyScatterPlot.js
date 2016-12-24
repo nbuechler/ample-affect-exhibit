@@ -143,7 +143,7 @@ class WordFrequencyScatterPlot extends Component {
                   widthPercent={'100'}
                   paddingPixel={'30'}
                   maxYValue={maxYValue}
-                  pointRadius={'9'}/>
+                  pointRadius={'12'}/>
             </div>
           </div>
         </div>
