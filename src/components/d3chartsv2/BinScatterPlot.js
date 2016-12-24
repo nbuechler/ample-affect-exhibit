@@ -20,8 +20,6 @@ export default class BinScatterPlot extends React.Component {
 
     // You are pulling levers for building the chart.
     let svgStyle = {
-      border: '1px solid black',
-      backgroundColor: 'rgba(256, 256, 256, .2)',
       height: this.props.heightPixel + 'px',
       width: this.props.widthPercent + '%',
       padding: this.props.paddingPixel + 'px',

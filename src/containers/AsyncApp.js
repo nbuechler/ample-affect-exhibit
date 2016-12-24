@@ -35,7 +35,7 @@ class AsyncApp extends Component {
             <NavItem href="#/nlp-infographic"><i className="fa fa-file-image-o" aria-hidden="true"></i> NLP Infographic</NavItem>
           </Nav>
         </Navbar>
-        <div className="container" style={{marginTop: '5%'}}>
+        <div className="container" style={{marginTop: '5%', maxWidth: '1600px'}}>
           {this.props.children}
         </div>
       </div>
