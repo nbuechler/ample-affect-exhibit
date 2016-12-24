@@ -111,3 +111,94 @@
   font-size: 12px;
   margin: 10px;
 }
+
+/*
+ * POS Points
+ */
+
+.IN-pos-point {
+  fill: #eae3db;
+}
+
+.RP-pos-point {
+  fill: #eae3db;
+}
+.PRP-pos-point {
+
+  fill: #c2f6ff;
+}
+.PRPS-pos-point {
+  fill: #c2f6ff;
+
+}
+.NN-pos-point {
+  fill: #c2f6ff;
+}
+
+.NNP-pos-point {
+  fill: #c2f6ff;
+}
+
+.NNS-pos-point {
+  fill: #c2f6ff;
+}
+
+.JJ-pos-point {
+  fill: #c2f6ff;
+}
+
+.JJR-pos-point {
+  fill: #90a9dc;
+}
+
+.JJS-pos-point {
+  fill: #90a9dc;
+}
+
+.RB-pos-point {
+  fill: #90a9dc;
+}
+
+.RBR-pos-point {
+  fill: #90a9dc;
+}
+
+.RBS-pos-point {
+  fill: #90a9dc;
+}
+
+.MD-pos-point {
+  fill: #d5c5fc;
+}
+
+.VB-pos-point {
+  fill: #d5c5fc;
+}
+
+.VBD-pos-point {
+  fill: #d5c5fc;
+}
+
+.VBG-pos-point {
+  fill: #d5c5fc;
+}
+
+.VBN-pos-point {
+  fill: #d5c5fc;
+}
+
+.VBP-pos-point {
+  fill: #d5c5fc;
+}
+
+.VBZ-pos-point {
+  fill: #d5c5fc;
+}
+
+.CD-pos-point {
+  fill: #a3b2ca;
+}
+
+.FW-pos-point {
+  fill: #a3b2ca;
+}
