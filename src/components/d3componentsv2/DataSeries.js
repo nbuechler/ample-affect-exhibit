@@ -12,20 +12,14 @@ export default class DataSeries extends React.Component {
   }
 
   render () {
-    let data = this.props.data;
-    let props = this.props;
-    // In px (pixels)
-    let yScale = d3.scale.linear()
-      // d3.max(>data>) should have the data with the greatest point
-      .domain([0, d3.max(data)])
-      // The VectorGraphicWrapper adds padding. The tallest point is fine.
-      // The shortest point is twice the padding off the graph.
-      .range([0 + (this.props.padding * 2), this.props.height]);
 
-    // In % (percents)
-    let xScale = d3.scale.ordinal()
-      .domain(d3.range(data.length))
-      .rangeRoundBands([0, 10000]);
+    let data = undefined;
+    let props = undefined;
+    let yScale = undefined;
+    let xScale = undefined;
+
+    let graphYRange = [0 + (this.props.padding * 2), this.props.height];
+    let graphXRangeBands = [0, 10000];
 
     let fillColors = this.props.fillColors,
         stroke = 'black',
@@ -35,9 +29,24 @@ export default class DataSeries extends React.Component {
 
     switch (this.props.chart) {
       case 'simple-scatter': //chart
+        data = this.props.data;
+        props = this.props;
+        // In px (pixels)
+        yScale = d3.scale.linear()
+          // d3.max(<data>) should have the data with the greatest point
+          .domain([0, d3.max(data)])
+          // The VectorGraphicWrapper adds padding. The tallest point is fine.
+          // The shortest point is twice the padding off the graph.
+          .range(graphYRange);
+
+        // In % (percents)
+        xScale = d3.scale.ordinal()
+          .domain(d3.range(data.length))
+          .rangeRoundBands(graphXRangeBands);
+
         var points = _.map(data, function(dataPoint, i) {
           return (
-            <Point id={i} key={i} r={'3px'} stroke={strokeAlt}
+            <Point id={i} key={i} r={'3px'} stroke={strokeAlt} opacity={.5}
               cy={yScale(dataPoint)} rangeBandTarget={i} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );
@@ -50,11 +59,48 @@ export default class DataSeries extends React.Component {
         );
         break;
       case 'bin-scatter': //chart
+        let rawData = this.props.data,
+            processedData = [],
+            datapoint = {},
+            counter = 0;
+        for (let i of rawData) {
+          for (let j of i) {
+            datapoint = {
+              "word": j[0][0],
+              "pos": j[0][1],
+              "count": j[1],
+              "bin": counter,
+            }
+            processedData.push(datapoint)
+          }
+          counter++
+        }
+
+        data = processedData;
+          // d3.max(<data>) should have the data with the greatest point
+
+        let maxYValue = d3.max(data, function(d) {
+                          return +d.count;
+                        })
+
+        props = this.props;
+        // In px (pixels)
+        yScale = d3.scale.linear()
+          .domain([0, maxYValue])
+          // The VectorGraphicWrapper adds padding. The tallest point is fine.
+          // The shortest point is twice the padding off the graph.
+          .range(graphYRange);
+
+        // In % (percents)
+        xScale = d3.scale.ordinal()
+          .domain(d3.range(counter*5))
+          .rangeRoundBands(graphXRangeBands);
+
+        console.log(xScale.rangeBand()/100);
         var points = _.map(data, function(dataPoint, i) {
-          console.log(dataPoint, i);
           return (
-            <Point id={i} key={i} r={'3px'} stroke={strokeAlt}
-              cy={yScale(dataPoint)} rangeBandTarget={i} rangeBand={xScale.rangeBand()/100}
+            <Point id={i} key={i} r={'3px'} stroke={strokeAlt} opacity={.3}
+              cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );
         });
