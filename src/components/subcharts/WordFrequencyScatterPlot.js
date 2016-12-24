@@ -55,9 +55,9 @@ class WordFrequencyScatterPlot extends Component {
       return result;
     }
 
-    const naturalBinData = prepareBinPlot('natural')
-    const stemmerBinData = prepareBinPlot('stemmer')
-    const lemmaBinData = prepareBinPlot('lemma')
+    const naturalBinData = prepareBinPlot('natural');
+    const stemmerBinData = prepareBinPlot('stemmer');
+    const lemmaBinData = prepareBinPlot('lemma');
     const allBinData = prepareBinPlotComplete(naturalBinData, stemmerBinData, lemmaBinData);
 
 

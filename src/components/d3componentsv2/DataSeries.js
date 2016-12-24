@@ -101,7 +101,7 @@ export default class DataSeries extends React.Component {
             dataPoint.pos = 'PRPS';
           }
           return (
-            <Point id={i} key={i} r={r + 'px'} stroke={strokeAlt} opacity={.3} className={ dataPoint.pos + '-pos-point' || ''}
+            <Point id={i} key={i} r={r + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );
