@@ -5,6 +5,7 @@ import { Calendar } from 'calendar';
 
 import Empty from '../d3componentsv2/Empty';
 import Point from '../d3componentsv2/Point';
+import PillPoint from '../d3componentsv2/PillPoint';
 
 export default class DataSeries extends React.Component {
   constructor (props) {
@@ -101,7 +102,7 @@ export default class DataSeries extends React.Component {
             dataPoint.pos = 'PRPS';
           }
           return (
-            <Point id={i} key={i} r={r + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
+            <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height}/>
           );
@@ -109,7 +110,15 @@ export default class DataSeries extends React.Component {
 
         return (
           <g>
-            {points}
+            <g>
+              {points}
+            </g>
+            {/* TODO: This is the start of adding an axis
+            <g>
+              <text y="9" x="0" dy=".71em" text-anchor="middle" transform="translate(-24,12)rotate(-45)">01 Jan</text>
+              <text y="9" x="30" dy=".71em" text-anchor="middle" transform="translate(-24,42)rotate(-45)">01 Jan</text>
+            </g>
+            */}
           </g>
         );
         break;
