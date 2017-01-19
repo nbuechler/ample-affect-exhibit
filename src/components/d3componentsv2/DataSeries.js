@@ -96,6 +96,26 @@ export default class DataSeries extends React.Component {
           .domain(d3.range(counter))
           .rangeRoundBands(graphXRangeBands);
 
+        {/*
+        var axisText = _.map(data, function(dataPoint, i) {
+          return (
+
+            <text key={i + 'text'} y={props.height - 150} x={dataPoint.bin * xScale.rangeBand()/100 + dataPoint.bin/2 + '%'} dy=".71em" text-anchor="middle" transform="translate(-24,12)rotate(-0)">01 Jan</text>
+          );
+        });
+        */}
+
+        let axisLabels = [
+          <text className="infographic--axis_label" key={'t_1'} y={'99%'} x={1 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I</text>,
+          <text className="infographic--axis_label" key={'t_2'} y={'99%'} x={2 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II</text>,
+          <text className="infographic--axis_label" key={'t_3'} y={'99%'} x={3 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">III</text>,
+          <text className="infographic--axis_label" key={'t_12'} y={'99%'} x={4 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II</text>,
+          <text className="infographic--axis_label" key={'t_13'} y={'99%'} x={5 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-III</text>,
+          <text className="infographic--axis_label" key={'t_23'} y={'99%'} x={6 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II-III</text>,
+          <text className="infographic--axis_label" key={'t_123'} y={'99%'} x={7 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II-III</text>,
+        ]
+
+
         r = this.props.pointRadius;
         var points = _.map(data, function(dataPoint, i) {
           if (dataPoint.pos == 'PRP$') {
@@ -113,12 +133,9 @@ export default class DataSeries extends React.Component {
             <g>
               {points}
             </g>
-            {/* TODO: This is the start of adding an axis
             <g>
-              <text y="9" x="0" dy=".71em" text-anchor="middle" transform="translate(-24,12)rotate(-45)">01 Jan</text>
-              <text y="9" x="30" dy=".71em" text-anchor="middle" transform="translate(-24,42)rotate(-45)">01 Jan</text>
+              {axisLabels}
             </g>
-            */}
           </g>
         );
         break;
