@@ -112,6 +112,11 @@
   margin: 10px;
 }
 
+.infographic--axis_label {
+  fill: white;
+  font-size: 10px;
+}
+
 /*
  * POS Points
  */
