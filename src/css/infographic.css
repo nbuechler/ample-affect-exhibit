@@ -121,6 +121,10 @@
  * POS Points
  */
 
+rect.true {
+  fill: red
+}
+
 .IN-pos-point {
   fill: #eae3db;
 }
