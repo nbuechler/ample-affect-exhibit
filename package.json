@@ -1,6 +1,6 @@
 {
   "name": "ample-affect-exhibit",
-  "version": "1.5.23",
+  "version": "1.5.24",
   "description": "ReactJS exhibit for affect",
   "scripts": {
     "start": "node server.js",

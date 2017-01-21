@@ -6,12 +6,30 @@ import _ from 'underscore';
 export default class PillPoint extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { };
+    this.state = {
+      // TODO Change me to be a classname instead maybe?
+      "success": false
+    };
   }
+
+  _handleOver(d, i) {
+    console.log(this);
+    this.setState({
+        success: !this.state.success
+    });
+  }
+
+  _handleOut(d, i) {
+    console.log(this);
+    this.setState({
+        success: !this.state.success
+    });
+  }
+
   render () {
     return (
       <rect
-        className={this.props.className}
+        className={this.props.className + " " + this.state.success.toString()}
         rx="5px"
         ry="5px"
         width={this.props.rw}
@@ -21,6 +39,8 @@ export default class PillPoint extends React.Component {
         y={this.props.availableHeight - this.props.cy}
         stroke={this.props.stroke}
         style={{strokeWidth: '1px', transform: "translate(-50%, -50%)"}}
+        onMouseOver={this._handleOver.bind(this, this.props)}
+        onMouseOut={this._handleOut.bind(this, this.props)}
         />
     );
   }
