@@ -8,21 +8,20 @@ export default class PillPoint extends React.Component {
     super(props);
     this.state = {
       // TODO Change me to be a classname instead maybe?
-      "success": false
+      "success": ""
     };
   }
 
   _handleOver(d, i) {
     console.log(this);
     this.setState({
-        success: !this.state.success
+        success: "active"
     });
   }
 
   _handleOut(d, i) {
-    console.log(this);
     this.setState({
-        success: !this.state.success
+        success: ""
     });
   }
 

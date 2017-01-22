@@ -121,8 +121,9 @@
  * POS Points
  */
 
-rect.true {
-  fill: red
+rect.active {
+  fill: white;
+  opacity: 1
 }
 
 .IN-pos-point {
