@@ -12,14 +12,17 @@ export default class PillPoint extends React.Component {
     };
   }
 
-  _handleOver(d, i) {
-    console.log(this);
+  _handleOver(d) {
+    let graphWidth = 400;
+    let x = (d.rangeBandTarget * d.rangeBand) + d.rangeBand/2 // x coordinate
+    let y =  d.availableHeight - d.cy // y coordinate
+    console.log(x * graphWidth / 100, y);
     this.setState({
         success: "active"
     });
   }
 
-  _handleOut(d, i) {
+  _handleOut(d) {
     this.setState({
         success: ""
     });
