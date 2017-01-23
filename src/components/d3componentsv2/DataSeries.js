@@ -6,6 +6,7 @@ import { Calendar } from 'calendar';
 import Empty from '../d3componentsv2/Empty';
 import Point from '../d3componentsv2/Point';
 import PillPoint from '../d3componentsv2/PillPoint';
+import ToolTip from '../d3componentsv2/ToolTip';
 
 export default class DataSeries extends React.Component {
   constructor (props) {
@@ -19,6 +20,8 @@ export default class DataSeries extends React.Component {
     let yScale = undefined;
     let xScale = undefined;
     let r = undefined;
+
+    let graphId = this.props.graphId
 
     let graphYRange = [0 + (this.props.padding * 2), this.props.height];
     let graphXRangeBands = [0, 10000];
@@ -124,7 +127,7 @@ export default class DataSeries extends React.Component {
           return (
             <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
-              availableHeight={props.height}/>
+              availableHeight={props.height} graphId={graphId}/>
           );
         });
 
@@ -136,6 +139,7 @@ export default class DataSeries extends React.Component {
             <g>
               {axisLabels}
             </g>
+            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'50'} ttRectHeight={'50'}  visibility={'hidden'}/>
           </g>
         );
         break;

@@ -97,6 +97,7 @@ class WordFrequencyScatterPlot extends Component {
           }}>
           <div style={{width: "100px"}}>
             <BinScatterPlot
+                graphId={0}
                 title={'Unprocessed Word Count'}
                 distinctColors={false}
                 modulus={1}
@@ -108,6 +109,7 @@ class WordFrequencyScatterPlot extends Component {
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
             <BinScatterPlot
+                graphId={1}
                 title={'Stemmed Word Count'}
                 distinctColors={false}
                 modulus={1}
@@ -119,6 +121,7 @@ class WordFrequencyScatterPlot extends Component {
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
             <BinScatterPlot
+                graphId={2}
                 title={'Lemmatized Word Count'}
                 distinctColors={false}
                 modulus={1}
@@ -133,6 +136,7 @@ class WordFrequencyScatterPlot extends Component {
           <div style={{width: "400px"}}>
             <div style={{marginTop: '6px'}}>
               <BinScatterPlot
+                  graphId={3}
                   title={this.props.emotionName + ' Word Count'}
                   titleSize={'20'}
                   distinctColors={false}
