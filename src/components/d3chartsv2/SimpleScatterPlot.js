@@ -34,7 +34,8 @@ export default class SimpleScatterPlot extends React.Component {
             data={this.props.data}
             height={this.props.heightPixel}
             width={this.props.widthPercent}
-            padding={this.props.paddingPixel}/>
+            padding={this.props.paddingPixel}
+            graphId={this.props.graphId}/>
         </VectorGraphicWrapper>
       </div>
     );

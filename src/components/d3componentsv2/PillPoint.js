@@ -7,7 +7,6 @@ export default class PillPoint extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      // TODO Change me to be a classname instead maybe?
       "success": ""
     };
   }
@@ -15,17 +14,25 @@ export default class PillPoint extends React.Component {
   _handleOver(d) {
     let graphWidth = 400;
     let x = (d.rangeBandTarget * d.rangeBand) + d.rangeBand/2 // x coordinate
-    let y =  d.availableHeight - d.cy // y coordinate
-    console.log(x * graphWidth / 100, y);
+    let y = d.availableHeight - d.cy // y coordinate
+    let currentTipXPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
+    let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
+
+    // console.log(x * graphWidth / 100, y);
     this.setState({
         success: "active"
     });
+
+    document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = x * graphWidth / 100
+    document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y
+    document.getElementById("tooltip-" + d.graphId).style.visibility = ""
   }
 
   _handleOut(d) {
     this.setState({
         success: ""
     });
+    document.getElementById("tooltip-" + d.graphId).style.visibility = "hidden"
   }
 
   render () {
