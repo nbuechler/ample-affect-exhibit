@@ -18,6 +18,8 @@ export default class PillPoint extends React.Component {
     let currentTipXPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
     let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
 
+    // TODO: Add logic to fix tooltip text and positioning
+
     // console.log(x * graphWidth / 100, y);
     this.setState({
         success: "active"
