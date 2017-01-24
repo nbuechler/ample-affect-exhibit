@@ -12,19 +12,23 @@ export default class PillPoint extends React.Component {
   }
 
   _handleOver(d) {
-    let graphWidth = 400;
-    let x = (d.rangeBandTarget * d.rangeBand) + d.rangeBand/2 // x coordinate
+    let graphWidth = d.availableWidth;
+    let x = (d.rangeBandTarget * d.rangeBand) //+ d.rangeBand/2 // x coordinate
     let y = d.availableHeight - d.cy // y coordinate
     let currentTipXPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
     let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
+
+    // TODO: Add logic to fix tooltip text and positioning
 
     // console.log(x * graphWidth / 100, y);
     this.setState({
         success: "active"
     });
 
-    document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = x * graphWidth / 100
-    document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y
+    console.log(d.rangeBandTarget, d.rangeBand, "+", d.rangeBand/2, "=", x);
+    console.log(graphWidth, x);
+    document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100
+    document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 20
     document.getElementById("tooltip-" + d.graphId).style.visibility = ""
   }
 

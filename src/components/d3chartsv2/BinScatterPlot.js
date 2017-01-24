@@ -34,6 +34,7 @@ export default class BinScatterPlot extends React.Component {
             data={this.props.data}
             height={this.props.heightPixel}
             width={this.props.widthPercent}
+            graphSize={this.props.graphSize}
             padding={this.props.paddingPixel}
             graphId={this.props.graphId}
             maxYValue={this.props.maxYValue}

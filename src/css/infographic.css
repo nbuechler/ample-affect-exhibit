@@ -118,6 +118,15 @@
 }
 
 /*
+ * Toolfip
+ */
+
+.infographic--tooltip_text {
+  fill: white;
+  font-size: 10px;
+}
+
+/*
  * POS Points
  */
 
