@@ -18,7 +18,9 @@ export default class ToolTip extends React.Component {
         <rect width={ttRectWidth} height={ttRectHeight} fill="#111" opacity="0.9" stroke="black" strokeWidth="3px"
               x={0} y={0} >
         </rect>
+        <text>
           {textElement}
+        </text>
       </g>
     );
   }

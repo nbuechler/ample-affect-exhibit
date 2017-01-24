@@ -105,6 +105,7 @@ class WordFrequencyScatterPlot extends Component {
                 data={naturalBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
+                graphSize={'sm'}
                 paddingPixel={'10'}
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
@@ -117,6 +118,7 @@ class WordFrequencyScatterPlot extends Component {
                 data={stemmerBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
+                graphSize={'sm'}
                 paddingPixel={'10'}
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
@@ -129,6 +131,7 @@ class WordFrequencyScatterPlot extends Component {
                 data={lemmaBinData}
                 heightPixel={'100'}
                 widthPercent={'100'}
+                graphSize={'sm'}
                 paddingPixel={'10'}
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
@@ -145,6 +148,7 @@ class WordFrequencyScatterPlot extends Component {
                   data={allBinData}
                   heightPixel={'408'}
                   widthPercent={'100'}
+                  graphSize={'md'}
                   paddingPixel={'30'}
                   maxYValue={maxYValue}
                   pointRadius={'12'}/>

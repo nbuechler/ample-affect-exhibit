@@ -120,14 +120,19 @@ export default class DataSeries extends React.Component {
 
 
         r = this.props.pointRadius;
+
+        let graphWidth = 100 - props.padding * 2
         var points = _.map(data, function(dataPoint, i) {
           if (dataPoint.pos == 'PRP$') {
             dataPoint.pos = 'PRPS';
           }
+          if (props.graphSize == "md") {
+            graphWidth = 400 - props.padding * 2
+          }
           return (
             <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
-              availableHeight={props.height} graphId={graphId}/>
+              availableHeight={props.height} availableWidth={graphWidth} graphId={graphId}/>
           );
         });
 
