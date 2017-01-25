@@ -16,7 +16,7 @@ export default class PillPoint extends React.Component {
     let x = (d.rangeBandTarget * d.rangeBand) //+ d.rangeBand/2 // x coordinate
     let y = d.availableHeight - d.cy // y coordinate
     let currentTipXPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
-    let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
+    let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value
 
     // TODO: Add logic to fix tooltip text and positioning
 
@@ -25,11 +25,14 @@ export default class PillPoint extends React.Component {
         success: "active"
     });
 
-    console.log(d.rangeBandTarget, d.rangeBand, "+", d.rangeBand/2, "=", x);
-    console.log(graphWidth, x);
+    // console.log(d.rangeBandTarget, d.rangeBand, "+", d.rangeBand/2, "=", x);
+    // console.log(graphWidth, x);
+
     document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100
     document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 20
     document.getElementById("tooltip-" + d.graphId).style.visibility = ""
+
+    document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal += " active"
   }
 
   _handleOut(d) {
@@ -37,12 +40,14 @@ export default class PillPoint extends React.Component {
         success: ""
     });
     document.getElementById("tooltip-" + d.graphId).style.visibility = "hidden"
+
+    document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal = "infographic--graphic_background"
   }
 
   render () {
     return (
       <rect
-        className={this.props.className + " " + this.state.success.toString()}
+        className={"infographic--pill_point " + this.props.className + " " + this.state.success.toString()}
         rx="5px"
         ry="5px"
         width={this.props.rw}
