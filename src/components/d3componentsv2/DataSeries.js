@@ -129,9 +129,10 @@ export default class DataSeries extends React.Component {
           if (props.graphSize == "md") {
             graphWidth = 400 - props.padding * 2
           }
+          {/*TODO: Make the pillpoint opacity more effective by not drawing duplicate points*/}
           return (
             <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
-              cy={yScale(dataPoint.count)} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
+              cy={yScale(dataPoint.count)} count={dataPoint.count} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
               availableHeight={props.height} availableWidth={graphWidth} graphId={graphId}/>
           );
         });
@@ -144,7 +145,7 @@ export default class DataSeries extends React.Component {
             <g>
               {axisLabels}
             </g>
-            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'50'} ttRectHeight={'50'}  visibility={'hidden'}/>
+            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'40'} ttRectHeight={'40'}  visibility={'hidden'}/>
           </g>
         );
         break;

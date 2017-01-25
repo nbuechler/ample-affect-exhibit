@@ -15,21 +15,30 @@ export default class PillPoint extends React.Component {
     let graphWidth = d.availableWidth;
     let x = (d.rangeBandTarget * d.rangeBand) //+ d.rangeBand/2 // x coordinate
     let y = d.availableHeight - d.cy // y coordinate
-    let currentTipXPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
-    let currentTipYPos = document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value
-
-    // TODO: Add logic to fix tooltip text and positioning
 
     // console.log(x * graphWidth / 100, y);
     this.setState({
         success: "active"
     });
 
-    console.log(d.rangeBandTarget, d.rangeBand, "+", d.rangeBand/2, "=", x);
-    console.log(graphWidth, x);
+    // console.log(d.rangeBandTarget, d.rangeBand, "+", d.rangeBand/2, "=", x);
+    // console.log(graphWidth, x);
+
+    // Logic to position tooltip rect
     document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100
     document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 20
+    // Logic to position tooltip texts, and to change the text
+    document.getElementById("tooltip-" + d.graphId).children[1]['x'].baseVal[0].valueAsString = graphWidth * x/100
+    document.getElementById("tooltip-" + d.graphId).children[1]['y'].baseVal[0].valueAsString = y + 20
+    document.getElementById("tooltip-" + d.graphId).children[2]['x'].baseVal[0].valueAsString = graphWidth * x/100
+    document.getElementById("tooltip-" + d.graphId).children[2]['y'].baseVal[0].valueAsString = y + 30
+    document.getElementById("tooltip-" + d.graphId).children[3]['x'].baseVal[0].valueAsString = graphWidth * x/100
+    document.getElementById("tooltip-" + d.graphId).children[3]['y'].baseVal[0].valueAsString = y + 40
+    document.getElementById("tooltip-" + 3).children[1].innerHTML = d.count + " count"
+
+    // Show Tooltip and 'dim' graph background
     document.getElementById("tooltip-" + d.graphId).style.visibility = ""
+    document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal += " active"
   }
 
   _handleOut(d) {
@@ -37,12 +46,14 @@ export default class PillPoint extends React.Component {
         success: ""
     });
     document.getElementById("tooltip-" + d.graphId).style.visibility = "hidden"
+
+    document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal = "infographic--graphic_background"
   }
 
   render () {
     return (
       <rect
-        className={this.props.className + " " + this.state.success.toString()}
+        className={"infographic--pill_point " + this.props.className + " " + this.state.success.toString()}
         rx="5px"
         ry="5px"
         width={this.props.rw}
