@@ -25,16 +25,16 @@ export default class PillPoint extends React.Component {
     // console.log(graphWidth, x);
 
     // Logic to position tooltip rect
-    document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100
-    document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 20
+    document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100 - 13
+    document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 17
     // Logic to position tooltip texts, and to change the text
-    document.getElementById("tooltip-" + d.graphId).children[1]['x'].baseVal[0].valueAsString = graphWidth * x/100
-    document.getElementById("tooltip-" + d.graphId).children[1]['y'].baseVal[0].valueAsString = y + 20
-    document.getElementById("tooltip-" + d.graphId).children[2]['x'].baseVal[0].valueAsString = graphWidth * x/100
-    document.getElementById("tooltip-" + d.graphId).children[2]['y'].baseVal[0].valueAsString = y + 30
-    document.getElementById("tooltip-" + d.graphId).children[3]['x'].baseVal[0].valueAsString = graphWidth * x/100
-    document.getElementById("tooltip-" + d.graphId).children[3]['y'].baseVal[0].valueAsString = y + 40
-    document.getElementById("tooltip-" + 3).children[1].innerHTML = d.count + " count"
+    document.getElementById("tooltip-" + d.graphId).children[1]['x'].baseVal[0].valueAsString = graphWidth * x/100 - 8
+    document.getElementById("tooltip-" + d.graphId).children[1]['y'].baseVal[0].valueAsString = y + 30
+    document.getElementById("tooltip-" + d.graphId).children[2]['x'].baseVal[0].valueAsString = graphWidth * x/100 - 8
+    document.getElementById("tooltip-" + d.graphId).children[2]['y'].baseVal[0].valueAsString = y + 40
+    document.getElementById("tooltip-" + d.graphId).children[3]['x'].baseVal[0].valueAsString = graphWidth * x/100 - 8
+    document.getElementById("tooltip-" + d.graphId).children[3]['y'].baseVal[0].valueAsString = y + 50
+    document.getElementById("tooltip-" + 3).children[2].innerHTML = "found " + d.count + " times"
 
     // Show Tooltip and 'dim' graph background
     document.getElementById("tooltip-" + d.graphId).style.visibility = ""
