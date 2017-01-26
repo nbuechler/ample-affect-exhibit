@@ -20,13 +20,13 @@ export default class ToolTip extends React.Component {
               x={0} y={0} >
         </rect>
         <text x={0} y={0} className="infographic--tooltip_text">
+          {"X word(s)"}
+        </text>
+        <text x={0} y={0} className="infographic--tooltip_text">
           {textElement}
         </text>
         <text x={0} y={0} className="infographic--tooltip_text">
           {"in Y order"}
-        </text>
-        <text x={0} y={0} className="infographic--tooltip_text">
-          {"and there was Z word(s)"}
         </text>
       </g>
     );

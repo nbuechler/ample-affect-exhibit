@@ -145,7 +145,7 @@ export default class DataSeries extends React.Component {
             <g>
               {axisLabels}
             </g>
-            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'40'} ttRectHeight={'40'}  visibility={'hidden'}/>
+            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'75'} ttRectHeight={'40'}  visibility={'hidden'}/>
           </g>
         );
         break;
