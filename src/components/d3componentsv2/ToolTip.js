@@ -11,8 +11,6 @@ export default class ToolTip extends React.Component {
         ttRectHeight = this.props.ttRectHeight,
         scaleShift = this.props.offset + this.props.width/2;
 
-    var textElement = 'hi';
-
     return (
       <g id={this.props.id} style={{visibility: this.props.visibility, fontWeight: 900, textAlign: 'center'}}>
         // TODO: Add className attr to rect and in CSS to handle this better
@@ -23,10 +21,10 @@ export default class ToolTip extends React.Component {
           {"X word(s)"}
         </text>
         <text x={0} y={0} className="infographic--tooltip_text">
-          {textElement}
+          {"found Z times"}
         </text>
         <text x={0} y={0} className="infographic--tooltip_text">
-          {"in Y order"}
+          {"in Order Y"}
         </text>
       </g>
     );

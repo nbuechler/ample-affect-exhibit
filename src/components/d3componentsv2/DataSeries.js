@@ -129,11 +129,39 @@ export default class DataSeries extends React.Component {
           if (props.graphSize == "md") {
             graphWidth = 400 - props.padding * 2
           }
+
+          let order = 'None'
+          switch (dataPoint.bin) {
+            case 0:
+              order = 'I'
+              break;
+            case 1:
+              order = 'II'
+              break;
+            case 2:
+              order = 'III'
+              break;
+            case 3:
+              order = 'I-II'
+              break;
+            case 4:
+              order = 'I-III'
+              break;
+            case 5:
+              order = 'II-III'
+              break;
+            case 6:
+              order = 'I-II-II'
+              break;
+            default:
+              order = 'None'
+          }
+
           {/*TODO: Make the pillpoint opacity more effective by not drawing duplicate points*/}
           return (
             <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} count={dataPoint.count} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
-              availableHeight={props.height} availableWidth={graphWidth} graphId={graphId}/>
+              availableHeight={props.height} availableWidth={graphWidth} graphSize={props.graphSize} graphId={graphId} order={order}/>
           );
         });
 
