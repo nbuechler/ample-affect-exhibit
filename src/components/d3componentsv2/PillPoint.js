@@ -38,10 +38,10 @@ export default class PillPoint extends React.Component {
       document.getElementById("tooltip-" + d.graphId).children[2].innerHTML = "found " + d.count + " times"
       document.getElementById("tooltip-" + d.graphId).children[3].innerHTML = "in order " + d.order
 
-      // Show Tooltip and 'dim' graph background
       document.getElementById("tooltip-" + d.graphId).style.visibility = ""
-      document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal += " active"
     }
+      // Show Tooltip and 'dim' graph background
+      document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal += " active"
   }
 
   _handleOut(d) {
@@ -50,9 +50,9 @@ export default class PillPoint extends React.Component {
     });
     if (d.graphSize == "md") {
       document.getElementById("tooltip-" + d.graphId).style.visibility = "hidden"
+    }
 
       document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal = "infographic--graphic_background"
-    }
   }
 
   render () {
