@@ -137,6 +137,11 @@ export default class DataSeries extends React.Component {
           );
         });
 
+        let tooltip = ''
+        if (props.graphSize == "md") {
+          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'75'} ttRectHeight={'40'}  visibility={'hidden'}/>
+        }
+
         return (
           <g>
             <g>
@@ -145,7 +150,7 @@ export default class DataSeries extends React.Component {
             <g>
               {axisLabels}
             </g>
-            <ToolTip id={"tooltip-" + graphId} ttRectWidth={'75'} ttRectHeight={'40'}  visibility={'hidden'}/>
+            {tooltip}
           </g>
         );
         break;
