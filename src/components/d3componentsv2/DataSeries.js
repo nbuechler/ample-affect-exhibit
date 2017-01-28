@@ -108,65 +108,58 @@ export default class DataSeries extends React.Component {
         });
         */}
 
-        let axisLabels = [
-          <text className="infographic--axis_label" key={'t_1'} y={'99%'} x={1 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I</text>,
-          <text className="infographic--axis_label" key={'t_2'} y={'99%'} x={2 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II</text>,
-          <text className="infographic--axis_label" key={'t_3'} y={'99%'} x={3 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">III</text>,
-          <text className="infographic--axis_label" key={'t_12'} y={'99%'} x={4 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II</text>,
-          <text className="infographic--axis_label" key={'t_13'} y={'99%'} x={5 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-III</text>,
-          <text className="infographic--axis_label" key={'t_23'} y={'99%'} x={6 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II-III</text>,
-          <text className="infographic--axis_label" key={'t_123'} y={'99%'} x={7 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II-III</text>,
-        ]
-
-
         r = this.props.pointRadius;
 
         let graphWidth = 100 - props.padding * 2
-        // console.log(data);
+        // TODO: Organize the code OR refactor into something more elegant!
         let binData = []
         // binCountFrequency is a list of lists where each list contains the point of the respective order
         // i.e. order I is in the zeroth position, order II is in the first position.
         let binCountFrequency = [[], [], [], [], [], [], []]
         for (let point of data) {
-          // for (var i = 0; i < 7; i++) {
-            switch (point.bin) {
-              case 0:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 1:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 2:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 3:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 4:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 5:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              case 6:
-                // binCountFrequency[point.bin].push(point)
-                binCountFrequency[point.bin].push(point.count)
-                break;
-              default:
-                order = 'None'
-            }
-          // }
+          switch (point.bin) {
+            case 0:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 1:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 2:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 3:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 4:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 5:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            case 6:
+              // binCountFrequency[point.bin].push(point)
+              binCountFrequency[point.bin].push(point.count)
+              break;
+            default:
+              order = 'None'
+          }
         }
 
-        console.log("Find the frequency of each count of words");
-        console.log(binCountFrequency);
+        // Find the frequency of each count of words
+        let frequencyDistOfCounts = []
         for (let bcfOrder of binCountFrequency) {
+          let counts = {};
+          let arr = bcfOrder
+          for (var i = 0; i < arr.length; i++) {
+              counts[arr[i]] = 1 + (counts[arr[i]] || 0);
+          }
+          frequencyDistOfCounts.push(counts)
         }
 
         var points = _.map(data, function(dataPoint, i) {
@@ -206,15 +199,31 @@ export default class DataSeries extends React.Component {
 
           {/*TODO: Make the pillpoint opacity more effective by not drawing duplicate points*/}
           return (
-            <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.2} className={ dataPoint.pos + '-pos-point' || ''}
+            <PillPoint id={i} key={i} rw={r * 3 + 'px'} rh={r / 2 + 'px'} stroke={strokeAlt} opacity={.1} className={ dataPoint.pos + '-pos-point' || ''}
               cy={yScale(dataPoint.count)} count={dataPoint.count} rangeBandTarget={dataPoint.bin} rangeBand={xScale.rangeBand()/100}
-              availableHeight={props.height} availableWidth={graphWidth} graphSize={props.graphSize} graphId={graphId} order={order}/>
+              availableHeight={props.height} availableWidth={graphWidth} graphSize={props.graphSize} graphId={graphId} order={order}
+              frequencyDistOfCounts={frequencyDistOfCounts}/>
           );
         });
 
         let tooltip = ''
+        let xAxisLabels = [
+          <text className="infographic--axis_label" key={'t_1'} y={'99%'} x={1 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I</text>,
+          <text className="infographic--axis_label" key={'t_2'} y={'99%'} x={2 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II</text>,
+          <text className="infographic--axis_label" key={'t_3'} y={'99%'} x={3 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">III</text>,
+          <text className="infographic--axis_label" key={'t_12'} y={'99%'} x={4 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II</text>,
+          <text className="infographic--axis_label" key={'t_13'} y={'99%'} x={5 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-III</text>,
+          <text className="infographic--axis_label" key={'t_23'} y={'99%'} x={6 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II-III</text>,
+          <text className="infographic--axis_label" key={'t_123'} y={'99%'} x={7 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II-III</text>,
+        ]
+        let yAxisLabels = ''
         if (props.graphSize == "md") {
-          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'75'} ttRectHeight={'40'}  visibility={'hidden'}/>
+          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'80'} ttRectHeight={'40'}  visibility={'hidden'}/>
+          yAxisLabels = [
+            <text className="infographic--axis_label" key={'maxYValue'} y={0 - 3} x={'102%'} dy=".71em">{maxYValue}</text>,
+            <text className="infographic--axis_label" key={'midYValue'} y={props.height - yScale(maxYValue/2) - 3} x={'102%'} dy=".71em">{maxYValue/2}</text>,
+            <text className="infographic--axis_label" key={'minYValue'} y={props.height - yScale(0) - 3} x={'102%'} dy=".71em">{0}</text>,
+          ]
         }
 
         return (
@@ -223,7 +232,10 @@ export default class DataSeries extends React.Component {
               {points}
             </g>
             <g>
-              {axisLabels}
+              {xAxisLabels}
+            </g>
+            <g>
+              {yAxisLabels}
             </g>
             {tooltip}
           </g>
