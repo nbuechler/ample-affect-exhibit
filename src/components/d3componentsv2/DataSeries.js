@@ -122,6 +122,53 @@ export default class DataSeries extends React.Component {
         r = this.props.pointRadius;
 
         let graphWidth = 100 - props.padding * 2
+        // console.log(data);
+        let binData = []
+        // binCountFrequency is a list of lists where each list contains the point of the respective order
+        // i.e. order I is in the zeroth position, order II is in the first position.
+        let binCountFrequency = [[], [], [], [], [], [], []]
+        for (let point of data) {
+          // for (var i = 0; i < 7; i++) {
+            switch (point.bin) {
+              case 0:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 1:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 2:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 3:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 4:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 5:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              case 6:
+                // binCountFrequency[point.bin].push(point)
+                binCountFrequency[point.bin].push(point.count)
+                break;
+              default:
+                order = 'None'
+            }
+          // }
+        }
+
+        console.log("Find the frequency of each count of words");
+        console.log(binCountFrequency);
+        for (let bcfOrder of binCountFrequency) {
+        }
+
         var points = _.map(data, function(dataPoint, i) {
           if (dataPoint.pos == 'PRP$') {
             dataPoint.pos = 'PRPS';
