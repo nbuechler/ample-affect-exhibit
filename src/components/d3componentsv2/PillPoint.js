@@ -35,7 +35,10 @@ export default class PillPoint extends React.Component {
       document.getElementById("tooltip-" + d.graphId).children[2]['y'].baseVal[0].valueAsString = y + 40
       document.getElementById("tooltip-" + d.graphId).children[3]['x'].baseVal[0].valueAsString = graphWidth * x/100 - 8
       document.getElementById("tooltip-" + d.graphId).children[3]['y'].baseVal[0].valueAsString = y + 50
-      document.getElementById("tooltip-" + d.graphId).children[2].innerHTML = "found " + d.count + " times"
+
+      // Change the text
+      document.getElementById("tooltip-" + d.graphId).children[1].innerHTML = d.frequencyDistOfCounts[d.rangeBandTarget][d.count] + " word(s)"
+      document.getElementById("tooltip-" + d.graphId).children[2].innerHTML = "found " + d.count + " time(s)"
       document.getElementById("tooltip-" + d.graphId).children[3].innerHTML = "in order " + d.order
 
       document.getElementById("tooltip-" + d.graphId).style.visibility = ""
