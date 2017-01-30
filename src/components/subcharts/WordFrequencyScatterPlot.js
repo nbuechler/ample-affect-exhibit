@@ -182,7 +182,20 @@ class WordFrequencyScatterPlot extends Component {
             <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
             Other
           </div>
-
+        </div>
+        <div className="infographic--key-text"
+             style={{
+                width: "530px",
+                margin: 'auto',
+                display: 'flex',
+                justifyContent: 'space-around',
+                padding: '10px'
+             }}>
+          The graph depicts a frequency distribution of the words associated with {this.props.emotionName}.
+          Multiple words with the same frequency are represented as a more opaque cell.
+          By contrast, a single word with a frequency is represented by a transparent cell.
+          Color represents the part of speech.
+          Cells representing words with more than one part of speech are the average color value.
         </div>
       </div>
     );

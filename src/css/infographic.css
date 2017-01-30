@@ -107,7 +107,7 @@
  * Infographic Graphs
  */
 
-.infographic--key-cell {
+.infographic--key-cell, .infographic--key-text {
   display: inline-flex;
   font-size: 10px;
 }
