@@ -107,6 +107,34 @@
  * Infographic Graphs
  */
 
+.infographic--key-cell, .infographic--key-text {
+  display: inline-flex;
+  font-size: 10px;
+}
+
+.infographic--key-cell_color-swatch {
+  height: 14px;
+  width: 14px;
+  margin-right: 4px;
+  border: .5px solid white;
+}
+
+.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_prep {
+  background: #eae3db
+}
+.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_noun {
+  background: #c2f6ff
+}
+.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_adj {
+  background: #90a9dc
+}
+.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_verb {
+  background: #d5c5fc
+}
+.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_other {
+  background: #a3b2ca
+}
+
 .infographic--graph-title {
   padding: 10px;
   text-align: center;

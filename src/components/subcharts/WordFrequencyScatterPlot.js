@@ -155,6 +155,48 @@ class WordFrequencyScatterPlot extends Component {
             </div>
           </div>
         </div>
+        <div style={{
+            width: "530px",
+            margin: 'auto',
+            display: 'flex',
+            justifyContent: 'space-around',
+            padding: '10px'
+          }}>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
+            Preposition
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_noun"></div>
+            Noun
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_adj"></div>
+            Adjective
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_verb"></div>
+            Verb
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
+            Other
+          </div>
+        </div>
+        <div className="infographic--key-text"
+             style={{
+                width: "530px",
+                margin: 'auto',
+                display: 'flex',
+                justifyContent: 'space-around',
+                padding: '10px'
+             }}>
+          The graph depicts a frequency distribution of the words associated with {this.props.emotionName}.
+          Multiple words with the same frequency are represented as a more opaque cell.
+          By contrast, a single word with a frequency is represented by a transparent cell.
+          Color represents the part of speech.
+          Cells representing words with more than one part of speech are the average color value.
+        </div>
       </div>
     );
   }
