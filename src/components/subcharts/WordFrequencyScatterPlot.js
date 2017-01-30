@@ -155,6 +155,35 @@ class WordFrequencyScatterPlot extends Component {
             </div>
           </div>
         </div>
+        <div style={{
+            width: "530px",
+            margin: 'auto',
+            display: 'flex',
+            justifyContent: 'space-around',
+            padding: '10px'
+          }}>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
+            Preposition
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_noun"></div>
+            Noun
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_adj"></div>
+            Adjective
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_verb"></div>
+            Verb
+          </div>
+          <div className="infographic--key-cell">
+            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
+            Other
+          </div>
+
+        </div>
       </div>
     );
   }
