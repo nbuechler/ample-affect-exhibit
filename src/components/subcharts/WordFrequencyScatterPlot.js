@@ -85,6 +85,7 @@ class WordFrequencyScatterPlot extends Component {
                       return +d.count;
                     })
 
+    let small_graph_height = 8*5
     return (
       <div>
         <div style={{
@@ -103,7 +104,7 @@ class WordFrequencyScatterPlot extends Component {
                 modulus={1}
                 fillColors={['none']}
                 data={naturalBinData}
-                heightPixel={'100'}
+                heightPixel={small_graph_height}
                 widthPercent={'100'}
                 graphSize={'sm'}
                 paddingPixel={'10'}
@@ -116,7 +117,7 @@ class WordFrequencyScatterPlot extends Component {
                 modulus={1}
                 fillColors={['none']}
                 data={stemmerBinData}
-                heightPixel={'100'}
+                heightPixel={small_graph_height}
                 widthPercent={'100'}
                 graphSize={'sm'}
                 paddingPixel={'10'}
@@ -129,7 +130,7 @@ class WordFrequencyScatterPlot extends Component {
                 modulus={1}
                 fillColors={['none']}
                 data={lemmaBinData}
-                heightPixel={'100'}
+                heightPixel={small_graph_height}
                 widthPercent={'100'}
                 graphSize={'sm'}
                 paddingPixel={'10'}
@@ -146,7 +147,7 @@ class WordFrequencyScatterPlot extends Component {
                   modulus={1}
                   fillColors={['none']}
                   data={allBinData}
-                  heightPixel={'408'}
+                  heightPixel={'228'}
                   widthPercent={'100'}
                   graphSize={'md'}
                   paddingPixel={'30'}

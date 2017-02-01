@@ -44,7 +44,7 @@ class NLPStatsDisplay extends Component {
             </Col>
           </Row>
           <Row>
-            <Col lg={6}>
+            <Col lg={4}>
               <div className="infographic--display_rank">
                 <div className="infographic--display_rank-sub_heading">{emotionName}</div>
                 {/*
@@ -59,8 +59,11 @@ class NLPStatsDisplay extends Component {
                 <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
             </Col>
-            <Col lg={6} style={{paddingTop: '20px'}}>
+            <Col lg={4} style={{paddingTop: '20px'}}>
               <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
+            </Col>
+            <Col lg={4} style={{}}>
+
             </Col>
           </Row>
           <br></br>
