@@ -5,7 +5,7 @@
 
 .infographic--display_rank {
   font-family: 'Orbitron', sans-serif;
-  width: 400px;
+  width: 100%;
   line-height: 35px;
   padding: 40px 0px 40px 0px;
   margin: 0 auto;
@@ -27,7 +27,7 @@
 
 .infographic--display_scores {
   font-family: 'Orbitron', sans-serif;
-  width: 400px;
+  width: 100%;
   padding: 50px;
   padding: 50px 0px 50px 0px;
   margin: 0 auto;
@@ -139,6 +139,15 @@
   padding: 10px;
   text-align: center;
   font-size: 12px;
+}
+
+.infographic--graph-wrapper {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  max-width: 510px;
 }
 
 .infographic--graphic_background {

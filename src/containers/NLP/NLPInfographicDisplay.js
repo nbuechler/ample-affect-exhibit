@@ -39,12 +39,12 @@ class NLPStatsDisplay extends Component {
         <a href="#/nlp"><Button bsStyle="success" className="pull-right">Return to emotion set</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <Row>
-            <Col lg={6}>
+            <Col sm={12} md={12} lg={6}>
               <div style={{fontSize: '10px'}}>Last updated on {lastEmotionCreationDate}.</div>
             </Col>
           </Row>
           <Row>
-            <Col lg={4}>
+            <Col sm={12} md={12} lg={3}>
               <div className="infographic--display_rank">
                 <div className="infographic--display_rank-sub_heading">{emotionName}</div>
                 {/*
@@ -59,10 +59,10 @@ class NLPStatsDisplay extends Component {
                 <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
             </Col>
-            <Col lg={4} style={{paddingTop: '20px'}}>
+            <Col sm={12} md={12} lg={6} style={{paddingTop: '20px'}}>
               <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
             </Col>
-            <Col lg={4} style={{}}>
+            <Col sm={12} md={12} lg={3} style={{}}>
 
             </Col>
           </Row>
