@@ -88,14 +88,7 @@ class WordFrequencyScatterPlot extends Component {
     let small_graph_height = 8*5
     return (
       <div>
-        <div style={{
-            width: "530px",
-            // border: "1px solid #DDD",
-            margin: 'auto',
-            display: 'flex',
-            justifyContent: 'space-around',
-            padding: '10px'
-          }}>
+        <div className="infographic--graph-wrapper">
           <div style={{width: "100px"}}>
             <BinScatterPlot
                 graphId={0}
@@ -137,8 +130,8 @@ class WordFrequencyScatterPlot extends Component {
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
           </div>
-          <div style={{width: "400px"}}>
-            <div style={{marginTop: '6px'}}>
+          <div style={{width: "450px"}}>
+            <div style={{margin: '6 10 0 10'}}>
               <BinScatterPlot
                   graphId={3}
                   title={this.props.emotionName + ' Word Count'}
@@ -150,19 +143,13 @@ class WordFrequencyScatterPlot extends Component {
                   heightPixel={'228'}
                   widthPercent={'100'}
                   graphSize={'md'}
-                  paddingPixel={'30'}
+                  paddingPixel={'50'}
                   maxYValue={maxYValue}
                   pointRadius={'12'}/>
             </div>
           </div>
         </div>
-        <div style={{
-            width: "530px",
-            margin: 'auto',
-            display: 'flex',
-            justifyContent: 'space-around',
-            padding: '10px'
-          }}>
+        <div className="infographic--graph-wrapper">
           <div className="infographic--key-cell">
             <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
             Preposition
@@ -184,14 +171,7 @@ class WordFrequencyScatterPlot extends Component {
             Other
           </div>
         </div>
-        <div className="infographic--key-text"
-             style={{
-                width: "530px",
-                margin: 'auto',
-                display: 'flex',
-                justifyContent: 'space-around',
-                padding: '10px'
-             }}>
+        <div className="infographic--key-text infographic--graph-wrapper">
           The graph depicts a frequency distribution of the words associated with {this.props.emotionName}.
           Multiple words with the same frequency are represented as a more opaque cell.
           By contrast, a single word with a frequency is represented by a transparent cell.
