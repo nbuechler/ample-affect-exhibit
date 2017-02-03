@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Table, Button, Row, Col, Panel } from 'react-bootstrap';
 
 import WordFrequencyScatterPlot from '../../components/subcharts/WordFrequencyScatterPlot'
+import WordFrequencyPieChart from '../../components/subcharts/WordFrequencyPieChart'
 
 import AffectUnprocessedRowTableGroup from '../../components/groups/AffectUnprocessedRowTableGroup'
 import AffectStemmedRowTableGroup from '../../components/groups/AffectStemmedRowTableGroup'
@@ -63,7 +64,7 @@ class NLPStatsDisplay extends Component {
               <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
             </Col>
             <Col sm={12} md={12} lg={3} style={{}}>
-
+              <WordFrequencyPieChart emotionName={emotionName}></WordFrequencyPieChart>
             </Col>
           </Row>
           <br></br>
