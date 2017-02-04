@@ -83,7 +83,7 @@ class WordFrequencyPieChart extends Component {
           return 1
           break;
         case 'JJ': //Adjectives
-          return 1
+          return 2
           break;
         case 'JJR': //Adjectives
           return 2
