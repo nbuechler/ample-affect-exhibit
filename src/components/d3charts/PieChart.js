@@ -18,26 +18,32 @@ export default class PieChart extends React.Component {
       .outerRadius(radius * 0.9);
     var color = ['#eae3db', '#c2f6ff', '#90a9dc', '#d5c5fc', '#a3b2ca'];
     return (
-      <svg style={{
-          height: props.heightPixel + 'px',
-          width: props.widthPixel + 'px'
-        }}>
-        <g transform={`translate(${props.widthPixel / 2},${props.heightPixel / 2})`}>
-          {layout.map((d, i) => {
-            return (
-              <path
-                d={arcGen(d)}
-                key={i}
-                style={{
-                  fill: color[i % 5],
-                  stroke: 'white',
-                  strokeWidth: '1px'
-                }}
-              />
-              );
-          })}
-        </g>
-      </svg>
+      <div>
+        <div className="infographic--graph-title">
+          Part-of-speech<br></br>
+          {props.title}
+        </div>
+        <svg style={{
+            height: props.heightPixel + 'px',
+            width: props.widthPixel + 'px'
+          }}>
+          <g transform={`translate(${props.widthPixel / 2},${props.heightPixel / 2})`}>
+            {layout.map((d, i) => {
+              return (
+                <path
+                  d={arcGen(d)}
+                  key={i}
+                  style={{
+                    fill: color[i % 5],
+                    stroke: 'white',
+                    strokeWidth: '1px'
+                  }}
+                />
+                );
+            })}
+          </g>
+        </svg>
+      </div>
 
     );
 

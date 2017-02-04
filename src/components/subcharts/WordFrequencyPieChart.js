@@ -58,6 +58,79 @@ class WordFrequencyPieChart extends Component {
     const lemmaBinData = prepareBinPlot('lemma');
     const allBinData = prepareBinPlotComplete(naturalBinData, stemmerBinData, lemmaBinData);
 
+    // Handle the Part-of-speech
+    function handlePOS(pos) {
+      switch (pos) {
+        case 'IN': //Preposition
+          return 0
+          break;
+        case 'RP': //Particle
+          return 0
+          break;
+        case 'PRP': //Nouns
+          return 1
+          break;
+        case 'PRP$': //Nouns
+          return 1
+          break;
+        case 'NN': //Nouns
+          return 1
+          break;
+        case 'NNP': //Nouns
+          return 1
+          break;
+        case 'NNS': //Nouns
+          return 1
+          break;
+        case 'JJ': //Adjectives
+          return 1
+          break;
+        case 'JJR': //Adjectives
+          return 2
+          break;
+        case 'JJS': //Adjectives
+          return 2
+          break;
+        case 'RB': //Adjectives
+          return 2
+          break;
+        case 'RBR': //Adjectives
+          return 2
+          break;
+        case 'RBS': //Adjectives
+          return 2
+          break;
+        case 'MD': //Verbs
+          return 3
+          break;
+        case 'VB': //Verbs
+          return 3
+          break;
+        case 'VBD': //Verbs
+          return 3
+          break;
+        case 'VBG': //Verbs
+          return 3
+          break;
+        case 'VBN': //Verbs
+          return 3
+          break;
+        case 'VBP': //Verbs
+          return 3
+          break;
+        case 'VBZ': //Verbs
+          return 3
+          break;
+        case 'CD': //Number
+          return 4
+          break;
+        case 'FW': //Foreign word
+          return 4
+          break;
+        default:
+          break;
+      }
+    }
 
     let rawData = allBinData,
         processedData = [],
@@ -91,7 +164,7 @@ class WordFrequencyPieChart extends Component {
             <div style={{margin: '0'}}>
               <PieChart
                   graphId={3}
-                  title={this.props.emotionName + ' Sliced by POS'}
+                  title={this.props.emotionName + ' - Frequency Distribution'}
                   titleSize={'20'}
                   distinctColors={false}
                   modulus={1}
