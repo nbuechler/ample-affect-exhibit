@@ -10,13 +10,13 @@ export default class PieChart extends React.Component {
 
   render () {
     var props = this.props;
-    let data = [1,2,3,4,5]
+    let data = props.data;
     var radius = Math.min(props.heightPixel, props.widthPixel) / 2;
     var layout = d3.layout.pie()(data);
     var arcGen = d3.svg.arc()
       .innerRadius(radius * 0.0)
       .outerRadius(radius * 0.9);
-    var color = ['#eae3db', '#c2f6ff', '#90a9dc', '#d5c5fc', '#a3b2ca'];
+    var color = props.fillColors;
     return (
       <div>
         <div className="infographic--graph-title">

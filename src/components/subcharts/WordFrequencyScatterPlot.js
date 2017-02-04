@@ -93,7 +93,7 @@ class WordFrequencyScatterPlot extends Component {
           <div style={{width: "100px"}}>
             <BinScatterPlot
                 graphId={0}
-                title={'Unprocessed Frequency'}
+                title={'Unprocessed Freq. Dist.'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -106,7 +106,7 @@ class WordFrequencyScatterPlot extends Component {
                 pointRadius={'3'}/>
             <BinScatterPlot
                 graphId={1}
-                title={'Stemmed Frequency'}
+                title={'Stemmed Freq. Dist.'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -119,7 +119,7 @@ class WordFrequencyScatterPlot extends Component {
                 pointRadius={'3'}/>
             <BinScatterPlot
                 graphId={2}
-                title={'Lemmatized Frequency'}
+                title={'Lemmatized Freq. Dist.'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -135,7 +135,7 @@ class WordFrequencyScatterPlot extends Component {
             <div style={{margin: '6 10 0 10'}}>
               <BinScatterPlot
                   graphId={3}
-                  title={this.props.emotionName + ' Frequency Distribution'}
+                  title={'Synonyms Frequency Distribution'}
                   titleSize={'20'}
                   distinctColors={false}
                   modulus={1}
@@ -173,6 +173,14 @@ class WordFrequencyScatterPlot extends Component {
           </div>
         </div>
         <div className="infographic--key-text infographic--graph-wrapper">
+          Each of the columns represents a particular set of synonyms. The first column
+          represents the synonyms of the {this.props.emotionName}. The second column
+          represents the synonyms of the first columns synonyms. The pattern continues.
+          'I-II Words' are words that exist in both the 'I Words' and 'II Words' groups.
+          Similarly, 'II-III Words','II-III Words', and 'I-II--III Words' are groups
+          where a word exists in n-number of groups.
+          <br></br>
+          <br></br>
           The graph depicts a frequency distribution of the words associated with {this.props.emotionName}.
           Multiple words with the same frequency are represented as a more opaque cell.
           By contrast, a single word with a frequency is represented by a transparent cell.

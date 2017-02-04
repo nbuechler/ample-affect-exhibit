@@ -59,8 +59,8 @@ class WordFrequencyPieChart extends Component {
     const allBinData = prepareBinPlotComplete(naturalBinData, stemmerBinData, lemmaBinData);
 
     // Handle the Part-of-speech
-    function handlePOS(pos) {
-      switch (pos) {
+    function handlePOS(datapoint) {
+      switch (datapoint['pos']) {
         case 'IN': //Preposition
           return 0
           break;
@@ -128,12 +128,14 @@ class WordFrequencyPieChart extends Component {
           return 4
           break;
         default:
+          return 'infinity'
           break;
       }
     }
 
     let rawData = allBinData,
         processedData = [],
+        pieData = [0, 0, 0, 0, 0],
         datapoint = {},
         counter = 0;
     for (let i of rawData) {
@@ -145,6 +147,28 @@ class WordFrequencyPieChart extends Component {
           "bin": counter,
         }
         processedData.push(datapoint)
+        let pieDataArrayPosition = handlePOS(datapoint);
+        switch (pieDataArrayPosition) {
+          case 0:
+              pieData[pieDataArrayPosition] += 1
+            break;
+          case 1:
+              pieData[pieDataArrayPosition] += 1
+            break;
+          case 2:
+              pieData[pieDataArrayPosition] += 1
+            break;
+          case 3:
+              pieData[pieDataArrayPosition] += 1
+            break;
+          case 4:
+              pieData[pieDataArrayPosition] += 1
+            break;
+          default:
+            console.log('error: ' + pieDataArrayPosition);
+            break;
+
+        }
       }
       counter++
     }
@@ -163,19 +187,11 @@ class WordFrequencyPieChart extends Component {
           <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
               <PieChart
-                  graphId={3}
-                  title={this.props.emotionName + ' - Frequency Distribution'}
-                  titleSize={'20'}
-                  distinctColors={false}
-                  modulus={1}
-                  fillColors={['none']}
-                  data={allBinData}
+                  title={'Frequency Distribution'}
+                  fillColors={['#eae3db', '#c2f6ff', '#90a9dc', '#d5c5fc', '#a3b2ca']}
+                  data={pieData}
                   heightPixel={'228'}
-                  widthPixel={'300'}
-                  graphSize={'md'}
-                  paddingPixel={'50'}
-                  maxYValue={maxYValue}
-                  pointRadius={'12'}/>
+                  widthPixel={'300'}/>
             </div>
           </div>
         </div>
