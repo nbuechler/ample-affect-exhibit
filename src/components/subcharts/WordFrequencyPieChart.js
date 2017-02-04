@@ -87,7 +87,7 @@ class WordFrequencyPieChart extends Component {
     return (
       <div>
         <div className="infographic--graph-wrapper">
-          <div style={{width: "450px"}}>
+          <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
               <PieChart
                   graphId={3}
@@ -98,7 +98,7 @@ class WordFrequencyPieChart extends Component {
                   fillColors={['none']}
                   data={allBinData}
                   heightPixel={'228'}
-                  widthPercent={'100'}
+                  widthPixel={'300'}
                   graphSize={'md'}
                   paddingPixel={'50'}
                   maxYValue={maxYValue}

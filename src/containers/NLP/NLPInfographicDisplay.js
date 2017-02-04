@@ -45,26 +45,18 @@ class NLPStatsDisplay extends Component {
             </Col>
           </Row>
           <Row>
-            <Col sm={12} md={12} lg={3}>
-              <div className="infographic--display_rank">
+            <Col sm={12} md={12} lg={4}>
+              <div className="infographic--emotion_set-title infographic--display_rank">
                 <div className="infographic--display_rank-sub_heading">{emotionName}</div>
-                {/*
-                <br></br>
-                <div className="infographic--display_rank-main_heading">3/400</div>
-                <br></br>
-                <div className="infographic--display_rank-sub_heading">in the 'All Affects' emotion set</div>
-                */}
               </div>
               <div className="infographic--display_scores infographic--display_main-area-wrapper">
                 <div className="infographic--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>
                 <div className="infographic--display_scores-sub_heading">Normalized Score</div>
               </div>
-            </Col>
-            <Col sm={12} md={12} lg={6} style={{paddingTop: '20px'}}>
-              <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
-            </Col>
-            <Col sm={12} md={12} lg={3} style={{}}>
               <WordFrequencyPieChart emotionName={emotionName}></WordFrequencyPieChart>
+            </Col>
+            <Col sm={12} md={12} lg={8} style={{paddingTop: '20px'}}>
+              <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
             </Col>
           </Row>
           <br></br>

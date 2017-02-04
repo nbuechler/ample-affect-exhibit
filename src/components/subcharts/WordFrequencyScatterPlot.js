@@ -85,14 +85,15 @@ class WordFrequencyScatterPlot extends Component {
                       return +d.count;
                     })
 
-    let small_graph_height = 8*5
+    let small_graph_height = 8*12
+    let large_graph_height = 8*50 - 4
     return (
       <div>
         <div className="infographic--graph-wrapper">
           <div style={{width: "100px"}}>
             <BinScatterPlot
                 graphId={0}
-                title={'Unprocessed Word Count'}
+                title={'Unprocessed Frequency'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -105,7 +106,7 @@ class WordFrequencyScatterPlot extends Component {
                 pointRadius={'3'}/>
             <BinScatterPlot
                 graphId={1}
-                title={'Stemmed Word Count'}
+                title={'Stemmed Frequency'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -118,7 +119,7 @@ class WordFrequencyScatterPlot extends Component {
                 pointRadius={'3'}/>
             <BinScatterPlot
                 graphId={2}
-                title={'Lemmatized Word Count'}
+                title={'Lemmatized Frequency'}
                 distinctColors={false}
                 modulus={1}
                 fillColors={['none']}
@@ -130,17 +131,17 @@ class WordFrequencyScatterPlot extends Component {
                 maxYValue={maxYValue}
                 pointRadius={'3'}/>
           </div>
-          <div style={{width: "450px"}}>
+          <div style={{width: "550px"}}>
             <div style={{margin: '6 10 0 10'}}>
               <BinScatterPlot
                   graphId={3}
-                  title={this.props.emotionName + ' Word Count'}
+                  title={this.props.emotionName + ' Frequency Distribution'}
                   titleSize={'20'}
                   distinctColors={false}
                   modulus={1}
                   fillColors={['none']}
                   data={allBinData}
-                  heightPixel={'228'}
+                  heightPixel={large_graph_height}
                   widthPercent={'100'}
                   graphSize={'md'}
                   paddingPixel={'50'}

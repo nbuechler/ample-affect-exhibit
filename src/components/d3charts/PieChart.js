@@ -11,15 +11,18 @@ export default class PieChart extends React.Component {
   render () {
     var props = this.props;
     let data = [1,2,3,4,5]
-    var radius = Math.min(200, 200) / 2;
+    var radius = Math.min(props.heightPixel, props.widthPixel) / 2;
     var layout = d3.layout.pie()(data);
     var arcGen = d3.svg.arc()
       .innerRadius(radius * 0.0)
       .outerRadius(radius * 0.9);
     var color = ['#eae3db', '#c2f6ff', '#90a9dc', '#d5c5fc', '#a3b2ca'];
     return (
-      <svg >
-        <g transform={`translate(${200 / 2},${200 / 2})`}>
+      <svg style={{
+          height: props.heightPixel + 'px',
+          width: props.widthPixel + 'px'
+        }}>
+        <g transform={`translate(${props.widthPixel / 2},${props.heightPixel / 2})`}>
           {layout.map((d, i) => {
             return (
               <path
