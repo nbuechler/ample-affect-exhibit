@@ -167,7 +167,7 @@ export default class DataSeries extends React.Component {
             dataPoint.pos = 'PRPS';
           }
           if (props.graphSize == "md") {
-            graphWidth = 400 - props.padding * 2
+            graphWidth = 542 - props.padding * 2
           }
 
           let order = 'None'
