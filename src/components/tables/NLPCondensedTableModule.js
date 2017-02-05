@@ -46,7 +46,7 @@ export default class NLPComprehensiveTableModule extends React.Component {
             </span>
           </div>
           <div>
-            <a href="#/nlp-infographic">
+            <a href="#/nlp-radiant">
               <Button
                 style={{fontSize: '12px'}}
                 bsSize="xsmall"
@@ -55,7 +55,7 @@ export default class NLPComprehensiveTableModule extends React.Component {
                 onClick={this.handleClick.bind(this, array[i])}
                 >
                 <i className="fa fa-file-image-o" aria-hidden="true"></i>
-                Infographic
+                radiant
               </Button>
             </a>
           </div>

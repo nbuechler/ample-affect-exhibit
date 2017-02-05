@@ -46,12 +46,12 @@ class NLPStatsDisplay extends Component {
           </Row>
           <Row>
             <Col sm={12} md={12} lg={4}>
-              <div className="infographic--emotion_set-title infographic--display_rank">
-                <div className="infographic--display_rank-sub_heading">{emotionName}</div>
+              <div className="radiant--emotion_set-title radiant--display_rank">
+                <div className="radiant--display_rank-sub_heading">{emotionName}</div>
               </div>
-              <div className="infographic--display_scores infographic--display_main-area-wrapper">
-                <div className="infographic--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>
-                <div className="infographic--display_scores-sub_heading">Normalized Score</div>
+              <div className="radiant--display_scores radiant--display_main-area-wrapper">
+                <div className="radiant--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>
+                <div className="radiant--display_scores-sub_heading">Normalized Score</div>
               </div>
               <WordFrequencyPieChart emotionName={emotionName}></WordFrequencyPieChart>
             </Col>
@@ -63,7 +63,7 @@ class NLPStatsDisplay extends Component {
           <br></br>
           <Row>
             <Col lg={12}>
-              <div className="infographic--emotion_set-title infographic--emotion_set-title_table">
+              <div className="radiant--emotion_set-title radiant--emotion_set-title_table">
                   <Table condensed style={{
                       fontSize: '12px',
                       marginLeft: '5%',
@@ -85,8 +85,8 @@ class NLPStatsDisplay extends Component {
                     </thead>
                   </Table>
               </div>
-              <div className="infographic--display_main-area-wrapper">
-                <div className="infographic--display_main-area">
+              <div className="radiant--display_main-area-wrapper">
+                <div className="radiant--display_main-area">
                   <Table condensed style={{
                       fontSize: '12px',
                       marginLeft: '5%',
@@ -103,7 +103,7 @@ class NLPStatsDisplay extends Component {
                   </Table>
                 </div>
               </div>
-              <div className="infographic--emotion_set-footer infographic--emotion_set-footer_table">
+              <div className="radiant--emotion_set-footer radiant--emotion_set-footer_table">
                   <Table condensed style={{
                       fontSize: '12px',
                       marginLeft: '5%',
@@ -124,12 +124,12 @@ class NLPStatsDisplay extends Component {
           <Row>
             {lastEmotionText.length > 0 &&
               <Col lg={6}>
-                <div className="infographic--emotion_set-title">
+                <div className="radiant--emotion_set-title">
                   Text used to generate this graphic
                 </div>
-                <div className="infographic--display_description-area-wrapper">
-                  <div className="infographic--display_description-area">
-                    <div className="infographic--display_description">
+                <div className="radiant--display_description-area-wrapper">
+                  <div className="radiant--display_description-area">
+                    <div className="radiant--display_description">
                     {lastEmotionText}
                     </div>
                   </div>
@@ -137,18 +137,18 @@ class NLPStatsDisplay extends Component {
               </Col>
             }
             <Col lg={6}>
-              <div className="infographic--emotion_set-title">
+              <div className="radiant--emotion_set-title">
                 Methodology
               </div>
-              <div className="infographic--display_description-area-wrapper">
-                <div className="infographic--display_description-area">
-                  <div className="infographic--display_description">
+              <div className="radiant--display_description-area-wrapper">
+                <div className="radiant--display_description-area">
+                  <div className="radiant--display_description">
                     A representation emotion is an abstract concept, but you
                     might know them simply as emotions. {emotionName} is calculated
                     and scored based on a process that separates words from a
                     selection of text into and compares them to groups.
                   </div>
-                  <div className="infographic--display_description">
+                  <div className="radiant--display_description">
                     The algorithm believes <i>'I Words'</i> are synonyms of {emotionName}
                     , the <i>'II Words'</i> are synonyms of those synonyms, and
                     the <i>'III Words'</i> are synonyms of those. The normalized score
@@ -159,13 +159,13 @@ class NLPStatsDisplay extends Component {
                     normalized score and they are combined to create the overall
                     normalized score for the representational emotion,{emotionName}.
                   </div>
-                  <div className="infographic--display_description">
+                  <div className="radiant--display_description">
                     <i>'I-II Words'</i> are words that exist in both the <i>'I Words'</i>
                      and <i>'II Words'</i> groups. Similarly, <i>'II-III Words'</i>,
                     <i>'II-III Words'</i>, and <i>'I-II--III Words'</i> are groups
                     where a word exists in n-number of groups.
                   </div>
-                  <div className="infographic--display_description">
+                  <div className="radiant--display_description">
                     A representational emotion is this algorithms cultural lens
                     of an emotion, and with sets of representational emotions,
                     the algorithm provides you something of an inference about

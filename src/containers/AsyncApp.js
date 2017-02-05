@@ -59,8 +59,8 @@ class AsyncApp extends Component {
       navOptions = (
         <Nav>
           <NavItem href="#/dashboard"><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</NavItem>
+          <NavItem href="#/nlp-radiant"><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</NavItem>
           <NavItem href="#/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavItem>
-          <NavItem href="#/nlp-infographic"><i className="fa fa-file-image-o" aria-hidden="true"></i> NLP Infographic</NavItem>
         </Nav>
       )
       loginButton = <Nav pullRight>

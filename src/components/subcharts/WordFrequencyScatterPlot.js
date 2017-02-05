@@ -89,7 +89,7 @@ class WordFrequencyScatterPlot extends Component {
     let large_graph_height = 8*50 - 4
     return (
       <div>
-        <div className="infographic--graph-wrapper">
+        <div className="radiant--graph-wrapper">
           <div style={{width: "100px"}}>
             <BinScatterPlot
                 graphId={0}
@@ -150,29 +150,29 @@ class WordFrequencyScatterPlot extends Component {
             </div>
           </div>
         </div>
-        <div className="infographic--graph-wrapper">
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
+        <div className="radiant--graph-wrapper">
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
             Preposition
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_noun"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
             Noun
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_adj"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
             Adjective
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_verb"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
             Verb
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
             Other
           </div>
         </div>
-        <div className="infographic--key-text infographic--graph-wrapper">
+        <div className="radiant--key-text radiant--graph-wrapper">
           Each of the columns represents a particular set of synonyms. The first column
           represents the synonyms of the {this.props.emotionName}. The second column
           represents the synonyms of the first columns synonyms. The pattern continues.

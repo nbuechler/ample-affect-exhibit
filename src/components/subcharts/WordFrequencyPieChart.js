@@ -187,7 +187,7 @@ class WordFrequencyPieChart extends Component {
     let small_graph_height = 8*5
     return (
       <div>
-        <div className="infographic--graph-wrapper">
+        <div className="radiant--graph-wrapper">
           <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
               <PieChart
@@ -199,29 +199,29 @@ class WordFrequencyPieChart extends Component {
             </div>
           </div>
         </div>
-        <div className="infographic--graph-wrapper">
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
+        <div className="radiant--graph-wrapper">
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
             Preposition
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_noun"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
             Noun
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_adj"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
             Adjective
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_verb"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
             Verb
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
             Other
           </div>
         </div>
-        <div className="infographic--key-text infographic--graph-wrapper">
+        <div className="radiant--key-text radiant--graph-wrapper">
         </div>
       </div>
     );

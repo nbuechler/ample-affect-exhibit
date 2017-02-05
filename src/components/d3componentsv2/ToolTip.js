@@ -19,13 +19,13 @@ export default class ToolTip extends React.Component {
               strokeWidth="1px"
               x={0} y={0} >
         </rect>
-        <text x={0} y={0} className="infographic--tooltip_text">
+        <text x={0} y={0} className="radiant--tooltip_text">
           {"X word(s)"}
         </text>
-        <text x={0} y={0} className="infographic--tooltip_text">
+        <text x={0} y={0} className="radiant--tooltip_text">
           {"found Z times"}
         </text>
-        <text x={0} y={0} className="infographic--tooltip_text">
+        <text x={0} y={0} className="radiant--tooltip_text">
           {"in Order Y"}
         </text>
       </g>

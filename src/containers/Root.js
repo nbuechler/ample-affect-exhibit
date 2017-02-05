@@ -13,7 +13,7 @@ import  Dashboard  from './Dashboard/Dashboard';
 import  Stats  from './Stats/Stats';
 import  NLPComprehensiveDisplay  from './NLP/NLPComprehensiveDisplay';
 import  NLPStatsDisplay  from './NLP/NLPStatsDisplay';
-import  NLPInfographicDisplay  from './NLP/NLPInfographicDisplay';
+import  NLPRadiantDisplay  from './NLP/NLPRadiantDisplay';
 
 const store = configureStore();
 
@@ -35,7 +35,7 @@ export default class Root extends Component {
               <Route path="/stats" component={Stats}/>
               <Route path="/nlp" component={NLPComprehensiveDisplay}/>
               <Route path="/nlp-stats" component={NLPStatsDisplay}/>
-              <Route path="/nlp-infographic" component={NLPInfographicDisplay}/>
+              <Route path="/nlp-radiant" component={NLPRadiantDisplay}/>
             </Route>
           </Router>
         }
