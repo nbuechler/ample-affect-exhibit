@@ -39,8 +39,19 @@ class NLPStatsDisplay extends Component {
       <div>
         <a href="#/nlp"><Button bsStyle="success" className="pull-right">Return to emotion set</Button></a>
         <div style={{paddingBottom: '100px'}}>
+          <h1><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</h1>
           <Row>
-            <Col sm={12} md={12} lg={6}>
+            <Col sm={12} md={12} lg={9}
+                  style={{
+                    margin: '10 0 20 0'
+                  }}>
+              A radiant is the sum of emotional aspects of information. Aspects include the part-of-speech of each word
+               in the case of natural language. This page visualizes the aspects for a more insightful discovery process
+               into the aspects of emotion. {emotionName}, the radiant shown, is visualized below.
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12} md={12} lg={9}>
               <div style={{fontSize: '10px'}}>Last updated on {lastEmotionCreationDate}.</div>
             </Col>
           </Row>
@@ -125,7 +136,7 @@ class NLPStatsDisplay extends Component {
             {lastEmotionText.length > 0 &&
               <Col lg={6}>
                 <div className="radiant--emotion_set-title">
-                  Text used to generate this graphic
+                  Text used to generate this radiant
                 </div>
                 <div className="radiant--display_description-area-wrapper">
                   <div className="radiant--display_description-area">
