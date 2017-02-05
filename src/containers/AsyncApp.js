@@ -58,12 +58,14 @@ class AsyncApp extends Component {
     if (localStorage.getItem('currentSession') == '1') {
       navOptions = (
         <Nav>
-          <NavItem href="#/dashboard"><i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard</NavItem>
+          <NavItem href="#/dashboard"><i className="fa fa-globe" aria-hidden="true"></i> Overview</NavItem>
+          <NavItem href="#/nlp"><i className="fa fa-fire" aria-hidden="true"></i> Fast Processing</NavItem>
+          <NavItem href="#/nlp"><i className="fa fa-tint" aria-hidden="true"></i> Precise Processing</NavItem>
           <NavItem href="#/nlp-radiant"><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</NavItem>
-          <NavItem href="#/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavItem>
         </Nav>
       )
       loginButton = <Nav pullRight>
+                     <NavItem href="#/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavItem>
                      <NavItem onClick={::this.handleLogout} href="#/">Sign out</NavItem>
                     </Nav>
     } else {

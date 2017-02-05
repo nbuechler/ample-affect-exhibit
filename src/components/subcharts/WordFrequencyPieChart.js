@@ -187,9 +187,16 @@ class WordFrequencyPieChart extends Component {
                       return +d.count;
                     })
 
-    let small_graph_height = 8*5
+    let totalWords = pieData.reduce((a, b) => a + b, 0);
     return (
       <div>
+        <div className="radiant--emotion_set-footer"
+             style={{
+               fontSize: '12px',
+               textAlign: 'right',
+             }}>
+          Total Words: {totalWords}
+        </div>
         <div className="radiant--graph-wrapper">
           <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
@@ -205,23 +212,23 @@ class WordFrequencyPieChart extends Component {
         <div className="radiant--graph-wrapper">
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
-            Preposition
+            Preposition ({'~' + Math.round(pieData[0] / totalWords * 100) + '%'})
           </div>
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
-            Noun
+            Noun ({'~' + Math.round(pieData[1] / totalWords * 100) + '%'})
           </div>
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
-            Adjective
+            Adjective ({'~' + Math.round(pieData[2] / totalWords * 100) + '%'})
           </div>
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
-            Verb
+            Verb ({'~' + Math.round(pieData[3] / totalWords * 100) + '%'})
           </div>
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
-            Other
+            Other ({'~' + Math.round(pieData[4] / totalWords * 100) + '%'})
           </div>
         </div>
         <div className="radiant--key-text radiant--graph-wrapper">
