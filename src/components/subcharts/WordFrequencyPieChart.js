@@ -127,6 +127,9 @@ class WordFrequencyPieChart extends Component {
         case 'FW': //Foreign word
           return 4
           break;
+        case 'DT': //Determiner word
+          return 4
+          break;
         default:
           return 'infinity'
           break;
@@ -166,6 +169,7 @@ class WordFrequencyPieChart extends Component {
             break;
           default:
             console.log('error: ' + pieDataArrayPosition);
+            console.log(datapoint);
             break;
 
         }

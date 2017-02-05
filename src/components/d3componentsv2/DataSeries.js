@@ -218,7 +218,7 @@ export default class DataSeries extends React.Component {
         ]
         let yAxisLabels = ''
         if (props.graphSize == "md") {
-          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'80'} ttRectHeight={'40'}  visibility={'hidden'}/>
+          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'100'} ttRectHeight={'40'}  visibility={'hidden'}/>
           yAxisLabels = [
             <text className="infographic--axis_label" key={'maxYValue'} y={0 - 3} x={'102%'} dy=".71em">{maxYValue}</text>,
             <text className="infographic--axis_label" key={'midYValue'} y={props.height - yScale(maxYValue/2) - 3} x={'102%'} dy=".71em">{maxYValue/2}</text>,

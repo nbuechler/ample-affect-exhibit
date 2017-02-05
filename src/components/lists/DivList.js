@@ -22,14 +22,9 @@ export default class DivList extends React.Component {
         adjColor = '#90a9dc',
         verbColor = '#d5c5fc',
         numColor = '#a3b2ca',
-        foreColor = '#a3b2ca';
+        foreColor = '#a3b2ca',
+        deteColor = '#a3b2ca';
 
-        // prepColor = 'palegoldenrod',
-        // nounColor = 'lightgreen',
-        // adjColor = 'lightblue',
-        // verbColor = 'lightcoral',
-        // numColor = 'goldenrod',
-        // foreColor = 'lightslategrey';
 
     // Handle the Part-of-speech
     function handlePOS(wordTuple) {
@@ -184,6 +179,13 @@ export default class DivList extends React.Component {
         case 'FW': //Foreign word
           return (
             <div className='affect--display_word-result' style={{color: foreColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
+        case 'DT': //Determiner word
+          return (
+            <div className='affect--display_word-result' style={{color: deteColor}}>
               {wordTuple[0] + ' (' + wordTuple[1] + ')'}
             </div>
             )
