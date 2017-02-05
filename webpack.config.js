@@ -13,7 +13,7 @@ module.exports = {
     './src/index',
     './src/css/bootstrap.css',
     './src/css/main.css',
-    './src/css/infographic.css'
+    './src/css/radiant.css'
   ],
   output: {
     path: path.join(__dirname, 'dist'),

@@ -26,7 +26,7 @@ export default class SimpleScatterPlot extends React.Component {
     }
     return (
       <div>
-        <div className="infographic--graph-title">{this.props.title}</div>
+        <div className="radiant--graph-title">{this.props.title}</div>
         <VectorGraphicWrapper graphId={this.props.graphId} svgStyle={svgStyle}>
           <DataSeries
             modulus={this.props.modulus}

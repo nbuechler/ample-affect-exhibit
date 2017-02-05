@@ -19,7 +19,7 @@ export default class PieChart extends React.Component {
     var color = props.fillColors;
     return (
       <div>
-        <div className="infographic--graph-title">
+        <div className="radiant--graph-title">
           Part-of-speech<br></br>
           {props.title}
         </div>

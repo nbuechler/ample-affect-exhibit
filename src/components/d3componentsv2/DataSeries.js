@@ -208,21 +208,21 @@ export default class DataSeries extends React.Component {
 
         let tooltip = ''
         let xAxisLabels = [
-          <text className="infographic--axis_label" key={'t_1'} y={'99%'} x={1 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I</text>,
-          <text className="infographic--axis_label" key={'t_2'} y={'99%'} x={2 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II</text>,
-          <text className="infographic--axis_label" key={'t_3'} y={'99%'} x={3 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">III</text>,
-          <text className="infographic--axis_label" key={'t_12'} y={'99%'} x={4 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II</text>,
-          <text className="infographic--axis_label" key={'t_13'} y={'99%'} x={5 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-III</text>,
-          <text className="infographic--axis_label" key={'t_23'} y={'99%'} x={6 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II-III</text>,
-          <text className="infographic--axis_label" key={'t_123'} y={'99%'} x={7 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II-III</text>,
+          <text className="radiant--axis_label" key={'t_1'} y={'99%'} x={1 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I</text>,
+          <text className="radiant--axis_label" key={'t_2'} y={'99%'} x={2 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II</text>,
+          <text className="radiant--axis_label" key={'t_3'} y={'99%'} x={3 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">III</text>,
+          <text className="radiant--axis_label" key={'t_12'} y={'99%'} x={4 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II</text>,
+          <text className="radiant--axis_label" key={'t_13'} y={'99%'} x={5 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-III</text>,
+          <text className="radiant--axis_label" key={'t_23'} y={'99%'} x={6 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">II-III</text>,
+          <text className="radiant--axis_label" key={'t_123'} y={'99%'} x={7 * xScale.rangeBand()/100 + '%'} dy=".71em" textAnchor="middle" transform="translate(-24,12)rotate(-0)">I-II-III</text>,
         ]
         let yAxisLabels = ''
         if (props.graphSize == "md") {
-          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'80'} ttRectHeight={'40'}  visibility={'hidden'}/>
+          tooltip = <ToolTip id={"tooltip-" + graphId} ttRectWidth={'100'} ttRectHeight={'40'}  visibility={'hidden'}/>
           yAxisLabels = [
-            <text className="infographic--axis_label" key={'maxYValue'} y={0 - 3} x={'102%'} dy=".71em">{maxYValue}</text>,
-            <text className="infographic--axis_label" key={'midYValue'} y={props.height - yScale(maxYValue/2) - 3} x={'102%'} dy=".71em">{maxYValue/2}</text>,
-            <text className="infographic--axis_label" key={'minYValue'} y={props.height - yScale(0) - 3} x={'102%'} dy=".71em">{0}</text>,
+            <text className="radiant--axis_label" key={'maxYValue'} y={0 - 3} x={'102%'} dy=".71em">{maxYValue}</text>,
+            <text className="radiant--axis_label" key={'midYValue'} y={props.height - yScale(maxYValue/2) - 3} x={'102%'} dy=".71em">{maxYValue/2}</text>,
+            <text className="radiant--axis_label" key={'minYValue'} y={props.height - yScale(0) - 3} x={'102%'} dy=".71em">{0}</text>,
           ]
         }
 

@@ -1,9 +1,9 @@
 
 /*
- * Infographic Display Rank
+ * radiant Display Rank
  */
 
-.infographic--display_rank {
+.radiant--display_rank {
   font-family: 'Orbitron', sans-serif;
   width: 100%;
   line-height: 35px;
@@ -12,20 +12,20 @@
   text-align: center;
 }
 
-.infographic--display_rank-main_heading {
+.radiant--display_rank-main_heading {
   font-size: 100px;
 }
 
-.infographic--display_rank-sub_heading {
+.radiant--display_rank-sub_heading {
   font-size: 20px;
 }
 
 
 /*
- * Infographic Display Scores
+ * radiant Display Scores
  */
 
-.infographic--display_scores {
+.radiant--display_scores {
   font-family: 'Orbitron', sans-serif;
   width: 100%;
   padding: 50px;
@@ -35,19 +35,19 @@
 
 }
 
-.infographic--display_scores-main_heading {
+.radiant--display_scores-main_heading {
   font-size: 40px;
 }
 
-.infographic--display_scores-sub_heading {
+.radiant--display_scores-sub_heading {
   font-size: 20px;
 }
 
 /*
- * Infographic Table Display
+ * radiant Table Display
  */
 
- .infographic--emotion_set-title {
+ .radiant--emotion_set-title {
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
    background: -moz-linear-gradient(bottom,  rgba(19,19,19,.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */
    background: -webkit-linear-gradient(bottom,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -60,26 +60,26 @@
    height: 60px;
  }
 
- .infographic--emotion_set-title_table {
+ .radiant--emotion_set-title_table {
    font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
    padding-right: 50px;
  }
 
- .infographic--display_main-area {
+ .radiant--display_main-area {
    overflow-y: scroll;
    max-height: 30vh;
    padding: 10px;
    padding-right: 30px;
 }
 
-.infographic--display_description-area {
+.radiant--display_description-area {
    overflow-y: scroll;
    height: 30vh;
    padding: 10px;
    padding-right: 30px;
 }
 
-.infographic--emotion_set-footer {
+.radiant--emotion_set-footer {
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
    background: -moz-linear-gradient(top,  rgba(19,19,19,.8) 0%, rgba(19,19,19,0.2) 100%); /* FF3.6-15 */
    background: -webkit-linear-gradient(top,  rgba(19,19,19,.8) 0%,rgba(19,19,19,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -91,57 +91,57 @@
    padding: 18px;
 }
 
-.infographic--emotion_set-footer_table {
+.radiant--emotion_set-footer_table {
    font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
    height: 100px;
    padding-right: 50px;
 }
 
-.infographic--display_description {
+.radiant--display_description {
   font-size: 12px;
   margin: 10px;
 }
 
 
 /*
- * Infographic Graphs
+ * radiant Graphs
  */
 
-.infographic--key-cell, .infographic--key-text {
+.radiant--key-cell, .radiant--key-text {
   display: inline-flex;
   font-size: 10px;
 }
 
-.infographic--key-cell_color-swatch {
+.radiant--key-cell_color-swatch {
   height: 14px;
   width: 14px;
   margin-right: 4px;
   border: .5px solid white;
 }
 
-.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_prep {
+.radiant--key-cell_color-swatch.radiant--key-cell_color-swatch_prep {
   background: #eae3db
 }
-.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_noun {
+.radiant--key-cell_color-swatch.radiant--key-cell_color-swatch_noun {
   background: #c2f6ff
 }
-.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_adj {
+.radiant--key-cell_color-swatch.radiant--key-cell_color-swatch_adj {
   background: #90a9dc
 }
-.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_verb {
+.radiant--key-cell_color-swatch.radiant--key-cell_color-swatch_verb {
   background: #d5c5fc
 }
-.infographic--key-cell_color-swatch.infographic--key-cell_color-swatch_other {
+.radiant--key-cell_color-swatch.radiant--key-cell_color-swatch_other {
   background: #a3b2ca
 }
 
-.infographic--graph-title {
+.radiant--graph-title {
   padding: 10px;
   text-align: center;
   font-size: 12px;
 }
 
-.infographic--graph-wrapper {
+.radiant--graph-wrapper {
   width: 100%;
   margin: auto;
   display: flex;
@@ -150,7 +150,7 @@
   max-width: 670px;
 }
 
-.infographic--graphic_background {
+.radiant--graphic_background {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
   background: -moz-linear-gradient(top,  rgba(19,19,19,0.4) 0%, rgba(256,256,256,0.1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(19,19,19,0.4) 0%,rgba(256,256,256,0.1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -159,7 +159,7 @@
   border-bottom: 1px solid white;
 }
 
-.infographic--graphic_background.active {
+.radiant--graphic_background.active {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,131313+100&0.8+0,0.2+100 */
   background: -moz-linear-gradient(top,  rgba(19,19,19,0.7) 0%, rgba(256,256,256,0.0) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top,  rgba(19,19,19,0.7) 0%,rgba(256,256,256,0.0) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -168,7 +168,7 @@
   border-bottom: 1px solid white;
 }
 
-.infographic--axis_label {
+.radiant--axis_label {
   fill: white;
   font-size: 10px;
 }
@@ -177,7 +177,7 @@
  * Toolfip
  */
 
-.infographic--tooltip_text {
+.radiant--tooltip_text {
   fill: white;
   font-size: 10px;
 }
@@ -195,11 +195,15 @@ rect.active {
   fill: #eae3db;
 }
 
+.IN-pos-point {
+  fill: #eae3db;
+}
+
 .RP-pos-point {
   fill: #eae3db;
 }
-.PRP-pos-point {
 
+.PRP-pos-point {
   fill: #c2f6ff;
 }
 .PRPS-pos-point {
@@ -219,7 +223,7 @@ rect.active {
 }
 
 .JJ-pos-point {
-  fill: #c2f6ff;
+  fill: #90a9dc;
 }
 
 .JJR-pos-point {
@@ -275,5 +279,9 @@ rect.active {
 }
 
 .FW-pos-point {
+  fill: #a3b2ca;
+}
+
+.DT-pos-point {
   fill: #a3b2ca;
 }

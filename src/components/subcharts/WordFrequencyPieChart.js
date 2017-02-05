@@ -64,6 +64,9 @@ class WordFrequencyPieChart extends Component {
         case 'IN': //Preposition
           return 0
           break;
+        case 'CC': //Preposition
+          return 0
+          break;
         case 'RP': //Particle
           return 0
           break;
@@ -83,7 +86,7 @@ class WordFrequencyPieChart extends Component {
           return 1
           break;
         case 'JJ': //Adjectives
-          return 1
+          return 2
           break;
         case 'JJR': //Adjectives
           return 2
@@ -127,6 +130,9 @@ class WordFrequencyPieChart extends Component {
         case 'FW': //Foreign word
           return 4
           break;
+        case 'DT': //Determiner word
+          return 4
+          break;
         default:
           return 'infinity'
           break;
@@ -166,6 +172,7 @@ class WordFrequencyPieChart extends Component {
             break;
           default:
             console.log('error: ' + pieDataArrayPosition);
+            console.log(datapoint);
             break;
 
         }
@@ -180,10 +187,17 @@ class WordFrequencyPieChart extends Component {
                       return +d.count;
                     })
 
-    let small_graph_height = 8*5
+    let totalWords = pieData.reduce((a, b) => a + b, 0);
     return (
       <div>
-        <div className="infographic--graph-wrapper">
+        <div className="radiant--emotion_set-footer"
+             style={{
+               fontSize: '12px',
+               textAlign: 'right',
+             }}>
+          Total Words: {totalWords}
+        </div>
+        <div className="radiant--graph-wrapper">
           <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
               <PieChart
@@ -195,29 +209,29 @@ class WordFrequencyPieChart extends Component {
             </div>
           </div>
         </div>
-        <div className="infographic--graph-wrapper">
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch here infographic--key-cell_color-swatch_prep"></div>
-            Preposition
+        <div className="radiant--graph-wrapper">
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
+            Preposition ({'~' + Math.round(pieData[0] / totalWords * 100) + '%'})
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_noun"></div>
-            Noun
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
+            Noun ({'~' + Math.round(pieData[1] / totalWords * 100) + '%'})
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_adj"></div>
-            Adjective
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
+            Adjective ({'~' + Math.round(pieData[2] / totalWords * 100) + '%'})
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_verb"></div>
-            Verb
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
+            Verb ({'~' + Math.round(pieData[3] / totalWords * 100) + '%'})
           </div>
-          <div className="infographic--key-cell">
-            <div className="infographic--key-cell_color-swatch infographic--key-cell_color-swatch_other"></div>
-            Other
+          <div className="radiant--key-cell">
+            <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
+            Other ({'~' + Math.round(pieData[4] / totalWords * 100) + '%'})
           </div>
         </div>
-        <div className="infographic--key-text infographic--graph-wrapper">
+        <div className="radiant--key-text radiant--graph-wrapper">
         </div>
       </div>
     );

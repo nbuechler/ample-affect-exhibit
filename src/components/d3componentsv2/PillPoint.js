@@ -26,7 +26,7 @@ export default class PillPoint extends React.Component {
       // console.log(graphWidth, x);
 
       // Logic to position tooltip rect
-      document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100 - 13
+      document.getElementById("tooltip-" + d.graphId).children[0]['x'].baseVal.value = graphWidth * x/100 - 23
       document.getElementById("tooltip-" + d.graphId).children[0]['y'].baseVal.value = y + 17
       // Logic to position tooltip texts, and to change the text
       document.getElementById("tooltip-" + d.graphId).children[1]['x'].baseVal[0].valueAsString = graphWidth * x/100 - 8
@@ -44,7 +44,7 @@ export default class PillPoint extends React.Component {
       document.getElementById("tooltip-" + d.graphId).style.visibility = ""
     }
       // Show Tooltip and 'dim' graph background
-      document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal += " active"
+      document.getElementById("radiant--graphic_background-" + d.graphId).className.baseVal += " active"
   }
 
   _handleOut(d) {
@@ -55,13 +55,13 @@ export default class PillPoint extends React.Component {
       document.getElementById("tooltip-" + d.graphId).style.visibility = "hidden"
     }
 
-      document.getElementById("infographic--graphic_background-" + d.graphId).className.baseVal = "infographic--graphic_background"
+      document.getElementById("radiant--graphic_background-" + d.graphId).className.baseVal = "radiant--graphic_background"
   }
 
   render () {
     return (
       <rect
-        className={"infographic--pill_point " + this.props.className + " " + this.state.success.toString()}
+        className={"radiant--pill_point " + this.props.className + " " + this.state.success.toString()}
         rx="5px"
         ry="5px"
         width={this.props.rw}
