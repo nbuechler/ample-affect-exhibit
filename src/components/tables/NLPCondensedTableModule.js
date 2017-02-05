@@ -54,8 +54,8 @@ export default class NLPComprehensiveTableModule extends React.Component {
                 className=""
                 onClick={this.handleClick.bind(this, array[i])}
                 >
-                <i className="fa fa-file-image-o" aria-hidden="true"></i>
-                radiant
+                <i className="fa fa-bolt" aria-hidden="true"></i>
+                Radiant
               </Button>
             </a>
           </div>

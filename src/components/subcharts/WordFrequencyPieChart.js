@@ -64,6 +64,9 @@ class WordFrequencyPieChart extends Component {
         case 'IN': //Preposition
           return 0
           break;
+        case 'CC': //Preposition
+          return 0
+          break;
         case 'RP': //Particle
           return 0
           break;

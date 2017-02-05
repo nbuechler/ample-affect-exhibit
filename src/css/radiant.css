@@ -195,11 +195,15 @@ rect.active {
   fill: #eae3db;
 }
 
+.IN-pos-point {
+  fill: #eae3db;
+}
+
 .RP-pos-point {
   fill: #eae3db;
 }
-.PRP-pos-point {
 
+.PRP-pos-point {
   fill: #c2f6ff;
 }
 .PRPS-pos-point {

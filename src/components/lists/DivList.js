@@ -36,6 +36,13 @@ export default class DivList extends React.Component {
             </div>
             )
           break;
+        case 'CC': //Preposition
+          return (
+            <div className='affect--display_word-result' style={{color: prepColor}}>
+              {wordTuple[0] + ' (' + wordTuple[1] + ')'}
+            </div>
+            )
+          break;
         case 'RP': //Particle
           return (
             <div className='affect--display_word-result' style={{color: prepColor}}>
