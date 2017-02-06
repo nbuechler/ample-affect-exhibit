@@ -185,11 +185,36 @@ export default class NLPDetailFreqDistTableModule extends React.Component {
           }}>
           <thead>
             <tr>
-              <th className="radiant--key-cell_heading">Preposition</th>
-              <th className="radiant--key-cell_heading">Noun</th>
-              <th className="radiant--key-cell_heading">Adjective</th>
-              <th className="radiant--key-cell_heading">Verb</th>
-              <th className="radiant--key-cell_heading">Other</th>
+              <th>
+                <div className="radiant--key-cell_heading">
+                  <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
+                  Preposition ({posData[0]})
+                </div>
+              </th>
+              <th>
+                <div className="radiant--key-cell_heading">
+                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
+                  Noun ({posData[1]})
+                </div>
+              </th>
+              <th>
+                <div className="radiant--key-cell_heading">
+                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
+                  Adjective ({posData[2]})
+                </div>
+              </th>
+              <th>
+                <div className="radiant--key-cell_heading">
+                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
+                  Verb ({posData[3]})
+                </div>
+              </th>
+              <th>
+                <div className="radiant--key-cell_heading">
+                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
+                  Other ({posData[4]})
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
