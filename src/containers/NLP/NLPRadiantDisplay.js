@@ -13,6 +13,8 @@ import AffectLemmatizedRowTableGroup from '../../components/groups/AffectLemmati
 import AffectCorpusLengthRowTableGroup from '../../components/groups/AffectCorpusLengthRowTableGroup'
 import AffectNormalizedScoreRowTableGroup from '../../components/groups/AffectNormalizedScoreRowTableGroup'
 
+import NLPDetailFreqDistTableModule from '../../components/tables/NLPDetailFreqDistTableModule'
+
 class NLPStatsDisplay extends Component {
   constructor(props) {
     super(props);
@@ -68,6 +70,7 @@ class NLPStatsDisplay extends Component {
             </Col>
             <Col sm={12} md={12} lg={8} style={{paddingTop: '20px'}}>
               <WordFrequencyScatterPlot emotionName={emotionName}></WordFrequencyScatterPlot>
+              <NLPDetailFreqDistTableModule></NLPDetailFreqDistTableModule>
             </Col>
           </Row>
           <br></br>

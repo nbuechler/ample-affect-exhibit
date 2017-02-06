@@ -150,6 +150,7 @@ class WordFrequencyScatterPlot extends Component {
             </div>
           </div>
         </div>
+        {/*
         <div className="radiant--graph-wrapper">
           <div className="radiant--key-cell">
             <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
@@ -172,6 +173,7 @@ class WordFrequencyScatterPlot extends Component {
             Other
           </div>
         </div>
+        */}
         <div className="radiant--key-text radiant--graph-wrapper">
           Each of the columns represents a particular set of synonyms. The first column
           represents the synonyms of the {this.props.emotionName}. The second column
