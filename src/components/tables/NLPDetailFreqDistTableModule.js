@@ -162,52 +162,65 @@ export default class NLPDetailFreqDistTableModule extends React.Component {
     let totalWords = posData.reduce((a, b) => a + b, 0);
 
     return (
-      <div className="radiant--graph-wrapper">
-        <Table condensed key={'table'} style={{
-            fontSize: '12px',
-            textAlign: 'left',
-            width: '100%',
-            tableLayout: 'fixed',
-            padding: '10px',
-          }}>
-          <thead>
-            <tr>
-              <th className="radiant--key-cell_heading-wrapper">
-                <div className="radiant--key-cell_heading">
-                  <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
-                  Preposition ({posData[0]})
-                </div>
-              </th>
-              <th className="radiant--key-cell_heading-wrapper">
-                <div className="radiant--key-cell_heading">
-                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
-                  Noun ({posData[1]})
-                </div>
-              </th>
-              <th className="radiant--key-cell_heading-wrapper">
-                <div className="radiant--key-cell_heading">
-                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
-                  Adjective ({posData[2]})
-                </div>
-              </th>
-              <th className="radiant--key-cell_heading-wrapper">
-                <div className="radiant--key-cell_heading">
-                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
-                  Verb ({posData[3]})
-                </div>
-              </th>
-              <th className="radiant--key-cell_heading-wrapper">
-                <div className="radiant--key-cell_heading">
-                  <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
-                  Other ({posData[4]})
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <POSCountDivList posExtendedData={posExtendedData}></POSCountDivList>
-          </tbody>
-        </Table>
+      <div>
+        <div className="radiant--graph-title">
+          Part-of-speech Frequency Distribution (count)
+        </div>
+        <div className="radiant--graph-wrapper">
+          <Table condensed key={'table'} style={{
+              fontSize: '12px',
+              textAlign: 'left',
+              width: '100%',
+              tableLayout: 'fixed',
+              padding: '10px',
+            }}>
+            <thead>
+              <tr>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
+                    Preposition ({posData[0]})
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
+                    Noun ({posData[1]})
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
+                    Adjective ({posData[2]})
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
+                    Verb ({posData[3]})
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
+                    Other ({posData[4]})
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <POSCountDivList posExtendedData={posExtendedData}></POSCountDivList>
+            </tbody>
+          </Table>
+        </div>
+        <div className=""
+             style={{
+               textAlign: 'right',
+               fontSize: '10px',
+             }}>
+          Each double or triple group of letters represents a part-of-speech as denoted by
+          <a style={{marginLeft: '3px'}} href="http://www.nltk.org/">NLTK</a>
+        </div>
       </div>
     );
 
