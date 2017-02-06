@@ -112,6 +112,11 @@
   font-size: 10px;
 }
 
+.radiant--key-cell_heading {
+  text-align: center;
+  font-size: 10px;
+}
+
 .radiant--key-cell_color-swatch {
   height: 14px;
   width: 14px;
