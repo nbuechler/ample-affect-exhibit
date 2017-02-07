@@ -15,6 +15,8 @@ import AffectNormalizedScoreRowTableGroup from '../../components/groups/AffectNo
 
 import NLPDetailFreqDistTableModule from '../../components/tables/NLPDetailFreqDistTableModule'
 
+import NLPNLTKPOSTable from '../../components/tables/NLPNLTKPOSTable'
+
 class NLPStatsDisplay extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +41,15 @@ class NLPStatsDisplay extends Component {
 
     return (
       <div>
+        <div className="transparent--module transparent--module_alt-01 transparent--module_module-3">
+          <div className="transparent--module_module-content">
+            <NLPNLTKPOSTable/>
+          </div>
+          <div className="transparent--module_module-icon">
+            <i className="fa fa-2x fa-key" aria-hidden="true"></i>
+          </div>
+        </div>
+
         <a href="#/nlp"><Button bsStyle="success" className="pull-right">Return to emotion set</Button></a>
         <div style={{paddingBottom: '100px'}}>
           <h1><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</h1>
@@ -65,6 +76,11 @@ class NLPStatsDisplay extends Component {
               <div className="radiant--display_scores radiant--display_main-area-wrapper">
                 <div className="radiant--display_scores-main_heading">{emotion.normalized_r_score.toFixed(4)}</div>
                 <div className="radiant--display_scores-sub_heading">Normalized Score</div>
+                {/*
+                <br></br>
+                <div className="radiant--display_scores-sub_heading">Originally Gernerated from *Everyday Categories*</div>
+                <div className="radiant--display_scores-main_heading">3/12</div>
+                */}
               </div>
               <WordFrequencyPieChart emotionName={emotionName}></WordFrequencyPieChart>
             </Col>
