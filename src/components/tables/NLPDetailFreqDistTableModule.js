@@ -164,7 +164,7 @@ export default class NLPDetailFreqDistTableModule extends React.Component {
     return (
       <div>
         <div className="radiant--graph-title">
-          Part-of-speech Frequency Distribution (count)
+          Part-of-speech Word Distribution (count)
         </div>
         <div className="radiant--graph-wrapper">
           <Table condensed key={'table'} style={{

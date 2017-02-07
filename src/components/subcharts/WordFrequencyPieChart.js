@@ -201,7 +201,7 @@ class WordFrequencyPieChart extends Component {
           <div style={{width: "300px"}}>
             <div style={{margin: '0'}}>
               <PieChart
-                  title={'Frequency Distribution (percent)'}
+                  title={'Word Distribution (percent)'}
                   fillColors={['#eae3db', '#c2f6ff', '#90a9dc', '#d5c5fc', '#a3b2ca']}
                   data={pieData}
                   heightPixel={'228'}

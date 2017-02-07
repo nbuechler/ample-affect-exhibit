@@ -203,6 +203,11 @@ i.fa {
   left: 15px;
 }
 
+.transparent--module_module-3 {
+  top: 80px;
+  right: 15px;
+}
+
 .transparent--module_form--nlp:hover {
   -webkit-transition: height .5s, width .5s, opacity .5s;
   transition: height .5s, width .5s, opacity .5s;
@@ -216,6 +221,14 @@ i.fa {
   transition: height .5s, width .5s, opacity .5s;
   height: 500px;
   width: 250px;
+  z-index: 1000;
+}
+
+.transparent--module_module-3:hover {
+  -webkit-transition: height .5s, width .5s, opacity .5s;
+  transition: height .5s, width .5s, opacity .5s;
+  height: 350px;
+  width: 700px;
   z-index: 1000;
 }
 
