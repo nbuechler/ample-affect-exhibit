@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import DivListGroup from '../groups/DivListGroup'
+import POSLegendDivList from '../lists/POSLegendDivList'
 
 import { Table, Alert } from 'react-bootstrap';
 
@@ -15,7 +15,64 @@ class NLPNLTKPOSTable extends Component {
 
     return (
       <div>
-          Hello
+        <div className="radiant--graph-title">
+          Part-of-speech Legend
+        </div>
+        <div className="radiant--graph-wrapper">
+          <Table condensed key={'table'} style={{
+              fontSize: '12px',
+              textAlign: 'left',
+              width: '100%',
+              tableLayout: 'fixed',
+              padding: '10px',
+            }}>
+            <thead>
+              <tr>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch here radiant--key-cell_color-swatch_prep"></div>
+                    Preposition
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_noun"></div>
+                    Noun
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_adj"></div>
+                    Adjective
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_verb"></div>
+                    Verb
+                  </div>
+                </th>
+                <th className="radiant--key-cell_heading-wrapper">
+                  <div className="radiant--key-cell_heading">
+                    <div className="radiant--key-cell_color-swatch radiant--key-cell_color-swatch_other"></div>
+                    Other
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <POSLegendDivList/>
+            </tbody>
+          </Table>
+        </div>
+        <div className=""
+             style={{
+               textAlign: 'right',
+               fontSize: '10px',
+             }}>
+          Each double or triple group of letters represents a part-of-speech as denoted by
+          <a style={{marginLeft: '3px'}} href="http://www.nltk.org/">NLTK</a>
+        </div>
       </div>
     );
   }
