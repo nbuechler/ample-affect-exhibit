@@ -31,8 +31,8 @@ class Dashboard extends Component {
                   For when you need your results right now.
                 </div>
                 <div style={{textAlign: 'right'}}>
-                  <Button style={{width: '200px'}} bsSize="small" href="#/nlp">
-                    <i className="fa fa-fire" aria-hidden="true"></i> Fast Processing
+                  <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                    <i className="oull-left fa fa-fire" aria-hidden="true"></i> Fast Processing
                   </Button>
                 </div>
                 <hr></hr>
@@ -40,8 +40,8 @@ class Dashboard extends Component {
                   For detailed results, that are the most precise.
                 </div>
                 <div style={{textAlign: 'right'}}>
-                  <Button style={{width: '200px'}} bsSize="small" href="#/nlp">
-                    <i className="fa fa fa-tint" aria-hidden="true"></i> Precise Processing
+                  <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                    <i className="oull-left fa fa-tint" aria-hidden="true"></i> Precise Processing
                   </Button>
                 </div>
               </Panel>
