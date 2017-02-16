@@ -102,7 +102,7 @@ export function nlpSubmit(data) {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(json => dispatch(receiveData('nlp', json)))
+    .then(json => dispatch(receiveData('nlp', json.data)))
     .catch(err => console.log(err));
 
   }
