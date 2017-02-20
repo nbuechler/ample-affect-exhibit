@@ -87,9 +87,8 @@ export function nlpSubmit(data) {
 
     let ip = window.location.hostname;
 
-    // TODO: Change 'emotion_ml' to a paramater that is extacted from the data!
     // let url = `http://` + ip + `:5000/helpers/analyze_emotion_set/` + data.emotion_set +`/`
-    let url = `http://` + ip + `:3000/analyzeEmotionSet/` // + data.emotion_set +`/`
+    let url = `http://` + ip + `:3000/analyzeEmotionSet/`
 
     fetch(url, {
       // credentials: 'include', //pass cookies, for authentication
