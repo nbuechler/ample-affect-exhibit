@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { Table, Button, Panel, Row, Col } from 'react-bootstrap';
 
+import NLPCardList from '../../components/lists/NLPCardList';
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -18,11 +20,7 @@ class Dashboard extends Component {
         <br></br>
         <Row>
           <Col lg={9}>
-            <div>
-              <Panel header={'Most recent processes'}>
-                Your most recent processes are shown here. Right now you don't have any! Why not run one?
-              </Panel>
-            </div>
+            <NLPCardList/>
           </Col>
           <Col lg={3}>
             <div>
