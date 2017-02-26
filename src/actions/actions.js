@@ -16,6 +16,9 @@ function receiveData(dataset, json) {
   if (dataset == 'nlp-stats') {
     data = json.statistics
   }
+  if (dataset == 'nlp-analyses') {
+    data = json.data
+  }
   else if (dataset !== 'nlp') {
     data = json.all
   }
@@ -52,6 +55,10 @@ function fetchData(dataset, port) {
 
     if (dataset == 'nlp-stats') {
       return fetch(`http://` + ip + `:` + port + `/helpers/stats/0/truncated/1`)
+        .then(req => req.json())
+        .then(json => dispatch(receiveData(dataset, json)));
+    } else if (dataset == 'nlp-analyses') {
+      return fetch(`http://` + ip + `:` + `3000/retrieveAllRunAnalyses`)
         .then(req => req.json())
         .then(json => dispatch(receiveData(dataset, json)));
     } else {
