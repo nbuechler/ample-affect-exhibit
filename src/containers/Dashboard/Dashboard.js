@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { Table, Button, Panel, Row, Col } from 'react-bootstrap';
 
-import NLPCardList from '../../components/lists/NLPCardList';
+import NLPDashboardList from '../../components/lists/NLPDashboardList';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -16,11 +16,11 @@ class Dashboard extends Component {
     return (
       <div>
         <h1><i className="fa fa-globe" aria-hidden="true"></i> Overview</h1>
-        <p>View linguitic processes from prior analyses below:</p>
+        <p>View linguistic processes from prior analyses below:</p>
         <br></br>
         <Row>
           <Col lg={9}>
-            <NLPCardList/>
+            <NLPDashboardList/>
           </Col>
           <Col lg={3}>
             <div>
@@ -30,7 +30,7 @@ class Dashboard extends Component {
                 </div>
                 <div style={{textAlign: 'right'}}>
                   <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
-                    <i className="oull-left fa fa-fire" aria-hidden="true"></i> Fast Processing
+                    <i className="fa fa-fire" aria-hidden="true"></i> Fast Processing
                   </Button>
                 </div>
                 <hr></hr>
@@ -39,7 +39,7 @@ class Dashboard extends Component {
                 </div>
                 <div style={{textAlign: 'right'}}>
                   <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
-                    <i className="oull-left fa fa-tint" aria-hidden="true"></i> Precise Processing
+                    <i className="fa fa-tint" aria-hidden="true"></i> Precise Processing
                   </Button>
                 </div>
               </Panel>
