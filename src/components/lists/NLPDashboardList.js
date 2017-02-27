@@ -2,12 +2,13 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 import DivListGroup from '../groups/DivListGroup'
+import NLPListItem from '../listitems/NLPListItem'
 
-import { Table, Alert, Panel } from 'react-bootstrap';
+import { Table, Alert, Panel, ListGroup } from 'react-bootstrap';
 
 import { selectActivityDataset, fetchDataIfNeeded } from '../../actions/actions';
 
-class NLPCardList extends Component {
+class NLPDashboardList extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,17 +22,38 @@ class NLPCardList extends Component {
   render () {
     const { data, isFetching, lastUpdated } = this.props;
 
+    let nlplistitems = [];
+    if (this.props.data.length > 0) {
+      let data = this.props.data;
+      for (var i = 0; i < data.length; i++) {
+        nlplistitems.push(
+          <NLPListItem key={'card-' + i} data={data[i]} />
+        )
+      }
+
+    }
+
     return (
       <div>
         <Panel header={'Most recent processes'}>
-          Your most recent processes are shown here. Right now you don't have any! Why not run one?
+          {isFetching && data.length === 0 &&
+            <Alert bsStyle="success">Loading...</Alert>
+          }
+          {!isFetching && data.length === 0 &&
+            <Alert bsStyle="success">Your most recent processes are shown here. Right now you don't have any! Why not run one?</Alert>
+          }
+          {data.length > 0 &&
+            <ListGroup>
+              {nlplistitems}
+            </ListGroup>
+          }
         </Panel>
       </div>
     );
   }
 }
 
-NLPCardList.propTypes = {
+NLPDashboardList.propTypes = {
   data: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
@@ -56,4 +78,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(NLPCardList);
+export default connect(mapStateToProps)(NLPDashboardList);
