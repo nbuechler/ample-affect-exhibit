@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, Col, ListGroupItem, Button, Well } from 'react-bootstrap';
+import { Alert, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
 
 export default class NLPListItem extends React.Component {
   constructor (props) {
@@ -9,6 +9,11 @@ export default class NLPListItem extends React.Component {
 
   render () {
     let data = this.props.data
+
+    let array = this.props.data.emotion_set.sort(function(a,b) {
+                    return b.normalized_r_score - a.normalized_r_score;
+                });
+
     return (
       <ListGroupItem>
         <div style={{fontSize: "12px"}}>
@@ -16,6 +21,62 @@ export default class NLPListItem extends React.Component {
             <div>
               Emotion Set: {data.name}
             </div>
+            <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} condensed>
+              <tbody>
+                <tr>
+                  <td>
+                    <div className="affect--display_name">
+                        {array[0].emotion}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_rank">
+                        1
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_scores">
+                        {array[0].normalized_r_score.toFixed(4)}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="affect--display_name">
+                        {array[1].emotion}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_rank">
+                        2
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_scores">
+                        {array[1].normalized_r_score.toFixed(4)}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div className="affect--display_name">
+                        {array[2].emotion}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_rank">
+                        3
+                    </div>
+                  </td>
+                  <td>
+                    <div className="affect--display_scores">
+                        {array[2].normalized_r_score.toFixed(4)}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+
           </div>
           <div className="pull-right">
             <div>
