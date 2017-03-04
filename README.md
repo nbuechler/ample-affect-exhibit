@@ -1,5 +1,5 @@
 # ample-affect-exhibit
-A user interface to show data that is created from affects
+A user interface, comprising data visualizations and analytics, to show data that is created from affects
 
 # About the project
 #### Affect
