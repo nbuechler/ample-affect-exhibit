@@ -35,7 +35,10 @@ class NLPDashboardList extends Component {
 
     return (
       <div>
-        <Panel header={'Most recent processes'}>
+        <div className="dashboard--emotion_set-title">
+          Most recent processes
+        </div>
+        <div className="dashboard--display_main-area-wrapper">
           {isFetching && data.length === 0 &&
             <Alert bsStyle="success">Loading...</Alert>
           }
@@ -47,7 +50,10 @@ class NLPDashboardList extends Component {
               {nlplistitems}
             </ListGroup>
           }
-        </Panel>
+        </div>
+        <div className="dashboard--emotion_set-footer" style={{fontSize: "12px", textAlign: "right"}}>
+          Currently showing five processes
+        </div>
       </div>
     );
   }

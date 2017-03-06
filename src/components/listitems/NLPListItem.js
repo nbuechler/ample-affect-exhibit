@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Alert, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
+import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
 
 import NLPMinRankTable from '../tables/NLPMinRankTable';
 
@@ -42,37 +42,51 @@ export default class NLPListItem extends React.Component {
     return (
       <ListGroupItem>
         <div style={{fontSize: "12px"}}>
-          <div className="pull-left">
-            <div style={{display: "inline-flex"}}>
-              <div style={{margin: "4px 4px 4px 0px"}}>
-              Emotion Set:
+          <Row>
+            <Col md={6} lg={6}>
+              <div className="pull-left">
+                <div style={{display: "inline-flex"}}>
+                  <div style={{margin: "4px 4px 4px 0px"}}>
+                    Emotion Set:
+                  </div>
+                  <div className="affect--display_corpus-set_name">
+                    {titleCase(data.name)}
+                  </div>
+                </div>
               </div>
-              <div className="affect--display_corpus-set_name">
-                {titleCase(data.name)}
+            </Col>
+            <Col md={6} lg={6}>
+              <div className="pull-right">
+                <div>
+                  Date: {data.date[0]}
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="pull-right">
-            <div>
-              Date: {data.date[0]}
-            </div>
-          </div>
-          <br></br>
-          <br></br>
-          <div>
-            <div style={{fontWeight: "900"}}>Document</div>
-            <Alert>
-              {data.doc}
-            </Alert>
-          </div>
-        </div>
-        <div>
-          <NLPMinRankTable data={array}/>
-        </div>
-        <div style={{textAlign: "right"}}>
-          <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
-            <i className="fa fa-leaf" aria-hidden="true"></i> See results
-          </Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={3} lg={3}>
+              <div className="opaque--module opaque--module_alt-01">
+                <NLPMinRankTable data={array}/>
+              </div>
+            </Col>
+            <Col md={9} lg={9}>
+              <div style={{fontWeight: "900"}}>Document</div>
+              <div>
+                <Alert>
+                  {data.doc}
+                </Alert>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} lg={12}>
+              <div style={{textAlign: "right"}}>
+                <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                  <i className="fa fa-leaf" aria-hidden="true"></i> See results
+                </Button>
+              </div>
+            </Col>
+          </Row>
         </div>
       </ListGroupItem>
     );
