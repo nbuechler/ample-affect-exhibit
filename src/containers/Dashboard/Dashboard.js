@@ -19,9 +19,11 @@ class Dashboard extends Component {
         <p>View linguistic processes from prior analyses below:</p>
         <br></br>
         <Row>
-          <Col lg={9}>
+          <Col lg={12}>
             <NLPDashboardList/>
           </Col>
+          {/*
+            TODO: Make this a transparent module
           <Col lg={3}>
             <div>
               <Panel header={'Begin a new process'}>
@@ -45,6 +47,7 @@ class Dashboard extends Component {
               </Panel>
             </div>
           </Col>
+          */}
         </Row>
       </div>
     );

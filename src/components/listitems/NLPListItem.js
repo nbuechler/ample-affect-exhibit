@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Alert, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
+import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
+
+import NLPMinRankTable from '../tables/NLPMinRankTable';
 
 export default class NLPListItem extends React.Component {
   constructor (props) {
@@ -14,88 +16,77 @@ export default class NLPListItem extends React.Component {
                     return b.normalized_r_score - a.normalized_r_score;
                 });
 
+    function titleCase(str) {
+       let strList = str.toLowerCase().split('_');
+
+       for(var i = 0; i < strList.length; i++){
+           switch (strList[i]) {
+             case 'fsre':
+               strList[i] = strList[i].toUpperCase();
+               break;
+             case 'occ':
+               strList[i] = strList[i].toUpperCase();
+               break;
+             case 'ml':
+               strList[i] = 'Markup Language';
+               break;
+             default:
+               strList[i] = strList[i].split('');
+               strList[i][0] = strList[i][0].toUpperCase();
+               strList[i] = strList[i].join('');
+           }
+       }
+       return strList.join(' ');
+    }
+
     return (
       <ListGroupItem>
         <div style={{fontSize: "12px"}}>
-          <div className="pull-left">
-            <div>
-              Emotion Set: {data.name}
-            </div>
-            <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} condensed>
-              <tbody>
-                <tr>
-                  <td>
-                    <div className="affect--display_name">
-                        {array[0].emotion}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_rank">
-                        1
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_scores">
-                        {array[0].normalized_r_score.toFixed(4)}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="affect--display_name">
-                        {array[1].emotion}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_rank">
-                        2
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_scores">
-                        {array[1].normalized_r_score.toFixed(4)}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div className="affect--display_name">
-                        {array[2].emotion}
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_rank">
-                        3
-                    </div>
-                  </td>
-                  <td>
-                    <div className="affect--display_scores">
-                        {array[2].normalized_r_score.toFixed(4)}
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-
-          </div>
-          <div className="pull-right">
-            <div>
-              Date: {data.date[0]}
-            </div>
-          </div>
-          <br></br>
-          <br></br>
-          <div>
-            <div style={{fontWeight: "900"}}>Document</div>
-            <Well>
-              {data.doc}
-            </Well>
-          </div>
-        </div>
-        <div style={{textAlign: "right"}}>
-          <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
-            <i className="fa fa-leaf" aria-hidden="true"></i> See results
-          </Button>
+          <Row style={{paddingBottom: "10px"}}>
+            <Col md={6} lg={6}>
+              <div className="pull-left">
+                <div style={{display: "inline-flex"}}>
+                  <div style={{margin: "4px 4px 4px 0px"}}>
+                    Emotion Set:
+                  </div>
+                  <div className="affect--display_corpus-set_name">
+                    {titleCase(data.name)}
+                  </div>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} lg={6}>
+              <div className="pull-right">
+                <div>
+                  Date: {data.date[0]}
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={3} lg={3}>
+              <div className="opaque--module opaque--module_alt-01">
+                <NLPMinRankTable data={array}/>
+              </div>
+            </Col>
+            <Col md={9} lg={9}>
+              <div style={{fontWeight: "900"}}>Document</div>
+              <div>
+                <div>
+                  {data.doc}
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} lg={12}>
+              <div style={{textAlign: "right"}}>
+                <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                  <i className="fa fa-leaf" aria-hidden="true"></i> See results
+                </Button>
+              </div>
+            </Col>
+          </Row>
         </div>
       </ListGroupItem>
     );

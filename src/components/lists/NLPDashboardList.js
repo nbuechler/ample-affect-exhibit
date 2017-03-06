@@ -35,19 +35,25 @@ class NLPDashboardList extends Component {
 
     return (
       <div>
-        <Panel header={'Most recent processes'}>
+        <div className="dashboard--emotion_set-title">
+          Most recent processes
+        </div>
+        <div className="dashboard--display_main-area-wrapper">
           {isFetching && data.length === 0 &&
-            <Alert bsStyle="success">Loading...</Alert>
+            <div style={{padding: "10px"}}>Loading...</div>
           }
           {!isFetching && data.length === 0 &&
-            <Alert bsStyle="success">Your most recent processes are shown here. Right now you don't have any! Why not run one?</Alert>
+            <div style={{padding: "10px"}}>Your most recent processes are shown here. Right now you don't have any! Why not run one?</div>
           }
           {data.length > 0 &&
             <ListGroup>
               {nlplistitems}
             </ListGroup>
           }
-        </Panel>
+        </div>
+        <div className="dashboard--emotion_set-footer" style={{fontSize: "12px", textAlign: "right"}}>
+          Currently showing five processes
+        </div>
       </div>
     );
   }
