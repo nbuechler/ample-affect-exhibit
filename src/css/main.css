@@ -28,11 +28,23 @@ video {
  * List overrides
  */
 
-.list-group-item,
-.list-group-item:first-child,
-.list-group-item:last-child {
+.list-group {
+  margin-bottom: 0px;
+}
+
+.list-group-item {
   border-radius: 0px;
-  border: 1px solid #393939;
+  border: 0px solid #393939;
+  border-bottom: 1px solid #393939;
+  background: transparent;
+}
+.list-group-item:first-child {
+  border-radius: 0px;
+  border-top: 0px solid #393939;
+}
+.list-group-item:last-child {
+  border-bottom: 0px solid #393939;
+  border-radius: 0px;
 }
 
 /*
@@ -74,6 +86,7 @@ i.fa {
 .radiant--display_main-area-wrapper,
 .radiant--display_description-area-wrapper,
 .transparent--module_alt-01,
+.dashboard--display_main-area-wrapper,
 .radiant--display_main-area-wrapper {
   padding: 0px 10px 0px 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#131313+0,222222+100 */
@@ -149,7 +162,7 @@ i.fa {
 }
 
 .affect--display_corpus-set_name {
-  background: rgba(17,19,53, .3);
+  background: rgba(107,59,103, .3);
   padding: 4px;
   color: #CCC;
   vertical-align: middle;
@@ -317,11 +330,6 @@ h6 {
    font-family: 'Orbitron', sans-serif;
    padding: 18px;
    height: 60px;
- }
-
- .dashboard--emotion_set-title_table {
-   font-family: "'Open Sans'", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   padding-right: 50px;
  }
 
  .dashboard--emotion_set-footer {

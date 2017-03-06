@@ -42,7 +42,7 @@ export default class NLPListItem extends React.Component {
     return (
       <ListGroupItem>
         <div style={{fontSize: "12px"}}>
-          <Row>
+          <Row style={{paddingBottom: "10px"}}>
             <Col md={6} lg={6}>
               <div className="pull-left">
                 <div style={{display: "inline-flex"}}>
@@ -72,9 +72,9 @@ export default class NLPListItem extends React.Component {
             <Col md={9} lg={9}>
               <div style={{fontWeight: "900"}}>Document</div>
               <div>
-                <Alert>
+                <div>
                   {data.doc}
-                </Alert>
+                </div>
               </div>
             </Col>
           </Row>
