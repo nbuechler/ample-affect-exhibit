@@ -6,7 +6,7 @@ import NLPListItem from '../listitems/NLPListItem'
 
 import { Table, Alert, Panel, ListGroup } from 'react-bootstrap';
 
-import { selectActivityDataset, fetchDataIfNeeded } from '../../actions/actions';
+import { fetchDataIfNeeded } from '../../actions/actions';
 
 class NLPDashboardList extends Component {
   constructor(props) {
