@@ -4,9 +4,17 @@ import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-boots
 
 import NLPMinRankTable from '../tables/NLPMinRankTable';
 
+import { fetchDataIfNeeded } from '../../actions/actions';
+
 export default class NLPListItem extends React.Component {
   constructor (props) {
     super(props);
+    this.fetchResults = this.fetchResults.bind(this);
+  }
+
+  fetchResults(resultID) {
+    console.log(resultID);
+    // fetchDataIfNeeded('nlp-analyses', '5000');
   }
 
   render () {
@@ -81,7 +89,7 @@ export default class NLPListItem extends React.Component {
           <Row>
             <Col md={12} lg={12}>
               <div style={{textAlign: "right"}}>
-                <Button style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                <Button onClick={()=>{this.fetchResults(data._id.$oid)}} style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
                   <i className="fa fa-leaf" aria-hidden="true"></i> See results
                 </Button>
               </div>
