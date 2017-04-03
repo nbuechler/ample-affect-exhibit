@@ -14,7 +14,7 @@ export default class NLPListItem extends React.Component {
 
   fetchResults(resultID) {
     console.log(resultID);
-    // fetchDataIfNeeded('nlp-analyses', '5000');
+    fetchDataIfNeeded('nlp-analyses', '5000');
   }
 
   render () {

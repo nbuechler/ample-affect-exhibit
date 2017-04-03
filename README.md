@@ -57,6 +57,7 @@ Display a user interface for natural language
 * More User Interfaces when other forms of affect generation present themselves
 * A combined user interface that cross relates multiple types of affect coming from a single source of data.
 
+(These extended scopes are likely going to be seperate projects, so as to release finished work more often)
 
 # Run the app
 
