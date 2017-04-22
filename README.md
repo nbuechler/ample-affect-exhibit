@@ -1,6 +1,9 @@
 # ample-affect-exhibit
 A user interface, comprising data visualizations and analytics, to show data that is created from affects - specifically natural language
 
+# A motto
+For this kind of project, it is vital that we at least attempt to try. This project is one where the primary goal is to provide a set of social measurement tools. Additionally, the hope is to radically improve the understanding humanity has of the social problems it faces in its near and distant futures. 
+
 # About the project
 #### Affect
 Affect is the measurable observation of an emotion.
