@@ -17,17 +17,17 @@ export default class NLPMinRankTable extends Component {
         <Table style={{fontSize: '12px', margin: 'auto', textAlign: 'center'}} condensed>
           <tbody>
             <tr>
-              <td>
+              <td style={{width: '80%'}}>
                 <div className="affect--display_name">
                     {array[0].emotion}
                 </div>
               </td>
-              <td>
+              <td style={{width: '10%'}}>
                 <div className="affect--display_rank">
                     1
                 </div>
               </td>
-              <td>
+              <td style={{width: '10%'}}>
                 <div className="affect--display_scores">
                     {array[0].normalized_r_score.toFixed(4)}
                 </div>
