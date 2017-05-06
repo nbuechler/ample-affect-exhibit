@@ -77,11 +77,17 @@ export default class NLPListItem extends React.Component {
                 <NLPMinRankTable data={array}/>
               </div>
             </Col>
-            <Col md={9} lg={9}>
-              <div style={{fontWeight: "900"}}>Document</div>
-              <div>
+            <Col md={6} lg={6}>
+              <div style={{
+                     display: 'flex',
+                     alignItems: 'center',
+                     height: '128px'
+                   }}>
                 <div>
-                  {data.doc}
+                  <div style={{fontWeight: "900"}}>Document</div>
+                  <div>
+                    {data.doc}
+                  </div>
                 </div>
               </div>
             </Col>
