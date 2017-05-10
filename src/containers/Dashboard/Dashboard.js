@@ -28,17 +28,19 @@ class Dashboard extends Component {
     return (
       <div>
 
-        <Pagination
-          prev
-          next
-          first
-          last
-          ellipsis
-          boundaryLinks
-          items={20}
-          maxButtons={3}
-          activePage={this.state.activePage}
-          onSelect={this.handleSelect} />
+        <div className="pull-right">
+          <Pagination
+            prev
+            next
+            first
+            last
+            ellipsis
+            boundaryLinks
+            items={25}
+            maxButtons={5}
+            activePage={this.state.activePage}
+            onSelect={this.handleSelect} />
+        </div>
 
         <h1><i className="fa fa-globe" aria-hidden="true"></i> Overview</h1>
         <p>View linguistic processes from prior analyses below:</p>
@@ -73,6 +75,23 @@ class Dashboard extends Component {
             </div>
           </Col>
           */}
+        </Row>
+        <Row>
+          <Col lg={12}>
+            <div className="pull-right">
+              <Pagination
+                prev
+                next
+                first
+                last
+                ellipsis
+                boundaryLinks
+                items={25}
+                maxButtons={5}
+                activePage={this.state.activePage}
+                onSelect={this.handleSelect} />
+            </div>
+          </Col>
         </Row>
       </div>
     );
