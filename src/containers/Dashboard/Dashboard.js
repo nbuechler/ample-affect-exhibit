@@ -1,13 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { Table, Button, Panel, Row, Col } from 'react-bootstrap';
+import { Table, Button, Panel, Row, Col, Pagination } from 'react-bootstrap';
+
 
 import NLPDashboardList from '../../components/lists/NLPDashboardList';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.state = {
+      "activePage": 1
+    }
+  }
+
+  handleSelect(eventKey) {
+    // TODO: Make api calls to update most recent processes.
+    this.setState({
+      activePage: eventKey
+    });
   }
 
   render () {
@@ -15,6 +27,21 @@ class Dashboard extends Component {
     const notImplemented = {textDecoration: "line-through", color: "gray"}
     return (
       <div>
+
+        <div className="pull-right">
+          <Pagination
+            prev
+            next
+            first
+            last
+            ellipsis
+            boundaryLinks
+            items={25}
+            maxButtons={5}
+            activePage={this.state.activePage}
+            onSelect={this.handleSelect} />
+        </div>
+
         <h1><i className="fa fa-globe" aria-hidden="true"></i> Overview</h1>
         <p>View linguistic processes from prior analyses below:</p>
         <br></br>
@@ -48,6 +75,23 @@ class Dashboard extends Component {
             </div>
           </Col>
           */}
+        </Row>
+        <Row>
+          <Col lg={12}>
+            <div className="pull-right">
+              <Pagination
+                prev
+                next
+                first
+                last
+                ellipsis
+                boundaryLinks
+                items={25}
+                maxButtons={5}
+                activePage={this.state.activePage}
+                onSelect={this.handleSelect} />
+            </div>
+          </Col>
         </Row>
       </div>
     );
