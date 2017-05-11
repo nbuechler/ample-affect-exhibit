@@ -40,7 +40,7 @@ function submitRequest(values) {
   };
 }
 
-function fetchData(dataset, port) {
+function fetchData(dataset, port, metadata) {
   return dispatch => {
     dispatch(requestData(dataset));
     // return fetch(`http://www.user.com/r/${user}.json`)
@@ -58,9 +58,20 @@ function fetchData(dataset, port) {
         .then(req => req.json())
         .then(json => dispatch(receiveData(dataset, json)));
     } else if (dataset == 'nlp-analyses') {
-      return fetch(`http://` + ip + `:` + `3000/retrieveAllRunAnalyses`)
-        .then(req => req.json())
-        .then(json => dispatch(receiveData(dataset, json)));
+      let url = `http://` + ip + `:` + `3000/retrieveAllRunAnalyses`
+      url += `?page=` + metadata.page
+      url += `&countPerPage=` + metadata.countPerPage
+      return fetch(url, {
+        // credentials: 'include', //pass cookies, for authentication
+        method: 'GET',
+        // mode: 'CORS', // This line didn't work in firefox
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(req => req.json())
+      .then(json => dispatch(receiveData(dataset, json)));
     } else {
       return fetch(`http://` + ip + `:` + portNum + `/${dataset}/?credentials=` + options.credentials)
         .then(req => req.json())
@@ -80,10 +91,15 @@ function shouldFetchData(state, dataset) {
   }
 }
 
-export function fetchDataIfNeeded(dataset, port) {
+export function fetchDataIfNeeded(dataset, port, metadata) {
+  console.log(metadata);
   return (dispatch, getState) => {
-    if (shouldFetchData(getState(), dataset)) {
-      return dispatch(fetchData(dataset, port));
+    let alwaysInvalidate = ['nlp-analyses']
+    if (alwaysInvalidate.indexOf(dataset) >= 0) {
+      return dispatch(fetchData(dataset, port, metadata));
+    }
+    else if (shouldFetchData(getState(), dataset, metadata)) {
+      return dispatch(fetchData(dataset, port, metadata));
     }
   };
 }

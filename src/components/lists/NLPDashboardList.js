@@ -4,20 +4,40 @@ import { connect } from 'react-redux';
 import DivListGroup from '../groups/DivListGroup'
 import NLPListItem from '../listitems/NLPListItem'
 
-import { Table, Alert, Panel, ListGroup } from 'react-bootstrap';
+import { Row, Col, Table, Alert, Panel, ListGroup, Pagination } from 'react-bootstrap';
 
 import { fetchDataIfNeeded } from '../../actions/actions';
 
 class NLPDashboardList extends Component {
   constructor(props) {
     super(props);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.state = {
+      "activePage": 1
+    }
   }
 
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(fetchDataIfNeeded('nlp-analyses', '5000'));
+    let metadata = {
+      'page': 1,
+      'countPerPage': 5,
+    }
+    dispatch(fetchDataIfNeeded('nlp-analyses', '5000', metadata));
   }
 
+  handleSelect(eventKey) {
+    // TODO: Make api calls to update most recent processes.
+    const { dispatch } = this.props;
+    this.setState({
+      activePage: eventKey
+    });
+    let metadata = {
+      'page': eventKey,
+      'countPerPage': 5,
+    }
+    dispatch(fetchDataIfNeeded('nlp-analyses', '5000', metadata));
+  }
 
   render () {
     const { data, isFetching, lastUpdated } = this.props;
@@ -46,9 +66,49 @@ class NLPDashboardList extends Component {
             <div style={{padding: "10px"}}>Your most recent processes are shown here. Right now you don't have any! Why not run one?</div>
           }
           {data.length > 0 &&
-            <ListGroup>
-              {nlplistitems}
-            </ListGroup>
+            <div>
+              <Row>
+                <Col lg={12}>
+                  <div className="pull-right">
+                    <Pagination
+                      prev
+                      next
+                      first
+                      last
+                      ellipsis
+                      boundaryLinks
+                      items={25}
+                      maxButtons={5}
+                      activePage={this.state.activePage}
+                      onSelect={this.handleSelect} />
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={12}>
+                  <ListGroup>
+                    {nlplistitems}
+                  </ListGroup>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={12}>
+                  <div className="pull-right">
+                    <Pagination
+                      prev
+                      next
+                      first
+                      last
+                      ellipsis
+                      boundaryLinks
+                      items={25}
+                      maxButtons={5}
+                      activePage={this.state.activePage}
+                      onSelect={this.handleSelect} />
+                  </div>
+                </Col>
+              </Row>
+            </div>
           }
         </div>
         <div className="dashboard--emotion_set-footer" style={{fontSize: "12px", textAlign: "right"}}>
