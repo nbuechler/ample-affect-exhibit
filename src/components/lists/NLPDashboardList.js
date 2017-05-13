@@ -43,6 +43,7 @@ class NLPDashboardList extends Component {
     const { data, isFetching, lastUpdated } = this.props;
 
     let nlplistitems = [];
+    console.log(this.props.data);
     if (this.props.data.length > 0) {
       let data = this.props.data;
       for (var i = 0; i < data.length; i++) {
@@ -55,6 +56,12 @@ class NLPDashboardList extends Component {
 
     return (
       <div>
+        {/*
+            TODO: Create a stats Component here that makes use of this endpoint:
+
+            dispatch(fetchDataIfNeeded('nlp-analyses-stats', '5000'));
+
+        */}
         <div className="dashboard--emotion_set-title">
           Most recent processes
         </div>
