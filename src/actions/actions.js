@@ -13,10 +13,17 @@ export const RECEIVE_DATA = 'RECEIVE_DATA';
 function receiveData(dataset, json) {
 
   let data = [json] // makes this an array so that the mapstatetoprops is happy
+  let metadata = {}
   if (dataset == 'nlp-stats') {
     data = json.statistics
   }
-  if (dataset == 'nlp-analyses') {
+  else if (dataset == 'nlp-analyses') {
+    data = json.data
+    metadata['totalAnalyses'] = json['total_analyses']
+    metadata['countPerPage'] = json['count_per_page']
+    metadata['totalPages'] = Math.ceil(json['total_analyses'] / json['count_per_page'])
+  }
+  else if (dataset == 'nlp-analyses-stats') {
     data = json.data
   }
   else if (dataset !== 'nlp') {
@@ -27,6 +34,7 @@ function receiveData(dataset, json) {
     type: RECEIVE_DATA,
     dataset,
     data: data,
+    metadata: metadata,
     receivedAt: Date.now()
   };
 }
@@ -61,6 +69,20 @@ function fetchData(dataset, port, metadata) {
       let url = `http://` + ip + `:` + `3000/retrieveAllRunAnalyses`
       url += `?page=` + metadata.page
       url += `&countPerPage=` + metadata.countPerPage
+      return fetch(url, {
+        // credentials: 'include', //pass cookies, for authentication
+        method: 'GET',
+        // mode: 'CORS', // This line didn't work in firefox
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(req => req.json())
+      .then(json => dispatch(receiveData(dataset, json)));
+    } else if (dataset == 'nlp-analyses-stats') {
+      console.log('rere');
+      let url = `http://` + ip + `:` + `3000/retrieveRunAnalysesStats`
       return fetch(url, {
         // credentials: 'include', //pass cookies, for authentication
         method: 'GET',

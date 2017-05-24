@@ -40,9 +40,11 @@ class NLPDashboardList extends Component {
   }
 
   render () {
-    const { data, isFetching, lastUpdated } = this.props;
+    const { data, metadata, isFetching, lastUpdated } = this.props;
 
     let nlplistitems = [];
+    console.log(this.props.data);
+    console.log(this.props);
     if (this.props.data.length > 0) {
       let data = this.props.data;
       for (var i = 0; i < data.length; i++) {
@@ -55,6 +57,12 @@ class NLPDashboardList extends Component {
 
     return (
       <div>
+        {/*
+            TODO: Create a stats Component here that makes use of this endpoint:
+
+            dispatch(fetchDataIfNeeded('nlp-analyses-stats', '5000'));
+
+        */}
         <div className="dashboard--emotion_set-title">
           Most recent processes
         </div>
@@ -77,7 +85,7 @@ class NLPDashboardList extends Component {
                       last
                       ellipsis
                       boundaryLinks
-                      items={25}
+                      items={parseInt(this.props.metadata.totalPages)}
                       maxButtons={5}
                       activePage={this.state.activePage}
                       onSelect={this.handleSelect} />
@@ -101,7 +109,7 @@ class NLPDashboardList extends Component {
                       last
                       ellipsis
                       boundaryLinks
-                      items={25}
+                      items={parseInt(this.props.metadata.totalPages)}
                       maxButtons={5}
                       activePage={this.state.activePage}
                       onSelect={this.handleSelect} />
@@ -121,24 +129,29 @@ class NLPDashboardList extends Component {
 
 NLPDashboardList.propTypes = {
   data: PropTypes.array.isRequired,
+  metadata: PropTypes.object.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
+  console.log(state);
   const { dataByDataset } = state;
   const {
     isFetching,
     lastUpdated,
-    items: data
+    items: data,
+    metadata: metadata
   } = dataByDataset['nlp-analyses'] || {
     isFetching: true,
-    items: []
+    items: [],
+    metadata: {}
   };
 
   return {
     data,
+    metadata,
     isFetching,
     lastUpdated
   };
