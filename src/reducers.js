@@ -8,8 +8,10 @@ import {
 function data(state = {
   isFetching: false,
   didInvalidate: false,
-  items: []
+  items: [],
+  metadata: {}
 }, action) {
+  console.log(state);
   switch (action.type) {
   case INVALIDATE_DATASET:
     return Object.assign({}, state, {
@@ -25,6 +27,7 @@ function data(state = {
       isFetching: false,
       didInvalidate: false,
       items: action.data,
+      metadata: action.metadata,
       lastUpdated: action.receivedAt
     });
   default:

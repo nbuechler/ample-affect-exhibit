@@ -12,15 +12,18 @@ function requestData(dataset) {
 export const RECEIVE_DATA = 'RECEIVE_DATA';
 function receiveData(dataset, json) {
 
-  console.log(dataset);
   let data = [json] // makes this an array so that the mapstatetoprops is happy
+  let metadata = {}
   if (dataset == 'nlp-stats') {
     data = json.statistics
   }
-  if (dataset == 'nlp-analyses') {
+  else if (dataset == 'nlp-analyses') {
     data = json.data
+    metadata['totalAnalyses'] = json['total_analyses']
+    metadata['countPerPage'] = json['count_per_page']
+    metadata['totalPages'] = Math.ceil(json['total_analyses'] / json['count_per_page'])
   }
-  if (dataset == 'nlp-analyses-stats') {
+  else if (dataset == 'nlp-analyses-stats') {
     data = json.data
   }
   else if (dataset !== 'nlp') {
@@ -31,6 +34,7 @@ function receiveData(dataset, json) {
     type: RECEIVE_DATA,
     dataset,
     data: data,
+    metadata: metadata,
     receivedAt: Date.now()
   };
 }
