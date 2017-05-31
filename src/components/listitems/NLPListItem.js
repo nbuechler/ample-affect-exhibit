@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
 
 import NLPMinRankTable from '../tables/NLPMinRankTable';
 
-import { fetchDataIfNeeded } from '../../actions/actions';
+import { loadNLPAnalysis } from '../../actions/actions';
 
-export default class NLPListItem extends React.Component {
+class NLPListItem extends React.Component {
   constructor (props) {
     super(props);
-    this.fetchResults = this.fetchResults.bind(this);
+    this.loadAnalysis = this.loadAnalysis.bind(this);
   }
 
-  fetchResults(resultID) {
-    console.log(resultID);
-    fetchDataIfNeeded('nlp-analyses', '5000');
+  loadAnalysis(id) {
+    const { dispatch } = this.props;
+    console.log(id);
+    let data = {
+      'analysis_id': id
+    }
+    dispatch(loadNLPAnalysis(data))
   }
 
   render () {
     let data = this.props.data
 
-    let array = this.props.data.emotion_set.sort(function(a,b) {
+    let array = data.emotion_set.sort(function(a,b) {
                     return b.normalized_r_score - a.normalized_r_score;
                 });
 
@@ -55,7 +60,7 @@ export default class NLPListItem extends React.Component {
               <div className="pull-left">
                 <div style={{display: "inline-flex"}}>
                   <div style={{margin: "4px 4px 4px 0px"}}>
-                    Emotion Set:
+                    Emotion Set:d
                   </div>
                   <div className="affect--display_corpus-set_name">
                     {titleCase(data.name)}
@@ -95,7 +100,7 @@ export default class NLPListItem extends React.Component {
           <Row>
             <Col md={12} lg={12}>
               <div style={{textAlign: "right"}}>
-                <Button onClick={()=>{this.fetchResults(data._id.$oid)}} style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
+                <Button onClick={()=>{this.loadAnalysis(data._id.$oid)}} style={{width: '200px'}} bsSize="xsmall" href="#/nlp">
                   <i className="fa fa-leaf" aria-hidden="true"></i> See results
                 </Button>
               </div>
@@ -108,3 +113,33 @@ export default class NLPListItem extends React.Component {
   }
 
 }
+
+NLPListItem.propTypes = {
+  metadata: PropTypes.object.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  lastUpdated: PropTypes.number,
+  dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+  console.log(state);
+  const { dataByDataset } = state;
+  const {
+    isFetching,
+    lastUpdated,
+    items: data,
+    metadata: metadata
+  } = dataByDataset['nlp-analyses'] || {
+    isFetching: true,
+    items: [],
+    metadata: {}
+  };
+
+  return {
+    metadata,
+    isFetching,
+    lastUpdated
+  };
+}
+
+export default connect(mapStateToProps)(NLPListItem);

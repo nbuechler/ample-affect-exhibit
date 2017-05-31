@@ -151,3 +151,27 @@ export function nlpSubmit(data) {
 
   }
 }
+
+export function loadNLPAnalysis(data) {
+  return dispatch => {
+    dispatch(submitRequest(data))
+
+    let ip = window.location.hostname;
+
+    let url = `http://` + ip + `:3000/retrieveRunAnalysis/`
+    url += `?analysis_id=` + data.analysis_id
+    fetch(url, {
+      // credentials: 'include', //pass cookies, for authentication
+      method: 'GET',
+      // mode: 'CORS', // This line didn't work in firefox
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(json => dispatch(receiveData('nlp', json.data)))
+    .catch(err => console.log(err));
+
+  }
+}

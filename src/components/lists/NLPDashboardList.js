@@ -23,11 +23,10 @@ class NLPDashboardList extends Component {
       'page': 1,
       'countPerPage': 5,
     }
-    dispatch(fetchDataIfNeeded('nlp-analyses', '5000', metadata));
+    dispatch(fetchDataIfNeeded('nlp-analyses', '3000', metadata));
   }
 
   handleSelect(eventKey) {
-    // TODO: Make api calls to update most recent processes.
     const { dispatch } = this.props;
     this.setState({
       activePage: eventKey
@@ -36,7 +35,7 @@ class NLPDashboardList extends Component {
       'page': eventKey,
       'countPerPage': 5,
     }
-    dispatch(fetchDataIfNeeded('nlp-analyses', '5000', metadata));
+    dispatch(fetchDataIfNeeded('nlp-analyses', '3000', metadata));
   }
 
   render () {
@@ -49,7 +48,7 @@ class NLPDashboardList extends Component {
       let data = this.props.data;
       for (var i = 0; i < data.length; i++) {
         nlplistitems.push(
-          <NLPListItem key={'card-' + i} data={data[i]} />
+          <NLPListItem key={'card-' + i} data={data[i]}/>
         )
       }
 
@@ -60,7 +59,7 @@ class NLPDashboardList extends Component {
         {/*
             TODO: Create a stats Component here that makes use of this endpoint:
 
-            dispatch(fetchDataIfNeeded('nlp-analyses-stats', '5000'));
+            dispatch(fetchDataIfNeeded('nlp-analyses-stats', '3000'));
 
         */}
         <div className="dashboard--emotion_set-title">
