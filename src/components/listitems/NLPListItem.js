@@ -26,8 +26,14 @@ class NLPListItem extends React.Component {
     let data = this.props.data
 
     let array = data.emotion_set.sort(function(a,b) {
-                    return b.normalized_r_score - a.normalized_r_score;
+                    return b.normalized_r_score - a.normalized_r_score || alphaSortEmotion(a,b);
                 });
+
+    function alphaSortEmotion(a, b) {
+      if(a.emotion < b.emotion) return -1;
+      if(a.emotion > b.emotion) return 1;
+      return 0;
+    }
 
     function titleCase(str) {
        let strList = str.toLowerCase().split('_');
