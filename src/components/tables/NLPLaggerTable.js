@@ -25,8 +25,15 @@ class NLPLaggerTable extends Component {
       primaryAlert = 'Lagger Summary of the Emotion Set\'s Bottom 10';
       let arrayName = this.props.data[0].name
       let array = this.props.data[0].emotion_set.sort(function(a,b) {
-                      return a.normalized_r_score - b.normalized_r_score;
+                      return a.normalized_r_score - b.normalized_r_score || alphaSortEmotion(a,b);
                   });
+
+      function alphaSortEmotion(a, b) {
+        if(a.emotion < b.emotion) return -1;
+        if(a.emotion > b.emotion) return 1;
+        return 0;
+      }
+
       switch (arrayName) {
         case 'big_6':
           primaryAlert = 'Lagger Summary of Paul Ekman\'s "Big Six"';
