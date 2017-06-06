@@ -1,5 +1,8 @@
 import fetch from 'isomorphic-fetch';
 
+function getCredentials(){
+  return localStorage.getItem('credentials');
+}
 
 export const REQUEST_DATA = 'REQUEST_DATA';
 function requestData(dataset) {
@@ -54,8 +57,10 @@ function fetchData(dataset, port, metadata) {
     // return fetch(`http://www.user.com/r/${user}.json`)
     // return fetch(`http://127.0.0.1:5000/${user}`)
 
+    let credentials = localStorage.getItem('credentials')
+
     let options = {
-      credentials: localStorage.getItem('credentials') | 'none'
+      credentials: credentials
     }
 
     let ip = window.location.hostname;
