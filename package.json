@@ -1,6 +1,6 @@
 {
   "name": "ample-affect-exhibit",
-  "version": "1.10.1",
+  "version": "2.0.0",
   "description": "ReactJS exhibit for affect",
   "scripts": {
     "start": "node server.js",
@@ -40,14 +40,15 @@
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
     "redux": "^3.7.2",
     "redux-form": "^7.0.4",
     "redux-logger": "^3.0.6",
-    "redux-router": "^2.1.2",
     "redux-thunk": "^2.2.0",
     "underscore": "^1.8.3"
   }

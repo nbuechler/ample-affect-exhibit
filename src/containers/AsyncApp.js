@@ -9,8 +9,11 @@ import { Button,
          MenuItem,
          NavDropdown } from 'react-bootstrap';
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { selectDataset, fetchDataIfNeeded, invalidateDataset } from '../actions/actions';
+
+import Home from './Home/Home';
 
 import { IndexLink, Link } from 'react-router';
 
