@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import DivListGroup from '../groups/DivListGroup'
@@ -33,7 +34,7 @@ class NLPRankTable extends Component {
         if(a.emotion > b.emotion) return 1;
         return 0;
       }
-      
+
       switch (arrayName) {
         case 'big_6':
           primaryAlert = 'Ranking Summary of Paul Ekman\'s "Big Six"';

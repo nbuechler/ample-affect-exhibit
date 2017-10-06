@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-bootstrap';
@@ -6,6 +7,7 @@ import { Alert, Row, Col, ListGroupItem, Button, Well, Table } from 'react-boots
 import NLPMinRankTable from '../tables/NLPMinRankTable';
 
 import { loadNLPAnalysis } from '../../actions/actions';
+
 
 class NLPListItem extends React.Component {
   constructor (props) {
