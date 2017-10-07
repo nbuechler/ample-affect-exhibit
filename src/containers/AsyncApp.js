@@ -14,8 +14,15 @@ import PropTypes from 'prop-types';
 import { selectDataset, fetchDataIfNeeded, invalidateDataset } from '../actions/actions';
 
 import Home from './Home/Home';
+import Signup from './Signup/Signup';
+import Login from './Login/Login';
+import Logout from './Logout/Logout';
+import Dashboard from './Dashboard/Dashboard';
+import NLPComprehensiveDisplay from './NLP/NLPComprehensiveDisplay';
+import NLPStatsDisplay from './NLP/NLPStatsDisplay';
+import NLPRadiantDisplay from './NLP/NLPRadiantDisplay';
 
-import { IndexLink, Link } from 'react-router';
+import { Link, NavLink, Route } from 'react-router-dom';
 
 class AsyncApp extends Component {
 
@@ -57,27 +64,52 @@ class AsyncApp extends Component {
       */
     let ip = window.location.hostname;
 
-    let loginButton, navOptions;
+    let loginButtons, navOptions;
     if (localStorage.getItem('currentSession') == '1') {
       navOptions = (
-        <Nav>
-          <NavItem href="#/dashboard"><i className="fa fa-globe" aria-hidden="true"></i> Overview</NavItem>
-          <NavItem href="#/nlp"><i className="fa fa-fire" aria-hidden="true"></i> Fast Processing</NavItem>
-          <NavItem href="#/nlp"><i className="fa fa-tint" aria-hidden="true"></i> Precise Processing</NavItem>
-          <NavItem href="#/nlp-radiant"><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</NavItem>
-        </Nav>
+        <div>
+          <nav className="nav navbar-nav">
+            <li>
+              <NavLink to="/dashboard"><i className="fa fa-globe" aria-hidden="true"></i> Overview</NavLink>
+            </li>
+            <li>
+              <NavLink to="/nlp"><i className="fa fa-fire" aria-hidden="true"></i> Fast Processing</NavLink>
+            </li>
+            <li>
+              <NavLink to="/nlp"><i className="fa fa-tint" aria-hidden="true"></i> Precise Processing</NavLink>
+            </li>
+            <li>
+              <NavLink to="/nlp-radiant"><i className="fa fa-bolt" aria-hidden="true"></i> Radiant</NavLink>
+            </li>
+          </nav>
+        </div>
       )
-      loginButton = <Nav pullRight>
-                     <NavItem href="#/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavItem>
-                     <NavItem onClick={::this.handleLogout} href="#/">Sign out</NavItem>
-                    </Nav>
+      loginButtons = (
+        <div>
+          <nav className="nav navbar-nav navbar-right">
+            <li>
+              <NavLink to="/stats"><i className="fa fa-signal" aria-hidden="true"></i> Stats</NavLink>
+            </li>
+            <li>
+              <NavLink to="/" onClick={::this.handleLogout}>Sign out</NavLink>
+            </li>
+          </nav>
+        </div>
+      )
     } else {
-      navOptions = <Nav>
-                   </Nav>
-      loginButton = <Nav pullRight>
-                     <NavItem href="#/signup">Sign Up</NavItem>
-                     <NavItem href="#/login">Sign In</NavItem>
-                    </Nav>
+      navOptions = <nav></nav>
+      loginButtons = (
+        <div>
+          <nav className="nav navbar-nav navbar-right">
+            <li>
+              <NavLink to="/signup">Sign Up</NavLink>
+            </li>
+            <li>
+              <NavLink to="/login">Sign In</NavLink>
+            </li>
+          </nav>
+        </div>
+      )
     }
 
    return (
@@ -85,14 +117,21 @@ class AsyncApp extends Component {
        <Navbar className="navbar-inverse">
          <Navbar.Header>
            <Navbar.Brand>
-             <a href="#/">ample-affect-exhibit</a>
+             <NavLink to="/">ample-affect-exhibit</NavLink>
            </Navbar.Brand>
          </Navbar.Header>
          {navOptions}
-         {loginButton}
+         {loginButtons}
        </Navbar>
        <div className="container" style={{marginTop: '5%', maxWidth: '1600px'}}>
-         {this.props.children}
+         <Route path="/" exact component={Home}/>
+         <Route path="/signup" component={Signup}/>
+         <Route path="/login" component={Login}/>
+         <Route path="/logout" component={Logout}/>
+         <Route path="/dashboard" component={Dashboard}/>
+         <Route path="/nlp" component={NLPComprehensiveDisplay}/>
+         <Route path="/stats" component={NLPStatsDisplay}/>
+         <Route path="/nlp-radiant" component={NLPRadiantDisplay}/>
        </div>
      </div>
    );
